@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc ext_build/dist/lib/libpugixml.a  CMakeFiles/pugixml.dir/ext/pugixml/src/pugixml.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib ext_build/dist/lib/libpugixml.a

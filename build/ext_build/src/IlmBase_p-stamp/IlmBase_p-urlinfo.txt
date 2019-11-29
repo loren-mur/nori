@@ -1,0 +1,3 @@
+repository='external project URL'
+module='/Users/alessiapaccagnella/desktop/nori/ext/openexr/IlmBase'
+tag=''

@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libtbbmalloc.a  CMakeFiles/tbbmalloc.dir/src/tbbmalloc/backend.cpp.o CMakeFiles/tbbmalloc.dir/src/tbbmalloc/large_objects.cpp.o CMakeFiles/tbbmalloc.dir/src/tbbmalloc/backref.cpp.o CMakeFiles/tbbmalloc.dir/src/tbbmalloc/tbbmalloc.cpp.o CMakeFiles/tbbmalloc.dir/src/tbbmalloc/frontend.cpp.o CMakeFiles/tbbmalloc.dir/src/tbb/itt_notify.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libtbbmalloc.a

@@ -77,12 +77,16 @@ add_executable(nori
   src/arealight.cpp
   src/normals.cpp
   src/averagevisibility.cpp
-  src/pointlight.cpp
+  src/pointLight.cpp
   src/direct.cpp
   src/direct_ems.cpp
   src/direct_mats.cpp
   src/direct_mis.cpp
-  src/path_mats.cpp src/path_mis.cpp)
+  src/path_mats.cpp
+  src/path_mis.cpp
+  src/envmap.cpp
+  src/conductor.cpp
+)
 
 # The following lines build the warping test application
 add_executable(warptest
