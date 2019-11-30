@@ -9,7 +9,7 @@ Alessia Paccagnella:
 - Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration) 
 - NL means denoising - Script written. Have to understand how to get dataset in exr format from nori. 
 - Image Textures
-- Spotlight
+- Spotlight - done. Have to compare it with Mitsuba. 
 - Procedural Texture
 
 Niklaus Houska:
