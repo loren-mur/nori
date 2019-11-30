@@ -50,7 +50,7 @@ public:
             //from pbr book and mistuba ref
             if (cosTheta < cosTotalWidth)     return 0;
             if (cosTheta > cosFalloffStart)   return 1;
-            float transitionWidth = (std::acos(cosTotalWidth) - std::acos(cosFalloffStart));
+            float transitionWidth = (std::acos(cosFalloffStart) - std::acos(cosTotalWidth));
             return ((std::acos(cosTotalWidth) - std::acos(cosTheta)) / transitionWidth);
         }
 

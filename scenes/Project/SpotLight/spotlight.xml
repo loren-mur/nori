@@ -31,7 +31,7 @@
     <emitter type="spotlight">
         <point name="position" value = "6, 5, -5"/>
         <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="45"/>
+        <float name="cosFalloffStart" value="5"/>
         <float name="cosTotalWidth" value="30"/>
         <vector name="direction" value = "-.25,-1,0"/>
     </emitter>
@@ -47,7 +47,7 @@
     <emitter type="spotlight">
         <point name="position" value = "6, 5, 5"/>
         <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="5"/>
+        <float name="cosFalloffStart" value="20"/>
         <float name="cosTotalWidth" value="30"/>
         <vector name="direction" value = "-.25,-1,0"/>
     </emitter>
