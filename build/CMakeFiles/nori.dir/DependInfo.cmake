@@ -43,6 +43,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/alessiapaccagnella/desktop/nori/src/scene.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/scene.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/shape.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/shape.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/sphere.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/sphere.cpp.o"
+  "/Users/alessiapaccagnella/desktop/nori/src/spotlight.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/spotlight.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/ttest.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/ttest.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/warp.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/warp.cpp.o"
   )

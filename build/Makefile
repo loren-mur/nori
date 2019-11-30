@@ -1339,6 +1339,33 @@ src/sphere.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/sphere.cpp.s
 .PHONY : src/sphere.cpp.s
 
+src/spotlight.o: src/spotlight.cpp.o
+
+.PHONY : src/spotlight.o
+
+# target to build an object file
+src/spotlight.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/spotlight.cpp.o
+.PHONY : src/spotlight.cpp.o
+
+src/spotlight.i: src/spotlight.cpp.i
+
+.PHONY : src/spotlight.i
+
+# target to preprocess a source file
+src/spotlight.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/spotlight.cpp.i
+.PHONY : src/spotlight.cpp.i
+
+src/spotlight.s: src/spotlight.cpp.s
+
+.PHONY : src/spotlight.s
+
+# target to generate assembly for a file
+src/spotlight.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/spotlight.cpp.s
+.PHONY : src/spotlight.cpp.s
+
 src/ttest.o: src/ttest.cpp.o
 
 .PHONY : src/ttest.o
@@ -1562,6 +1589,9 @@ help:
 	@echo "... src/sphere.o"
 	@echo "... src/sphere.i"
 	@echo "... src/sphere.s"
+	@echo "... src/spotlight.o"
+	@echo "... src/spotlight.i"
+	@echo "... src/spotlight.s"
 	@echo "... src/ttest.o"
 	@echo "... src/ttest.i"
 	@echo "... src/ttest.s"

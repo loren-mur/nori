@@ -40,6 +40,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/nori.dir/src/path_mis.cpp.o"
   "CMakeFiles/nori.dir/src/envmap.cpp.o"
   "CMakeFiles/nori.dir/src/conductor.cpp.o"
+  "CMakeFiles/nori.dir/src/spotlight.cpp.o"
   "nori.pdb"
   "nori"
 )

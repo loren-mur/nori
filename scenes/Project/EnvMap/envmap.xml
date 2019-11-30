@@ -1,4 +1,4 @@
-<scene>
+<scene version="0.5.0">
     <!-- Integrator -->
     <integrator type="path_mis"/>
 

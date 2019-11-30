@@ -86,6 +86,7 @@ add_executable(nori
   src/path_mis.cpp
   src/envmap.cpp
   src/conductor.cpp
+  src/spotlight.cpp
 )
 
 # The following lines build the warping test application

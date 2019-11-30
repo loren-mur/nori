@@ -18,8 +18,12 @@ sstream
 array
 -
 
-../include/nori/bsdf.h
-nori/object.h
+../include/nori/bbox.h
+nori/ray.h
+-
+
+../include/nori/bvh.h
+nori/shape.h
 -
 
 ../include/nori/color.h
@@ -42,8 +46,16 @@ ImathPlatform.h
 tinyformat.h
 -
 
+../include/nori/emitter.h
+nori/object.h
+-
+
 ../include/nori/frame.h
 nori/vector.h
+-
+
+../include/nori/integrator.h
+nori/object.h
 -
 
 ../include/nori/object.h
@@ -62,6 +74,26 @@ map
 nori/vector.h
 -
 
+../include/nori/sampler.h
+nori/object.h
+-
+memory
+-
+
+../include/nori/scene.h
+nori/bvh.h
+-
+nori/emitter.h
+-
+
+../include/nori/shape.h
+nori/object.h
+-
+nori/frame.h
+-
+nori/bbox.h
+-
+
 ../include/nori/transform.h
 nori/common.h
 -
@@ -72,10 +104,20 @@ nori/ray.h
 nori/common.h
 -
 
-/Users/alessiapaccagnella/desktop/nori/src/conductor.cpp
-nori/bsdf.h
+../include/nori/warp.h
+nori/common.h
 -
-nori/frame.h
+nori/sampler.h
+-
+
+/Users/alessiapaccagnella/desktop/nori/src/spotlight.cpp
+nori/integrator.h
+-
+nori/scene.h
+-
+nori/warp.h
+-
+nori/emitter.h
 -
 
 ext_build/dist/include/Eigen/Core
