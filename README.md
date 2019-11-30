@@ -5,9 +5,9 @@ Ray tracing renderer implemented for Computer Graphics rendering competition at 
 Features:
 
 Alessia Paccagnella:
-- Environment map emitter
+- Environment map emitter - done. Have to compare it with Mitsuba.
 - Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration) 
-- NL means denoising
+- NL means denoising - Script written. Have to understand how to get dataset in exr format from nori. 
 - Image Textures
 - Spotlight
 - Procedural Texture
