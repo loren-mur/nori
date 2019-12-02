@@ -43,6 +43,7 @@ add_executable(nori
   include/nori/transform.h
   include/nori/vector.h
   include/nori/warp.h
+  include/nori/lodepng.h
 
   # Source code files
   src/bitmap.cpp
@@ -87,6 +88,8 @@ add_executable(nori
   src/envmap.cpp
   src/conductor.cpp
   src/spotlight.cpp
+  src/imagetexture.cpp
+  src/lodepng.cpp
 )
 
 # The following lines build the warping test application

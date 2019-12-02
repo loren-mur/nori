@@ -6,6 +6,36 @@
 
 #IncludeRegexTransform: 
 
+../ext/filesystem/filesystem/path.h
+string
+-
+vector
+-
+stdexcept
+-
+sstream
+-
+cctype
+-
+cstdlib
+-
+cerrno
+-
+cstring
+-
+windows.h
+-
+sys/stat.h
+-
+unistd.h
+-
+linux/limits.h
+-
+
+../ext/filesystem/filesystem/resolver.h
+path.h
+../ext/filesystem/filesystem/path.h
+
 ../ext/tinyformat/tinyformat.h
 algorithm
 -
@@ -16,14 +46,6 @@ iostream
 sstream
 -
 array
--
-
-../include/nori/bbox.h
-nori/ray.h
--
-
-../include/nori/bvh.h
-nori/shape.h
 -
 
 ../include/nori/color.h
@@ -46,17 +68,19 @@ ImathPlatform.h
 tinyformat.h
 -
 
-../include/nori/emitter.h
-nori/object.h
+../include/nori/lodepng.h
+string.h
 -
-
-../include/nori/frame.h
-nori/vector.h
+vector
 -
-
-../include/nori/integrator.h
-nori/object.h
+string
 -
+lodepng.h
+../include/nori/lodepng.h
+iostream
+-
+lodepng.h
+../include/nori/lodepng.h
 
 ../include/nori/object.h
 nori/proplist.h
@@ -74,24 +98,8 @@ map
 nori/vector.h
 -
 
-../include/nori/sampler.h
+../include/nori/texture.h
 nori/object.h
--
-memory
--
-
-../include/nori/scene.h
-nori/bvh.h
--
-nori/emitter.h
--
-
-../include/nori/shape.h
-nori/object.h
--
-nori/frame.h
--
-nori/bbox.h
 -
 
 ../include/nori/transform.h
@@ -104,20 +112,12 @@ nori/ray.h
 nori/common.h
 -
 
-../include/nori/warp.h
-nori/common.h
+/Users/alessiapaccagnella/desktop/nori/src/imagetexture.cpp
+nori/lodepng.h
 -
-nori/sampler.h
+nori/texture.h
 -
-
-/Users/alessiapaccagnella/desktop/nori/src/spotlight.cpp
-nori/integrator.h
--
-nori/scene.h
--
-nori/warp.h
--
-nori/emitter.h
+filesystem/resolver.h
 -
 
 ext_build/dist/include/Eigen/Core

@@ -763,6 +763,33 @@ src/hdrToLdr.cpp.s:
 	$(MAKE) -f CMakeFiles/tonemapper.dir/build.make CMakeFiles/tonemapper.dir/src/hdrToLdr.cpp.s
 .PHONY : src/hdrToLdr.cpp.s
 
+src/imagetexture.o: src/imagetexture.cpp.o
+
+.PHONY : src/imagetexture.o
+
+# target to build an object file
+src/imagetexture.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/imagetexture.cpp.o
+.PHONY : src/imagetexture.cpp.o
+
+src/imagetexture.i: src/imagetexture.cpp.i
+
+.PHONY : src/imagetexture.i
+
+# target to preprocess a source file
+src/imagetexture.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/imagetexture.cpp.i
+.PHONY : src/imagetexture.cpp.i
+
+src/imagetexture.s: src/imagetexture.cpp.s
+
+.PHONY : src/imagetexture.s
+
+# target to generate assembly for a file
+src/imagetexture.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/imagetexture.cpp.s
+.PHONY : src/imagetexture.cpp.s
+
 src/independent.o: src/independent.cpp.o
 
 .PHONY : src/independent.o
@@ -789,6 +816,33 @@ src/independent.s: src/independent.cpp.s
 src/independent.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/independent.cpp.s
 .PHONY : src/independent.cpp.s
+
+src/lodepng.o: src/lodepng.cpp.o
+
+.PHONY : src/lodepng.o
+
+# target to build an object file
+src/lodepng.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/lodepng.cpp.o
+.PHONY : src/lodepng.cpp.o
+
+src/lodepng.i: src/lodepng.cpp.i
+
+.PHONY : src/lodepng.i
+
+# target to preprocess a source file
+src/lodepng.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/lodepng.cpp.i
+.PHONY : src/lodepng.cpp.i
+
+src/lodepng.s: src/lodepng.cpp.s
+
+.PHONY : src/lodepng.s
+
+# target to generate assembly for a file
+src/lodepng.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/lodepng.cpp.s
+.PHONY : src/lodepng.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -1526,9 +1580,15 @@ help:
 	@echo "... src/hdrToLdr.o"
 	@echo "... src/hdrToLdr.i"
 	@echo "... src/hdrToLdr.s"
+	@echo "... src/imagetexture.o"
+	@echo "... src/imagetexture.i"
+	@echo "... src/imagetexture.s"
 	@echo "... src/independent.o"
 	@echo "... src/independent.i"
 	@echo "... src/independent.s"
+	@echo "... src/lodepng.o"
+	@echo "... src/lodepng.i"
+	@echo "... src/lodepng.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

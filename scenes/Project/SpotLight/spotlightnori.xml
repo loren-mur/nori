@@ -1,0 +1,130 @@
+<scene>
+    <!-- Independent sample generator, user-selected samples per pixel -->
+    <sampler type="independent">
+        <integer name="sampleCount" value="512"/>
+    </sampler>
+
+    <!-- Use the average visibility integrator -->
+    <integrator type="path_mis">
+    </integrator>
+
+    <!-- Render the scene as viewed by a perspective camera -->
+    <camera type="perspective">
+        <transform name="toWorld">
+            <lookat target="0, 0, 0"
+                    origin="17, 7, 3"
+                    up="0, 0.5, 0"/>
+
+        </transform>
+
+        <!-- Field of view: 75 degrees -->
+        <float name="fov" value="75"/>
+
+        <!-- 800x400 pixels -->
+        <integer name="width" value="800"/>
+        <integer name="height" value="400"/>
+    </camera>
+
+
+
+    <!-- 3 spots!!! -->
+    <emitter type="spotlight">
+        <point name="position" value = "6, 5, -5"/>
+        <color name="color" value="1000,1000,1000"/>
+        <float name="cosFalloffStart" value="5"/>
+        <float name="cosTotalWidth" value="30"/>
+        <vector name="direction" value = "-.25,-1,0"/>
+    </emitter>
+
+    <emitter type="spotlight">
+        <point name="position" value = "6, 5, 0"/>
+        <color name="color" value="1000,1000,1000"/>
+        <float name="cosFalloffStart" value="50"/>
+        <float name="cosTotalWidth" value="30"/>
+        <vector name="direction" value = "-.25,-1,0"/>
+    </emitter>
+
+    <emitter type="spotlight">
+        <point name="position" value = "6, 5, 5"/>
+        <color name="color" value="1000,1000,1000"/>
+        <float name="cosFalloffStart" value="20"/>
+        <float name="cosTotalWidth" value="30"/>
+        <vector name="direction" value = "-.25,-1,0"/>
+    </emitter>
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.55,0.55,0.55"/>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="6,0,0"/>
+        </transform>
+
+    </mesh>
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.55,0.55,0.55"/>
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="6,0,-5"/>
+        </transform>
+
+    </mesh>
+
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.55,0.55,0.55"/>
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="6,0,5"/>
+        </transform>
+
+    </mesh>
+
+
+    <!-- pavimento -->
+    <mesh type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value="20, 20, 20"/>
+            <rotate angle="90" axis="0 0 1" />
+            <translate value="100,0,0"/>
+        </transform>
+
+
+    </mesh>
+
+
+
+</scene>
+
+
+
+
+
+
+
+

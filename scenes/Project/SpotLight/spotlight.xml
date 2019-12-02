@@ -1,122 +1,246 @@
-<scene>
+<scene version="0.5.0">
     <!-- Independent sample generator, user-selected samples per pixel -->
-    <sampler type="independent">
-        <integer name="sampleCount" value="512"/>
-    </sampler>
 
     <!-- Use the average visibility integrator -->
-    <integrator type="path_mis">
+    <integrator type="path">
     </integrator>
 
+ 
+
     <!-- Render the scene as viewed by a perspective camera -->
-    <camera type="perspective">
+    <sensor type="perspective">
         <transform name="toWorld">
             <lookat target="0, 0, 0"
-                    origin="17, 7, 3"
+                    origin="17, 7, -3"
                     up="0, 0.5, 0"/>
 
         </transform>
 
-        <!-- Field of view: 75 degrees -->
-        <float name="fov" value="75"/>
 
-        <!-- 800x400 pixels -->
-        <integer name="width" value="800"/>
-        <integer name="height" value="400"/>
-    </camera>
+        <film type="hdrfilm">
+            <integer name="height" value="400"/>
+            <integer name="width" value="800"/>
+        </film>
 
 
+        <sampler type="independent">
+            <integer name="sampleCount" value="512"/>
+        </sampler>
 
-    <!-- 3 spots!!! -->
-    <emitter type="spotlight">
-        <point name="position" value = "6, 5, -5"/>
-        <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="5"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+   </sensor>
+
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, 0"
+                    origin="6, 5, 0"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
     </emitter>
 
-    <emitter type="spotlight">
-        <point name="position" value = "6, 5, 0"/>
-        <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="50"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+    <!--
+        <emitter type="spot">
+                <transform name="toWorld">
+                    <!- Orient the light so that points from (1, 1, 1) towards (1, 2, 1)
+                    <lookat origin="-6, 5, 5" target=".25, -1, 0"/>
+                </transform>
+            <rgb name="color" value = "1000,1000,1000"/>
+            <float name="cosFalloffSt art" value="5"/>
+            <float name="cosTotalWidth" value="30"/>
+        </emitter> -->
+
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, -5"
+                    origin="6, 5, -5"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
     </emitter>
 
-    <emitter type="spotlight">
-        <point name="position" value = "6, 5, 5"/>
-        <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="20"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, 5"
+                    origin="6, 5, 5"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
     </emitter>
 
-    <mesh type="obj">
+    <!--
+        <emitter type="spot">
+                <transform name="toWorld">
+                    <!- Orient the light so that points from (1, 1, 1) towards (1, 2, 1)
+                <lookat origin="-6, 5, 0" target=".25, -1, 0"/>
+            </transform>
+            <rgb name="color" value = "1000,1000,1000"/>
+            <float name="cosFalloffStart" value="50"/>
+            <float name="cosTotalWidth" value="30"/>
+        </emitter>
+
+        <emitter type="spot">
+            <transform name="toWorld">
+                <!- Orient the light so that points from (1, 1, 1) towards (1, 2, 1)
+                <lookat origin="-6, 5, -5" target=".25, -1, 0"/>
+            </transform>
+            <rgb name="color" value = "1000,1000,1000"/>
+            <float name="cosFalloffStart" value="20"/>
+            <float name="cosTotalWidth" value="30"/>
+        </emitter> -->
+
+
+
+    <shape type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-            <color name="albedo" value="0.55,0.55,0.55"/>
+            <rgb name="albedo" value = "0.55,0.55,0.55"/>
         </bsdf>
 
         <transform name="toWorld">
-            <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
-            <rotate angle="-90" axis="1 0 0" />
-            <translate value="6,0,0"/>
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate z="1" angle="90"/>
+            <rotate x="1" angle="-90"/>
+            <translate x="6" y="0" z="0"/>
         </transform>
 
-    </mesh>
+    </shape>
 
-    <mesh type="obj">
+    <shape type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-            <color name="albedo" value="0.55,0.55,0.55"/>
+            <rgb name="albedo" value = "0.55,0.55,0.55"/>
         </bsdf>
 
 
         <transform name="toWorld">
-            <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
-            <rotate angle="-90" axis="1 0 0" />
-            <translate value="6,0,-5"/>
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate z="1" angle="90"/>
+            <rotate x="1" angle="-90"/>
+            <translate x="6" y="0" z="-5"/>
         </transform>
 
-    </mesh>
+    </shape>
 
 
-    <mesh type="obj">
+    <shape type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-            <color name="albedo" value="0.55,0.55,0.55"/>
+            <rgb name="albedo" value = "0.55,0.55,0.55"/>
         </bsdf>
 
 
         <transform name="toWorld">
-            <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
-            <rotate angle="-90" axis="1 0 0" />
-            <translate value="6,0,5"/>
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate z="1" angle="90"/>
+            <rotate x="1" angle="-90"/>
+            <translate x="6" y="0" z="5"/>
         </transform>
 
-    </mesh>
+    </shape>
 
 
     <!-- pavimento -->
-    <mesh type="obj">
+    <shape type="obj">
         <string name="filename" value="base.obj"/>
         <bsdf type="diffuse">
         </bsdf>
 
 
         <transform name="toWorld">
-            <scale value="20, 20, 20"/>
-            <rotate angle="90" axis="0 0 1" />
-            <translate value="100,0,0"/>
+            <scale x = "20" y = "20" z = "20"/>
+            <rotate z="1" angle="90"/>
+            <translate x ="100" y="0" z ="0"/>
         </transform>
 
 
-    </mesh>
+    </shape>
 
 
 
 </scene>
+
+
+
+
+
+
+
+        <!--
+       <shape type="obj">
+           <string name="filename" value="shaderBall.obj"/>
+
+           <bsdf type="diffuse">
+               <rgb name="albedo" value="0.55 0.55 0.55"/>
+           </bsdf>
+
+           <transform name="toWorld">
+               <scale x=".01" y="0.01" z=".01"/>
+               <rotate angle="90" y="1" />
+               <translate x="5" y="0" z="0"/>
+           </transform>
+
+       </shape>
+
+       <shape type="obj">
+           <string name="filename" value="shaderBall.obj"/>
+
+           <bsdf type="diffuse">
+               <rgb name="albedo" value="0.55 0.55 0.55"/>
+           </bsdf>
+
+           <transform name="toWorld">
+               <scale x=".01" y="0.01" z=".01"/>
+               <rotate angle="90" y="1" />
+               <translate x="5" y="0" z="-5"/>
+           </transform>
+
+       </shape>
+
+       <shape type="obj">
+           <string name="filename" value="shaderBall.obj"/>
+
+           <bsdf type="diffuse">
+               <rgb name="albedo" value="0.55 0.55 0.55"/>
+           </bsdf>
+
+           <transform name="toWorld">
+               <scale x=".01" y="0.01" z=".01"/>
+               <rotate angle="90" y="1" />
+               <translate x="5" y="0" z="5"/>
+           </transform>
+
+       </shape>
+
+       <shape type="obj">
+           <string name="filename" value="frontWall.obj"/>
+           <transform name="toWorld">
+               <scale value="20"/>
+           </transform>
+
+           <bsdf type="diffuse">
+           </bsdf>
+       </shape>
+
+       <shape type="obj">
+           <string name="filename" value="frontWall.obj"/>
+           <transform name="toWorld">
+               <scale value="20"/>
+               <rotate angle="90" z="1" />
+               <translate x="100" y="0" z="0"/>
+           </transform>
+
+           <bsdf type="diffuse">
+           </bsdf>
+       </shape>
+
+
+       </scene>-->
+
+
+
+
+
+
