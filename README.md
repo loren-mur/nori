@@ -6,11 +6,11 @@ Features:
 
 Alessia Paccagnella:
 - Environment map emitter - done. Have to compare it with Mitsuba.
-- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration) 
+- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - TODO 
 - NL means denoising - Script written. Have to understand how to get dataset in exr format from nori. 
-- Image Textures
+- Image Textures - done. Have to compare it with Mitsuba. 
 - Spotlight - done. Have to compare it with Mitsuba. 
-- Procedural Texture
+- Procedural Texture - almost finished. 
 
 Niklaus Houska:
 - Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss) 
