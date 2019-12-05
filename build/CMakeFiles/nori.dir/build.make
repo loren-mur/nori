@@ -616,9 +616,22 @@ CMakeFiles/nori.dir/src/imagetexture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/imagetexture.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/imagetexture.cpp -o CMakeFiles/nori.dir/src/imagetexture.cpp.s
 
+CMakeFiles/nori.dir/src/proceduraltexture.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/proceduraltexture.cpp.o: ../src/proceduraltexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/nori.dir/src/proceduraltexture.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/proceduraltexture.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/proceduraltexture.cpp
+
+CMakeFiles/nori.dir/src/proceduraltexture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/proceduraltexture.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/proceduraltexture.cpp > CMakeFiles/nori.dir/src/proceduraltexture.cpp.i
+
+CMakeFiles/nori.dir/src/proceduraltexture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/proceduraltexture.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/proceduraltexture.cpp -o CMakeFiles/nori.dir/src/proceduraltexture.cpp.s
+
 CMakeFiles/nori.dir/src/lodepng.cpp.o: CMakeFiles/nori.dir/flags.make
 CMakeFiles/nori.dir/src/lodepng.cpp.o: ../src/lodepng.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/nori.dir/src/lodepng.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/nori.dir/src/lodepng.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/lodepng.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/lodepng.cpp
 
 CMakeFiles/nori.dir/src/lodepng.cpp.i: cmake_force
@@ -628,6 +641,19 @@ CMakeFiles/nori.dir/src/lodepng.cpp.i: cmake_force
 CMakeFiles/nori.dir/src/lodepng.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/lodepng.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/lodepng.cpp -o CMakeFiles/nori.dir/src/lodepng.cpp.s
+
+CMakeFiles/nori.dir/src/perlintexture.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/perlintexture.cpp.o: ../src/perlintexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/nori.dir/src/perlintexture.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/perlintexture.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/perlintexture.cpp
+
+CMakeFiles/nori.dir/src/perlintexture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/perlintexture.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/perlintexture.cpp > CMakeFiles/nori.dir/src/perlintexture.cpp.i
+
+CMakeFiles/nori.dir/src/perlintexture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/perlintexture.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/perlintexture.cpp -o CMakeFiles/nori.dir/src/perlintexture.cpp.s
 
 # Object files for target nori
 nori_OBJECTS = \
@@ -674,7 +700,9 @@ nori_OBJECTS = \
 "CMakeFiles/nori.dir/src/conductor.cpp.o" \
 "CMakeFiles/nori.dir/src/spotlight.cpp.o" \
 "CMakeFiles/nori.dir/src/imagetexture.cpp.o" \
-"CMakeFiles/nori.dir/src/lodepng.cpp.o"
+"CMakeFiles/nori.dir/src/proceduraltexture.cpp.o" \
+"CMakeFiles/nori.dir/src/lodepng.cpp.o" \
+"CMakeFiles/nori.dir/src/perlintexture.cpp.o"
 
 # External object files for target nori
 nori_EXTERNAL_OBJECTS =
@@ -722,11 +750,13 @@ nori: CMakeFiles/nori.dir/src/envmap.cpp.o
 nori: CMakeFiles/nori.dir/src/conductor.cpp.o
 nori: CMakeFiles/nori.dir/src/spotlight.cpp.o
 nori: CMakeFiles/nori.dir/src/imagetexture.cpp.o
+nori: CMakeFiles/nori.dir/src/proceduraltexture.cpp.o
 nori: CMakeFiles/nori.dir/src/lodepng.cpp.o
+nori: CMakeFiles/nori.dir/src/perlintexture.cpp.o
 nori: CMakeFiles/nori.dir/build.make
 nori: ext_build/dist/lib/libpugixml.a
 nori: CMakeFiles/nori.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Linking CXX executable nori"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX executable nori"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nori.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

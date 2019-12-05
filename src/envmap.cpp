@@ -108,7 +108,7 @@ public:
             //formular for bilinear interpolation http://www.cs.umd.edu/~djacobs/CMSC427/Interpolation.pdf + wikipedia ref
             Color3f bilinearInterpolation(float Dx, float Dy, Color3f Q11, Color3f Q21, Color3f Q12, Color3f Q22, float dx1, float dy1, float dx2, float dy2) const {
                 if (Dx == 0.f || Dy == 0.f) return 0.f;
-                //wiki formula extended
+                //wikipedia formula extended
                 return ((1.0 / (Dx * Dy)) * (Q11 * dx2 * dy2 + Q21 * dx1 * dy2 + Q12 * dx2 * dy1 + Q22 * dx1 * dy1));
             }
 
@@ -152,7 +152,7 @@ public:
                 float jacobian = (mcols - 1) * (mrows - 1) / (2 * std::pow(M_PI, 2) * Frame::sinTheta(lRec.wi));
                 float u, v;
                 float pdfu, pdfv;
-                //sample the pixel, twice for u and v
+                //sample the pixel, for u = 0 and v with u , marginal and conditional
                 sample1D(0, pmarginal, cmarginal, sample.x(), u, pdfu);
                 sample1D(u, mpdf, mcdf, sample.y(), v, pdfv);
                 Point2f pixel = Point2f(u, v); //lui qua usava solo u e v.

@@ -1120,6 +1120,33 @@ src/path_mis.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/path_mis.cpp.s
 .PHONY : src/path_mis.cpp.s
 
+src/perlintexture.o: src/perlintexture.cpp.o
+
+.PHONY : src/perlintexture.o
+
+# target to build an object file
+src/perlintexture.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/perlintexture.cpp.o
+.PHONY : src/perlintexture.cpp.o
+
+src/perlintexture.i: src/perlintexture.cpp.i
+
+.PHONY : src/perlintexture.i
+
+# target to preprocess a source file
+src/perlintexture.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/perlintexture.cpp.i
+.PHONY : src/perlintexture.cpp.i
+
+src/perlintexture.s: src/perlintexture.cpp.s
+
+.PHONY : src/perlintexture.s
+
+# target to generate assembly for a file
+src/perlintexture.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/perlintexture.cpp.s
+.PHONY : src/perlintexture.cpp.s
+
 src/perspective.o: src/perspective.cpp.o
 
 .PHONY : src/perspective.o
@@ -1227,6 +1254,33 @@ src/pointLight.s: src/pointLight.cpp.s
 src/pointLight.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/pointLight.cpp.s
 .PHONY : src/pointLight.cpp.s
+
+src/proceduraltexture.o: src/proceduraltexture.cpp.o
+
+.PHONY : src/proceduraltexture.o
+
+# target to build an object file
+src/proceduraltexture.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/proceduraltexture.cpp.o
+.PHONY : src/proceduraltexture.cpp.o
+
+src/proceduraltexture.i: src/proceduraltexture.cpp.i
+
+.PHONY : src/proceduraltexture.i
+
+# target to preprocess a source file
+src/proceduraltexture.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/proceduraltexture.cpp.i
+.PHONY : src/proceduraltexture.cpp.i
+
+src/proceduraltexture.s: src/proceduraltexture.cpp.s
+
+.PHONY : src/proceduraltexture.s
+
+# target to generate assembly for a file
+src/proceduraltexture.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/proceduraltexture.cpp.s
+.PHONY : src/proceduraltexture.cpp.s
 
 src/proplist.o: src/proplist.cpp.o
 
@@ -1619,6 +1673,9 @@ help:
 	@echo "... src/path_mis.o"
 	@echo "... src/path_mis.i"
 	@echo "... src/path_mis.s"
+	@echo "... src/perlintexture.o"
+	@echo "... src/perlintexture.i"
+	@echo "... src/perlintexture.s"
 	@echo "... src/perspective.o"
 	@echo "... src/perspective.i"
 	@echo "... src/perspective.s"
@@ -1631,6 +1688,9 @@ help:
 	@echo "... src/pointLight.o"
 	@echo "... src/pointLight.i"
 	@echo "... src/pointLight.s"
+	@echo "... src/proceduraltexture.o"
+	@echo "... src/proceduraltexture.i"
+	@echo "... src/proceduraltexture.s"
 	@echo "... src/proplist.o"
 	@echo "... src/proplist.i"
 	@echo "... src/proplist.s"

@@ -89,7 +89,9 @@ add_executable(nori
   src/conductor.cpp
   src/spotlight.cpp
   src/imagetexture.cpp
+  src/proceduraltexture.cpp
   src/lodepng.cpp
+  src/perlintexture.cpp
 )
 
 # The following lines build the warping test application

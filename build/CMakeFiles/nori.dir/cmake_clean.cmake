@@ -42,7 +42,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/nori.dir/src/conductor.cpp.o"
   "CMakeFiles/nori.dir/src/spotlight.cpp.o"
   "CMakeFiles/nori.dir/src/imagetexture.cpp.o"
+  "CMakeFiles/nori.dir/src/proceduraltexture.cpp.o"
   "CMakeFiles/nori.dir/src/lodepng.cpp.o"
+  "CMakeFiles/nori.dir/src/perlintexture.cpp.o"
   "nori.pdb"
   "nori"
 )

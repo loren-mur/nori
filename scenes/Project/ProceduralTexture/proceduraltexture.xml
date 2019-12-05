@@ -1,0 +1,144 @@
+<scene>
+    <!-- Independent sample generator, user-selected samples per pixel -->
+    <sampler type="independent">
+        <integer name="sampleCount" value="128"/>
+    </sampler>
+
+    <!-- Use the average visibility integrator -->
+
+    <integrator type="path_mis">
+    </integrator>
+
+
+
+
+
+    <camera type="perspective">
+        <transform name="toWorld">
+            <lookat target="5, 0, 0"
+                    origin="16, 3, 3"
+                    up="0, 1, 0"/>
+
+        </transform>
+
+        <!-- Field of view: 40 degrees -->
+        <float name="fov" value="70"/>
+
+        <!-- 800x600 pixels -->
+        <integer name="width" value="800"/>
+        <integer name="height" value="400"/>
+    </camera>
+
+
+
+
+
+
+    <mesh type="obj">
+        <string name="filename" value="base.obj"/>
+
+        <transform name="toWorld">
+            <scale value="300, 300, 300"/>
+            <rotate angle="270" axis="0 0 1" />
+            <translate value="-1000, 1000, 0"/>
+        </transform>
+
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <emitter type="area">
+            <color name="radiance" value="1, 1, 1"/>
+        </emitter>
+    </mesh>
+
+
+
+
+
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+
+            <texture type="proceduraltexture" name="albedo">
+                <point name="delta" value="0.5,0.5"/>
+                <vector name="scale" value="0.10,0.10"/>
+                <color name="color1" value="0,0,1"/>
+                <color name="color2" value="1, 0, 0"/>
+            </texture>
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="5,0,5"/>
+        </transform>
+
+    </mesh>
+
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+
+            <texture type="proceduraltexture" name="albedo">
+                <point name="delta" value="0.5,0.5"/>
+                <vector name="scale" value="0.10,0.10"/>
+                <color name="color1" value="0,1,0"/>
+                <color name="color2" value="1, 0, 0"/>
+            </texture>
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="5,0,-5"/>
+        </transform>
+
+    </mesh>
+
+
+    <mesh type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+
+            <texture type="perlintexture" name="albedo">
+                <integer name="width" value="256"/>
+                <integer name="height" value="256"/>
+                <integer name="levels" value="16"/>
+            </texture>
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value=".01,.01,.01"/>
+            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="-90" axis="1 0 0" />
+            <translate value="5,0,0"/>
+        </transform>
+
+    </mesh>
+
+
+
+    <!-- pavimento -->
+    <mesh type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+
+        <transform name="toWorld">
+            <scale value="20, 20, 20"/>
+            <rotate angle="90" axis="0 0 1" />
+            <translate value="100,0,0"/>
+        </transform>
+
+
+    </mesh>
+
+</scene>

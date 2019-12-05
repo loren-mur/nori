@@ -6,36 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../ext/filesystem/filesystem/path.h
-string
--
-vector
--
-stdexcept
--
-sstream
--
-cctype
--
-cstdlib
--
-cerrno
--
-cstring
--
-windows.h
--
-sys/stat.h
--
-unistd.h
--
-linux/limits.h
--
-
-../ext/filesystem/filesystem/resolver.h
-path.h
-../ext/filesystem/filesystem/path.h
-
 ../ext/tinyformat/tinyformat.h
 algorithm
 -
@@ -68,20 +38,6 @@ ImathPlatform.h
 tinyformat.h
 -
 
-../include/nori/lodepng.h
-string.h
--
-vector
--
-string
--
-lodepng.h
-../include/nori/lodepng.h
-iostream
--
-lodepng.h
-../include/nori/lodepng.h
-
 ../include/nori/object.h
 nori/proplist.h
 -
@@ -98,6 +54,12 @@ map
 nori/vector.h
 -
 
+../include/nori/sampler.h
+nori/object.h
+-
+memory
+-
+
 ../include/nori/texture.h
 nori/object.h
 -
@@ -112,13 +74,15 @@ nori/ray.h
 nori/common.h
 -
 
-/Users/alessiapaccagnella/desktop/nori/src/imagetexture.cpp
-nori/lodepng.h
+/Users/alessiapaccagnella/desktop/nori/src/perlintexture.cpp
+nori/object.h
 -
 nori/texture.h
 -
-filesystem/resolver.h
+nori/sampler.h
 -
+math.h
+/Users/alessiapaccagnella/desktop/nori/src/math.h
 
 ext_build/dist/include/Eigen/Core
 src/Core/util/DisableStupidWarnings.h

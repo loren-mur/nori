@@ -15,28 +15,28 @@ The C compiler identification is AppleClang, found in "/Users/alessiapaccagnella
 Determining if the C compiler works passed with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1d21d/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_1d21d.dir/build.make CMakeFiles/cmTC_1d21d.dir/build
-Building C object CMakeFiles/cmTC_1d21d.dir/testCCompiler.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_1d21d.dir/testCCompiler.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_1d21d
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d21d.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1d21d.dir/testCCompiler.c.o  -o cmTC_1d21d 
+Run Build Command(s):/usr/bin/make cmTC_9992a/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_9992a.dir/build.make CMakeFiles/cmTC_9992a.dir/build
+Building C object CMakeFiles/cmTC_9992a.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_9992a.dir/testCCompiler.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_9992a
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9992a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9992a.dir/testCCompiler.c.o  -o cmTC_9992a 
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_44930/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_44930.dir/build.make CMakeFiles/cmTC_44930.dir/build
-Building C object CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -v -Wl,-v -o CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o   -c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/make cmTC_a7245/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a7245.dir/build.make CMakeFiles/cmTC_a7245.dir/build
+Building C object CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -v -Wl,-v -o CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o   -c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.14 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.gcno -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.14 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.gcno -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c
 clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0
 ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/local/include"
 ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/Library/Frameworks"
@@ -47,14 +47,14 @@ ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platf
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks (framework directory)
 End of search list.
-Linking C executable cmTC_44930
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44930.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o  -o cmTC_44930 
+Linking C executable cmTC_a7245
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7245.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o  -o cmTC_a7245 
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_44930 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_a7245 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
 @(#)PROGRAM:ld  PROJECT:ld64-450.3
 BUILD 18:16:53 Apr  5 2019
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -81,16 +81,16 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_44930/fast ]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_44930.dir/build.make CMakeFiles/cmTC_44930.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -v -Wl,-v -o CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o   -c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_a7245/fast ]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a7245.dir/build.make CMakeFiles/cmTC_a7245.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -v -Wl,-v -o CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o   -c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
   ignore line: [clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]]
-  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.14 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.gcno -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
+  ignore line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.14 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.gcno -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/alessiapaccagnella/Desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o -x c /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/share/cmake-3.14/Modules/CMakeCCompilerABI.c]
   ignore line: [clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0]
   ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/local/include"]
   ignore line: [ignoring nonexistent directory "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/Library/Frameworks"]
@@ -101,14 +101,14 @@ Parsed C implicit link information from above output:
   ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include]
   ignore line: [ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks (framework directory)]
   ignore line: [End of search list.]
-  ignore line: [Linking C executable cmTC_44930]
-  ignore line: [/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44930.dir/link.txt --verbose=1]
-  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o  -o cmTC_44930 ]
+  ignore line: [Linking C executable cmTC_a7245]
+  ignore line: [/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7245.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o  -o cmTC_a7245 ]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin]
-  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_44930 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -lto_library /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -o cmTC_a7245 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-lto_library] ==> ignore, skip following value
@@ -121,11 +121,11 @@ Parsed C implicit link information from above output:
     arg [-syslibroot] ==> ignore
     arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_44930] ==> ignore
+    arg [cmTC_a7245] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_44930.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_a7245.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
     arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
   Library search paths: [;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/lib]
@@ -144,13 +144,13 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_2b01f/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2b01f.dir/build.make CMakeFiles/cmTC_2b01f.dir/build
-Building C object CMakeFiles/cmTC_2b01f.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c11 -o CMakeFiles/cmTC_2b01f.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_2b01f
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b01f.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_2b01f.dir/feature_tests.c.o  -o cmTC_2b01f 
+Run Build Command(s):/usr/bin/make cmTC_f5c8c/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_f5c8c.dir/build.make CMakeFiles/cmTC_f5c8c.dir/build
+Building C object CMakeFiles/cmTC_f5c8c.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c11 -o CMakeFiles/cmTC_f5c8c.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_f5c8c
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5c8c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f5c8c.dir/feature_tests.c.o  -o cmTC_f5c8c 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -162,13 +162,13 @@ Linking C executable cmTC_2b01f
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_cc00f/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_cc00f.dir/build.make CMakeFiles/cmTC_cc00f.dir/build
-Building C object CMakeFiles/cmTC_cc00f.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c99 -o CMakeFiles/cmTC_cc00f.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_cc00f
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc00f.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_cc00f.dir/feature_tests.c.o  -o cmTC_cc00f 
+Run Build Command(s):/usr/bin/make cmTC_3248c/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_3248c.dir/build.make CMakeFiles/cmTC_3248c.dir/build
+Building C object CMakeFiles/cmTC_3248c.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c99 -o CMakeFiles/cmTC_3248c.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3248c
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3248c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_3248c.dir/feature_tests.c.o  -o cmTC_3248c 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -180,13 +180,13 @@ Linking C executable cmTC_cc00f
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_53e75/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_53e75.dir/build.make CMakeFiles/cmTC_53e75.dir/build
-Building C object CMakeFiles/cmTC_53e75.dir/feature_tests.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c90 -o CMakeFiles/cmTC_53e75.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_53e75
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53e75.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_53e75.dir/feature_tests.c.o  -o cmTC_53e75 
+Run Build Command(s):/usr/bin/make cmTC_e8f72/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_e8f72.dir/build.make CMakeFiles/cmTC_e8f72.dir/build
+Building C object CMakeFiles/cmTC_e8f72.dir/feature_tests.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -std=c90 -o CMakeFiles/cmTC_e8f72.dir/feature_tests.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e8f72
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8f72.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_e8f72.dir/feature_tests.c.o  -o cmTC_e8f72 
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -196,25 +196,25 @@ Linking C executable cmTC_53e75
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_21fcc/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_21fcc.dir/build.make CMakeFiles/cmTC_21fcc.dir/build
-Building C object CMakeFiles/cmTC_21fcc.dir/CheckIncludeFile.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_21fcc.dir/CheckIncludeFile.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_21fcc
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21fcc.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_21fcc.dir/CheckIncludeFile.c.o  -o cmTC_21fcc 
+Run Build Command(s):/usr/bin/make cmTC_1a635/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_1a635.dir/build.make CMakeFiles/cmTC_1a635.dir/build
+Building C object CMakeFiles/cmTC_1a635.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_1a635.dir/CheckIncludeFile.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_1a635
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a635.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1a635.dir/CheckIncludeFile.c.o  -o cmTC_1a635 
 
 
 Determining if the pthread_create exist passed with the following output:
 Change Dir: /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_83558/fast 
-/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_83558.dir/build.make CMakeFiles/cmTC_83558.dir/build
-Building C object CMakeFiles/cmTC_83558.dir/CheckSymbolExists.c.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_83558.dir/CheckSymbolExists.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_83558
-/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83558.dir/link.txt --verbose=1
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_83558.dir/CheckSymbolExists.c.o  -o cmTC_83558 
+Run Build Command(s):/usr/bin/make cmTC_14bb8/fast 
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_14bb8.dir/build.make CMakeFiles/cmTC_14bb8.dir/build
+Building C object CMakeFiles/cmTC_14bb8.dir/CheckSymbolExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14   -o CMakeFiles/cmTC_14bb8.dir/CheckSymbolExists.c.o   -c /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_14bb8
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/cmake/data/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14bb8.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_14bb8.dir/CheckSymbolExists.c.o  -o cmTC_14bb8 
 
 File /Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */

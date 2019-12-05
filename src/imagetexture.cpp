@@ -2,7 +2,7 @@
 // Created by Alessia Paccagnella on 30/11/2019.
 //
 #include <nori/lodepng.h>
-//#include <nori/object.h>
+#include <nori/object.h>
 #include <nori/texture.h>
 #include <filesystem/resolver.h>
 
