@@ -10,61 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/customTargets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/proceduraltexture.cpp.o" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ProceduralTexture/base.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ProceduralTexture/proceduraltexture.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/Project/DepthOfField/depthoffield.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/pugixml.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/pugixml.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/tbb_p.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/tbb_p.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/tonemapper.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/tonemapper.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libHalf.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libHalf.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libIex.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libIex.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libIexMath.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libIexMath.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libIlmImf.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libIlmImf.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libIlmThread.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libIlmThread.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libImath.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libImath.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libglfw3.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libglfw3.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libnanogui.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libnanogui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libpugixml.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libpugixml.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbb.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbb.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbbmalloc.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbbmalloc.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbbmalloc_proxy.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/dist/lib/libtbbmalloc_proxy.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Half/libHalf.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Half/libHalf.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Iex/libIex.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Iex/libIex.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/IexMath/libIexMath.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/IexMath/libIexMath.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/IlmThread/libIlmThread.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/IlmThread/libIlmThread.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Imath/libImath.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/IlmBase_p-build/Imath/libImath.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/OpenEXR_p-build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/OpenEXR_p-build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/OpenEXR_p-build/IlmImf/libIlmImf.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/OpenEXR_p-build/IlmImf/libIlmImf.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/src/libglfw3.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-build/src/libglfw3.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/libnanogui.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/nanogui_p-build/libnanogui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbb.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbb.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbbmalloc.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbbmalloc.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbbmalloc_proxy.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/ext_build/src/tbb_p-build/libtbbmalloc_proxy.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nori" beforeDir="false" afterPath="$PROJECT_DIR$/build/nori" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/envmap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/envmap.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imagetexture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/imagetexture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlightnori.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/perspective.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/perspective.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575387287461</updated>
-      <workItem from="1575387289213" duration="27363000" />
+      <workItem from="1575387289213" duration="33751000" />
     </task>
     <servers />
   </component>

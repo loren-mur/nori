@@ -47,7 +47,13 @@ public:
         m_nearClip = propList.getFloat("nearClip", 1e-4f);
         m_farClip = propList.getFloat("farClip", 1e4f);
 
+        lensRadius = propList.getFloat("lensRadius", 0);
+        focalDistance = propList.getFloat("focalDistance", 12);
+
         m_rfilter = NULL;
+
+        //focalDistance = propList.getFloat("focalDistance", 10.0f);
+        //lensRadius = propList.getFloat("lensRadius", 0.0f); // per default, no effect
     }
 
     virtual void activate() override {
@@ -97,12 +103,28 @@ public:
             samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
         /* Turn into a normalized ray direction, and
-           adjust the ray interval accordingly */
+               adjust the ray interval accordingly */
         Vector3f d = nearP.normalized();
         float invZ = 1.0f / d.z();
-
         ray.o = m_cameraToWorld * Point3f(0, 0, 0);
         ray.d = m_cameraToWorld * d;
+
+
+        //perspective
+        if(lensRadius != 0){
+            Point2f pLens = lensRadius * Warp::squareToUniformDisk(apertureSample);
+            //compute point on plane of focus
+             //calculate t
+            float tf = focalDistance / d.z();
+            Point3f pFocus = d * tf;
+            //update ray for effect of lens
+            Point3f o(pLens.x(), pLens.y(), 0);
+            ray.o = m_cameraToWorld * o;
+            d = (pFocus - o).normalized();
+            ray.d = m_cameraToWorld * d;
+        }
+
+
         ray.mint = m_nearClip * invZ;
         ray.maxt = m_farClip * invZ;
         ray.update();
@@ -133,13 +155,17 @@ public:
             "  fov = %f,\n"
             "  clip = [%f, %f],\n"
             "  rfilter = %s\n"
+            "  focalDistance = %s,\n"
+            "  lensRadius = %s\n"
             "]",
             indent(m_cameraToWorld.toString(), 18),
             m_outputSize.toString(),
             m_fov,
             m_nearClip,
             m_farClip,
-            indent(m_rfilter->toString())
+            indent(m_rfilter->toString()),
+            focalDistance,
+            lensRadius
         );
     }
 private:
@@ -149,6 +175,8 @@ private:
     float m_fov;
     float m_nearClip;
     float m_farClip;
+    float lensRadius;
+    float focalDistance;
 };
 
 NORI_REGISTER_CLASS(PerspectiveCamera, "perspective");
