@@ -10,7 +10,7 @@ Alessia Paccagnella:
 - NL means denoising - Script written. Have to understand how to get dataset in exr format from nori. 
 - Image Textures - done. Have to compare it with Mitsuba. 
 - Spotlight - done. Have to compare it with Mitsuba. 
-- Procedural Texture - almost finished. 
+- Procedural Texture - done. How to compare it with Mitsuba? Try different noises. 
 
 Niklaus Houska:
 - Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss) 
