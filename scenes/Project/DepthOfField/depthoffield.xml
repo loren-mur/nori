@@ -25,6 +25,10 @@
         <float name="fov" value="70"/>
         <float name="lensRadius" value="0.1"/>
         <float name="focalDistance" value="15.0"/>
+        <integer name="distortion" value="1"/>
+        <float name="change1" value="0.001"/>
+        <float name="change2" value="0.01"/>
+
 
 
         <!-- 800x600 pixels -->
@@ -48,6 +52,8 @@
 
         <bsdf type="diffuse">
         </bsdf>
+
+
 
         <emitter type="area">
             <color name="radiance" value="1, 1, 1"/>

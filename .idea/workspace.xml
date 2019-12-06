@@ -10,15 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scenes/Project/DepthOfField/depthoffield.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/nori" beforeDir="false" afterPath="$PROJECT_DIR$/build/nori" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlight.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Project/SpotLight/spotlightnori.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/Project/DepthOfField/depthoffield.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/DepthOfField/depthoffield.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/perspective.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/perspective.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575387287461</updated>
-      <workItem from="1575387289213" duration="33751000" />
+      <workItem from="1575387289213" duration="43313000" />
     </task>
     <servers />
   </component>

@@ -49,6 +49,9 @@ public:
 
         lensRadius = propList.getFloat("lensRadius", 0);
         focalDistance = propList.getFloat("focalDistance", 12);
+        m_distortion = propList.getInteger("distortion", 0);
+        m_kc[0] = propList.getFloat("change1", 0.0f);
+        m_kc[1] = propList.getFloat("change2", 0.0f);
 
         m_rfilter = NULL;
 
@@ -67,8 +70,18 @@ public:
          *  The cotangent factor ensures that the field of view is 
          *  mapped to the interval [-1, 1].
          */
+
         float recip = 1.0f / (m_farClip - m_nearClip),
-              cot = 1.0f / std::tan(degToRad(m_fov / 2.0f));
+                cot = 1.0f / std::tan(degToRad(m_fov / 2.0f));
+
+        //DISTORSION - lines 74-81
+        //nearP.x() = nearP.x()*(1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
+        //nearP.y() = nearP.y()*(1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
+        //float k1 = 1.532*pow(10,-4);
+        //float k2 = -9.656*pow(10,-8);
+        //float k3 = 7.245*pow(10,-11);
+        //float r = 0.3;
+        //cot = cot * (1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
 
         Eigen::Matrix4f perspective;
         perspective <<
@@ -93,24 +106,29 @@ public:
         }
     }
 
-    Color3f sampleRay(Ray3f &ray,
-            const Point2f &samplePosition,
-            const Point2f &apertureSample) const {
+    Color3f sampleRay(Ray3f &ray,const Point2f &samplePosition,const Point2f &apertureSample) const {
         /* Compute the corresponding position on the 
            near plane (in local camera space) */
         Point3f nearP = m_sampleToCamera * Point3f(
-            samplePosition.x() * m_invOutputSize.x(),
-            samplePosition.y() * m_invOutputSize.y(), 0.0f);
+                samplePosition.x() * m_invOutputSize.x(),
+                samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
+
+        if(m_distortion) {
+            float distort = invertDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
+            nearP.x() *= distort;
+            nearP.y() *= distort;
+        }
         /* Turn into a normalized ray direction, and
                adjust the ray interval accordingly */
         Vector3f d = nearP.normalized();
+
         float invZ = 1.0f / d.z();
         ray.o = m_cameraToWorld * Point3f(0, 0, 0);
         ray.d = m_cameraToWorld * d;
 
 
-        //perspective
+        //dof
         if(lensRadius != 0){
             Point2f pLens = lensRadius * Warp::squareToUniformDisk(apertureSample);
             //compute point on plane of focus
@@ -125,11 +143,28 @@ public:
         }
 
 
+
         ray.mint = m_nearClip * invZ;
         ray.maxt = m_farClip * invZ;
         ray.update();
 
         return Color3f(1.0f);
+    }
+
+
+    float invertDistortion(float y) const{
+        int it = 0;
+        float r = y;
+
+        while (true) {
+            float r2 = r*r;
+            float f  = r*(1+r2*(m_kc[0] + r2*m_kc[1])) - y;
+            float df = 1 + r2*(3*m_kc[0] + 5*m_kc[1]*r2);
+            r -= f / df;
+            if (std::abs(f) < 1e-6 || ++it > 4)
+                break;
+        }
+        return r/y;
     }
 
     virtual void addChild(NoriObject *obj) override {
@@ -177,6 +212,9 @@ private:
     float m_farClip;
     float lensRadius;
     float focalDistance;
+    bool m_distortion;
+    float m_kc[2];
+
 };
 
 NORI_REGISTER_CLASS(PerspectiveCamera, "perspective");
