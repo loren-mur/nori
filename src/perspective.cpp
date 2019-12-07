@@ -50,10 +50,15 @@ public:
         lensRadius = propList.getFloat("lensRadius", 0);
         focalDistance = propList.getFloat("focalDistance", 12);
         m_distortion = propList.getInteger("distortion", 0);
-        m_kc[0] = propList.getFloat("change1", 0.0f);
-        m_kc[1] = propList.getFloat("change2", 0.0f);
+        k1 = propList.getFloat("change1", 0.0f);
+        k2 = propList.getFloat("change2", 0.0f);
 
-        m_rfilter = NULL;
+
+        //aberration = propList.getInteger("aberration", 0);
+        //_aperture(std::make_shared<DiskTexture>());
+        //_apertureSize = propList.getFloat("aperture", 0.001f);
+        //_aperture->makeSamplable(MAP_UNIFORM);
+        //m_rfilter = NULL;
 
         //focalDistance = propList.getFloat("focalDistance", 10.0f);
         //lensRadius = propList.getFloat("lensRadius", 0.0f); // per default, no effect
@@ -106,16 +111,29 @@ public:
         }
     }
 
+
+
+
+
     Color3f sampleRay(Ray3f &ray,const Point2f &samplePosition,const Point2f &apertureSample) const {
         /* Compute the corresponding position on the 
            near plane (in local camera space) */
+
+        /*if(aberration){
+
+            Color3f color = evalApertureThroughtput());
+        }
+        else{*/
+            Color3f color = Color3f(1.0f);
+        //}
+
         Point3f nearP = m_sampleToCamera * Point3f(
-                samplePosition.x() * m_invOutputSize.x(),
-                samplePosition.y() * m_invOutputSize.y(), 0.0f);
+                    samplePosition.x() * m_invOutputSize.x(),
+                    samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
 
         if(m_distortion) {
-            float distort = invertDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
+            float distort = calculateDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
             nearP.x() *= distort;
             nearP.y() *= distort;
         }
@@ -148,20 +166,37 @@ public:
         ray.maxt = m_farClip * invZ;
         ray.update();
 
-        return Color3f(1.0f);
+        return color;
     }
 
 
-    float invertDistortion(float y) const{
-        int it = 0;
-        float r = y;
 
+
+
+/*
+    //evaluate the aperture based on the coordinate
+    float evalApertureThroughput(Vec3f planePos, Vec2f aperturePos) const
+    {
+        float aperture = (*_aperture)[aperturePos].x();
+        return aperture/_aperture->maximum().x();
+    }*/
+
+
+
+
+
+
+
+    float calculateDistortion(float y) const{
+        int iteration = 0;
+
+        float r = y;
         while (true) {
-            float r2 = r*r;
-            float f  = r*(1+r2*(m_kc[0] + r2*m_kc[1])) - y;
-            float df = 1 + r2*(3*m_kc[0] + 5*m_kc[1]*r2);
-            r -= f / df;
-            if (std::abs(f) < 1e-6 || ++it > 4)
+            float y_squared = pow(y,2);
+            float f  = y *(1+ k1 * y_squared + k2 * pow(y_squared,2)) - y;
+            float df = 1 + 3 * k1 * y_squared + 5 * k2 * pow(y_squared,2);
+            r = r - f / df;
+            if (std::abs(f) < 1e-6 || iteration++ > 4)
                 break;
         }
         return r/y;
@@ -210,11 +245,15 @@ private:
     float m_fov;
     float m_nearClip;
     float m_farClip;
+    //dof parameters
     float lensRadius;
     float focalDistance;
+    //distorsion parameters
     bool m_distortion;
-    float m_kc[2];
-
+    float k1,k2;
+    //chromatic aberration parameters
+    //std::shared_ptr<Texture> _aperture;
+    //bool aberration;
 };
 
 NORI_REGISTER_CLASS(PerspectiveCamera, "perspective");

@@ -23,11 +23,11 @@
 
         <!-- Field of view: 40 degrees -->
         <float name="fov" value="70"/>
-        <float name="lensRadius" value="0.1"/>
-        <float name="focalDistance" value="15.0"/>
-        <integer name="distortion" value="1"/>
-        <float name="change1" value="0.001"/>
-        <float name="change2" value="0.01"/>
+        <float name="lensRadius" value="0.2"/>
+        <float name="focalDistance" value="8"/>
+        <integer name="distortion" value="0"/>
+        <float name="change1" value="0.0"/>
+        <float name="change2" value="0.0"/>
 
 
 
@@ -56,7 +56,7 @@
 
 
         <emitter type="area">
-            <color name="radiance" value="1, 1, 1"/>
+            <color name="radiance" value="2, 2, 2"/>
         </emitter>
     </mesh>
 
@@ -68,19 +68,12 @@
     <mesh type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-
-            <texture type="proceduraltexture" name="albedo">
-                <point name="delta" value="0.5,0.5"/>
-                <vector name="scale" value="0.10,0.10"/>
-                <color name="color1" value="0,0,1"/>
-                <color name="color2" value="1, 0, 0"/>
-            </texture>
         </bsdf>
 
 
         <transform name="toWorld">
             <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="90" axis="0 0 1" />
             <rotate angle="-90" axis="1 0 0" />
             <translate value="5,0,5"/>
         </transform>
@@ -91,19 +84,12 @@
     <mesh type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-
-            <texture type="proceduraltexture" name="albedo">
-                <point name="delta" value="0.5,0.5"/>
-                <vector name="scale" value="0.10,0.10"/>
-                <color name="color1" value="0,1,0"/>
-                <color name="color2" value="1, 0, 0"/>
-            </texture>
         </bsdf>
 
 
         <transform name="toWorld">
             <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="90" axis="0 0 1" />
             <rotate angle="-90" axis="1 0 0" />
             <translate value="5,0,-5"/>
         </transform>
@@ -114,19 +100,12 @@
     <mesh type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-
-            <texture type="proceduraltexture" name="albedo">
-                <point name="delta" value="0.5,0.5"/>
-                <vector name="scale" value="0.10,0.10"/>
-                <color name="color1" value="0,0.3,0"/>
-                <color name="color2" value="0, 0, 0.5"/>
-            </texture>
         </bsdf>
 
 
         <transform name="toWorld">
             <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="90" axis="0 0 1" />
             <rotate angle="-90" axis="1 0 0" />
             <translate value="5,0,0"/>
         </transform>
@@ -136,18 +115,12 @@
     <mesh type="obj">
         <string name="filename" value="mug.obj"/>
         <bsdf type="diffuse">
-
-            <texture type="perlintexture" name="albedo">
-                <integer name="width" value="256"/>
-                <integer name="height" value="256"/>
-                <integer name="levels" value="16"/>
-            </texture>
         </bsdf>
 
 
         <transform name="toWorld">
             <scale value=".01,.01,.01"/>
-            <rotate angle="-90" axis="0 0 1" />
+            <rotate angle="90" axis="0 0 1" />
             <rotate angle="-90" axis="1 0 0" />
             <translate value="5,0,-10"/>
         </transform>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../favicon.ico" />
+
+    <title>Computer Graphics - PA4</title>
+
+    <link href="resources/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/offcanvas.css" rel="stylesheet">
+    <link href="resources/custom2014.css" rel="stylesheet">
+    <link href="resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container headerBar">
+		<h1>Project Proposal - Niklaus Houska & Alessia Paccagnella</h1>
+</div>
+
+<div class="container contentWrapper">
+<div class="pageContent">
+
+	<!-- ================================================================= -->
+
+	<h2>Alessia</h2>
+
+     <h2>1. Depth of field</h2>
+
+   </p>
+   ** WILL DESCRIBE THE IMPLEMENTATION LATER, FOR NOW I AM JUST UPLOADING THE COMPARISON WITH MITSUBA **
+
+  	<h3>Focal Length = 8, radius = 0.2 </h3>
+  	<div class="twentytwenty-container">
+  	    <img src="images/miaFD8R02.jpg" alt="Mine" class="img-responsive">
+  	    <img src="images/mitsubaFD8R02.jpg" alt="Mitsuba" class="img-responsive">
+  	</div> <br>
+
+	<h3>Focal Length = 15, radius = 0.2 </h3>
+  	<div class="twentytwenty-container">
+  	    <img src="images/miaFD15R02.jpg" alt="Mine" class="img-responsive">
+  	    <img src="images/mitsubaFD15R02.jpg" alt="Mitsuba" class="img-responsive">
+  	</div> <br>
+
+    <h3>Focal Length = 15, radius = 0.5 </h3>
+    	<div class="twentytwenty-container">
+    	    <img src="images/miaFD15R05.jpg" alt="Mine" class="img-responsive">
+    	    <img src="images/mitsubaFD15R05.jpg" alt="Mitsuba" class="img-responsive">
+    	</div> <br>
+
+<h2>2. Spotlight</h2>
+<div class="twentytwenty-container">
+    <img src="images/spotlight.jpg" alt="Mine" class="img-responsive">
+    <img src="images/spotlightmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+</div> <br>
+
+<h2>2. Environmental Map Emitter</h2>
+<div class="twentytwenty-container">
+    <img src="images/envmapnori.jpg" alt="Mine" class="img-responsive">
+    <img src="images/envmapmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+</div> <br>
+
+</div>
+</div>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="resources/bootstrap.min.js"></script>
+<script src="/js/offcanvas.js"></script>
+<script src="resources/jquery.event.move.js"></script>
+<script src="resources/jquery.twentytwenty.js"></script>
+
+
+<script>
+$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+</script>
+
+</body>
+</html>

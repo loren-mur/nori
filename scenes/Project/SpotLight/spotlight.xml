@@ -8,7 +8,6 @@
     <integrator type="path_mis">
     </integrator>
 
-    <!-- Render the scene as viewed by a perspective camera -->
     <camera type="perspective">
         <transform name="toWorld">
             <lookat target="0, 0, 0"
@@ -17,8 +16,7 @@
 
         </transform>
 
-        <!-- Field of view: 75 degrees -->
-        <float name="fov" value="75"/>
+        <float name="fov" value="70"/>
 
         <!-- 800x400 pixels -->
         <integer name="width" value="800"/>
@@ -29,27 +27,27 @@
 
     <!-- 3 spots!!! -->
     <emitter type="spotlight">
-        <point name="position" value = "6, 5, -5"/>
+        <point name="position" value = "5, 5, -5"/>
         <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="45"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+        <float name="cosFalloffStart" value="28"/>
+        <float name="cosTotalWidth" value="32"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
     <emitter type="spotlight">
-        <point name="position" value = "6, 5, 0"/>
+        <point name="position" value = "5, 5, 0"/>
         <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="50"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+        <float name="cosFalloffStart" value="28"/>
+        <float name="cosTotalWidth" value="32"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
     <emitter type="spotlight">
-        <point name="position" value = "6, 5, 5"/>
+        <point name="position" value = "5, 5, 5"/>
         <color name="color" value="1000,1000,1000"/>
-        <float name="cosFalloffStart" value="50"/>
-        <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "-.25,-1,0"/>
+        <float name="cosFalloffStart" value="28"/>
+        <float name="cosTotalWidth" value="32"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
     <mesh type="obj">
@@ -100,6 +98,7 @@
 
     </mesh>
 
+
     <!-- pavimento -->
     <mesh type="obj">
         <string name="filename" value="base.obj"/>
@@ -115,8 +114,6 @@
 
 
     </mesh>
-
-
 
 </scene>
 

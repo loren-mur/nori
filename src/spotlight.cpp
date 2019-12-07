@@ -2,6 +2,7 @@
 // Created by Alessia Paccagnella on 30/11/2019.
 //
 
+
 #include <nori/integrator.h>
 #include <nori/scene.h>
 #include <nori/warp.h>
@@ -50,8 +51,12 @@ public:
             //from pbr book and mistuba ref
             if (cosTheta < cosTotalWidth)     return 0;
             if (cosTheta > cosFalloffStart)   return 1;
-            float transitionWidth = (std::acos(cosFalloffStart) - std::acos(cosTotalWidth));
-            return ((std::acos(cosTotalWidth) - std::acos(cosTheta)) / transitionWidth);
+            //float transitionWidth = (std::acos(cosFalloffStart) - std::acos(cosTotalWidth));
+            //return ((std::acos(cosTotalWidth) - std::acos(cosTheta)) / transitionWidth);
+            //float delta = (cosTheta - cosTotalWidth) / (cosFalloffStart - cosTotalWidth);
+            //return delta*delta*delta*delta;
+            float m_invTransitionWidth = 1.0f / (std::acos(cosTotalWidth) - std::acos(cosFalloffStart));
+            return ((std::acos(cosTotalWidth) - std::acos(cosTheta)) * m_invTransitionWidth);
         }
 
         virtual float pdf(const EmitterQueryRecord &lRec)const override {

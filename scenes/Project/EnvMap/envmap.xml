@@ -40,8 +40,9 @@
             <float name="eta" value="0.24873"/>
             <float name="k" value="3.0740"/>
             <float name="specularReflectance" value="0.90962"/>
-            <color name="rgb" value="255, 215, 200"/>
+           <!-- <color name="rgb" value="255, 215, 200"/>-->
         </bsdf>
+
     </mesh>
 
 
