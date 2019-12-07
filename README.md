@@ -5,11 +5,11 @@ Ray tracing renderer implemented for Computer Graphics rendering competition at 
 Features:
 
 Alessia Paccagnella:
-- Environment map emitter - done. Have to compare it with Mitsuba.
-- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - Depth done, LENS AND CHROMATIC TODO
+- Environment map emitter - done.
+- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - Depth done, lens done. CHROMATIC TODO
 - NL means denoising - Script written. Have to understand how to get dataset in exr format from nori. 
-- Image Textures - done. Have to compare it with Mitsuba. 
-- Spotlight - done. Have to compare it with Mitsuba. 
+- Image Textures - done. 
+- Spotlight - done. 
 - Procedural Texture - done. How to compare it with Mitsuba? Try different noises. 
 
 Niklaus Houska:
