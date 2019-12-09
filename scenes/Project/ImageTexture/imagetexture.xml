@@ -69,7 +69,7 @@
         <bsdf type="diffuse">
             <texture type="imagetexture" name="albedo">
                 <string name="fileName" value="texture4.png"/>
-                <vector name="scale" value=".50,.50"/>
+                <vector name="scale" value="1,1"/>
             </texture>
         </bsdf>
 
@@ -120,27 +120,27 @@
 
     <emitter type="spotlight">
         <point name="position" value = "5, 5, -5"/>
-        <color name="color" value="1000,773,433"/>
+        <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="20"/>
         <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "0.1,-1,0.17"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
 
     <emitter type="spotlight">
         <point name="position" value = "5, 5, 0"/>
-        <color name="color" value="1000,773,433"/>
+        <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="20"/>
         <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "0.1,-1,0"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
     <emitter type="spotlight">
         <point name="position" value = "5, 5, 5"/>
-        <color name="color" value="1000,773,433"/>
+        <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="20"/>
         <float name="cosTotalWidth" value="30"/>
-        <vector name="direction" value = "0.1,-1,-0.17"/>
+        <vector name="direction" value = "0,-1,0"/>
     </emitter>
 
 

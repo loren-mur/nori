@@ -63,7 +63,7 @@
             <texture type="proceduraltexture" name="albedo">
                 <point name="delta" value="0.5,0.5"/>
                 <vector name="scale" value="0.10,0.10"/>
-                <color name="color1" value="0,0,1"/>
+                <color name="color1" value="0,1,1"/>
                 <color name="color2" value="1, 0, 0"/>
             </texture>
         </bsdf>
@@ -87,7 +87,7 @@
                 <point name="delta" value="0.5,0.5"/>
                 <vector name="scale" value="0.10,0.10"/>
                 <color name="color1" value="0,1,0"/>
-                <color name="color2" value="1, 0, 0"/>
+                <color name="color2" value="1, 1, 0"/>
             </texture>
         </bsdf>
 

@@ -4742,6 +4742,7 @@ CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/proplist.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/ray.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/rfilter.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/sampler.h
+CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/texture.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/transform.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/vector.h
 CMakeFiles/nori.dir/src/perspective.cpp.o: ../include/nori/warp.h

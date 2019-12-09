@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Independent sample generator, user-selected samples per pixel -->
+<scene version="0.5.0">
+    <integrator type="path"/>
+
+    <sensor type="perspective">
+    <float name="fov" value="70"/>
+    <transform name="toWorld">
+        <lookat target="5, 0, 0"
+                origin="16, 3, -3"
+                up="0, 1, 0"/>
+
+    </transform>
+        <!-- Field of view: 40 degrees -->
+        <float name="fov" value="70"/>
+
+        <sampler type="independent">
+            <integer name="sampleCount" value="512"/>
+        </sampler>
+
+        <film type="hdrfilm">
+            <integer name="height" value="400"/>
+            <integer name="width" value="800"/>
+        </film>
+    </sensor>
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+                <texture type="bitmap" name="reflectance">
+                    <string name="filename" value="texture1.png"/>
+                    <float name="uoffset" value ="100"/>
+                    <float name="voffset" value ="5"/>
+                </texture>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate angle="90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="5"/>
+        </transform>
+
+
+    </shape>
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+            <texture type="bitmap" name="reflectance">
+                <string name="filename" value="texture2.png"/>
+            </texture>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate angle="90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="0"/>
+        </transform>
+
+
+    </shape>
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+            <texture type="bitmap" name="reflectance">
+                <string name="filename" value="texture4.png"/>
+            </texture>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y=".01" z=".01"/>
+            <rotate angle="90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="-5"/>
+        </transform>
+
+
+    </shape>
+
+
+
+
+    <!--
+    <emitter type="point">
+        <point name="position" value = "5, 5, -5"/>
+        <color name="power" value="255,255,255"/>
+    </emitter>
+
+    <emitter type="point">
+        <point name="position" value = "5, 5, 5"/>
+        <color name="power" value="255,255,255"/>
+    </emitter>
+
+    Illuminate using a point light
+    <emitter type="point">
+        <point name="position" value = "5, 5, 0"/>
+        <color name="power" value="255,255,255"/>
+    </emitter>-->
+
+
+    <shape type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x="300" y="300" z="300"/>
+            <rotate angle="270" z="1" />
+            <translate x="-1000" y="1000" z="0"/>
+        </transform>
+
+        <emitter type="area">
+            <spectrum name="radiance" value="2"/>
+        </emitter>
+    </shape>
+
+
+
+
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, -5"
+                    origin="5, 5, -5"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
+    </emitter>
+
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, 0"
+                    origin="5, 5, 0"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
+    </emitter>
+
+    <emitter type="spot">
+        <transform name="toWorld">
+            <lookat target="5, 0, 5"
+                    origin="5, 5, 5"/>
+        </transform>
+        <spectrum name="intensity" value = "85"/>
+        <float name="cutoffAngle" value="30"/>
+        <float name="beamWidth" value="20"/>
+    </emitter>
+
+
+
+    <shape type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+            <texture type="bitmap" name="reflectance">
+                <string name="filename" value="texture3.png"/>
+                <float name="uscale" value = "100"/>
+                <float name="vscale" value = "50"/>
+            </texture>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x="20" y="100" z="20"/>
+            <rotate angle="90" z="1" />
+
+            <translate x="100" y="0" z="0"/>
+        </transform>
+
+
+    </shape>
+
+
+</scene>

@@ -4743,6 +4743,7 @@ CMakeFiles/nori.dir/src/perspective.cpp.o
  ../include/nori/ray.h
  ../include/nori/rfilter.h
  ../include/nori/sampler.h
+ ../include/nori/texture.h
  ../include/nori/transform.h
  ../include/nori/vector.h
  ../include/nori/warp.h

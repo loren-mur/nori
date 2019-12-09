@@ -20,6 +20,9 @@
 #include <nori/rfilter.h>
 #include <nori/warp.h>
 #include <Eigen/Geometry>
+#include <nori/sampler.h>
+#include <nori/texture.h>
+
 
 NORI_NAMESPACE_BEGIN
 
@@ -54,11 +57,11 @@ public:
         k2 = propList.getFloat("change2", 0.0f);
 
 
-        //aberration = propList.getInteger("aberration", 0);
+        aberration = propList.getInteger("aberration", 0);
         //_aperture(std::make_shared<DiskTexture>());
         //_apertureSize = propList.getFloat("aperture", 0.001f);
         //_aperture->makeSamplable(MAP_UNIFORM);
-        //m_rfilter = NULL;
+        m_rfilter = NULL;
 
         //focalDistance = propList.getFloat("focalDistance", 10.0f);
         //lensRadius = propList.getFloat("lensRadius", 0.0f); // per default, no effect
@@ -119,18 +122,54 @@ public:
         /* Compute the corresponding position on the 
            near plane (in local camera space) */
 
-        /*if(aberration){
+       Point3f nearP;
+       Color3f color;
+       //if(aberration){
+       //    Sampler *sampler = static_cast<Sampler *>(
+       //             NoriObjectFactory::createInstance("independent", PropertyList()));
+            /*Vector2f v(0.05, 0);
+            Point2f apertureSample1 = apertureSample;
+            Point2f apertureSample2 = sampler->next2D();
+            Point2f apertureSample3 = sampler->next2D();
 
-            Color3f color = evalApertureThroughtput());
-        }
-        else{*/
-            Color3f color = Color3f(1.0f);
-        //}
+            int randomnumber = (rand() % 3) + 1; //1, 2 or 3
+            Point2f apertureChosen;
+            std::cout << randomnumber;
+            if(randomnumber == 1)
+                apertureChosen = apertureSample1;
+            if(randomnumber == 2)
+                apertureChosen = apertureSample2;
+            if(randomnumber == 3)
+                apertureChosen = apertureSample3;
 
-        Point3f nearP = m_sampleToCamera * Point3f(
-                    samplePosition.x() * m_invOutputSize.x(),
-                    samplePosition.y() * m_invOutputSize.y(), 0.0f);
+           float aperture = apertureChosen.x();
+            int max = 0;
+            if(apertureSample1.x() > max)
+                max = apertureSample1.x();
+            if(apertureSample2.x() > max)
+                max = apertureSample2.x();
+            if(apertureSample3.x() > max)
+                max = apertureSample3.x();
+           color =  aperture/max;*/
 
+       //    Point2f lensUv = sampler->next2D();
+       //    Point2f aperturePos = _aperture->sample(MAP_UNIFORM, lensUv);
+       //    aperturePos = (aperturePos*2.0f - 1.0f)*_apertureSize;
+
+       //    nearP = m_sampleToCamera*Point3f(aperturePos.x(), aperturePos.y(), 0.0f);
+       //    color = Color3f(1.0f);
+       //}
+       // else {
+           //color = Color3f(1.0f);
+           //nearP = m_sampleToCamera * Point3f(
+           //        samplePosition.x() * m_invOutputSize.x(),
+           //        samplePosition.y() * m_invOutputSize.y(), 0.0f);
+       //}
+
+        color = Color3f(1.0f);
+        nearP = m_sampleToCamera * Point3f(
+                samplePosition.x() * m_invOutputSize.x(),
+                samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
         if(m_distortion) {
             float distort = calculateDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
@@ -173,16 +212,6 @@ public:
 
 
 
-/*
-    //evaluate the aperture based on the coordinate
-    float evalApertureThroughput(Vec3f planePos, Vec2f aperturePos) const
-    {
-        float aperture = (*_aperture)[aperturePos].x();
-        return aperture/_aperture->maximum().x();
-    }*/
-
-
-
 
 
 
@@ -192,9 +221,10 @@ public:
 
         float r = y;
         while (true) {
-            float y_squared = pow(y,2);
-            float f  = y *(1+ k1 * y_squared + k2 * pow(y_squared,2)) - y;
-            float df = 1 + 3 * k1 * y_squared + 5 * k2 * pow(y_squared,2);
+            float r_squared = pow(r,2);
+            float f  = r *(1+ k1 * r_squared + k2 * pow(r_squared,2)) - y;
+            float df = 1 + 3 * k1 * r_squared + 5 * k2 * pow(r_squared,2);
+
             r = r - f / df;
             if (std::abs(f) < 1e-6 || iteration++ > 4)
                 break;
@@ -253,7 +283,9 @@ private:
     float k1,k2;
     //chromatic aberration parameters
     //std::shared_ptr<Texture> _aperture;
-    //bool aberration;
+    bool aberration;
+    //std::shared_ptr<Texture> _aperture;
+    //float _apertureSize;
 };
 
 NORI_REGISTER_CLASS(PerspectiveCamera, "perspective");
