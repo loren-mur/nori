@@ -22,6 +22,7 @@
 #include <Eigen/Geometry>
 #include <nori/sampler.h>
 #include <nori/texture.h>
+#include <iostream>
 
 
 NORI_NAMESPACE_BEGIN
@@ -32,6 +33,7 @@ NORI_NAMESPACE_BEGIN
  * This class implements a simple perspective camera model. It uses an
  * infinitesimally small aperture, creating an infinite depth of field.
  */
+
 class PerspectiveCamera : public Camera {
 public:
     PerspectiveCamera(const PropertyList &propList) {
@@ -57,7 +59,10 @@ public:
         k2 = propList.getFloat("change2", 0.0f);
 
 
-        aberration = propList.getInteger("aberration", 0);
+
+        m_aberration = propList.getFloat("aberration", 0.0);
+        apertureCenter = Vector2f(1000,70);
+        resolution = 2;
         //_aperture(std::make_shared<DiskTexture>());
         //_apertureSize = propList.getFloat("aperture", 0.001f);
         //_aperture->makeSamplable(MAP_UNIFORM);
@@ -115,6 +120,91 @@ public:
     }
 
 
+    float evalApertureThroughput(Vector2f aperturePos) const
+    {
+
+        Vector2f radius = Vector2f(2,2);
+        float color = 0;
+        /*Vector2f radius = Vector2f(10000,10000);
+        if ((aperturePos).x() > (apertureCenter).x()){
+            color = aperturePos.x() / (apertureCenter.x() + radius.x()) - 1;
+        } //sei fuori dal raggio
+        else if(((aperturePos).y() > (apertureCenter).y())){
+            color = aperturePos.y() / (apertureCenter.y() + radius.x()) -1;
+        }
+        else if(((aperturePos).x() < (apertureCenter).x())){
+            color = (apertureCenter.x() + radius.x())/aperturePos.x() - 1;
+        }
+        else if((aperturePos).y() < (apertureCenter).y()){
+            color =  (apertureCenter.y()  + radius.x())/aperturePos.y() - 1;
+        }*/
+        float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
+        if(distance > radius.x()){
+            /*float max;
+            if (aperturePos.x() > aperturePos.y()) {
+                max = aperturePos.x();
+                color = max/(apertureCenter.x() + radius.x()) ; //it means that distance is bigger
+            }
+            else{
+                max = aperturePos.y();
+                color = max/(apertureCenter.y() + radius.x()) / max; //it means that distance is bigger
+            }*/
+
+           color = 56;
+        }
+        else
+        { //sei dentro al raggio
+            color = 1.0f;
+        }
+
+        return color/500;
+    }
+
+
+
+    Color3f aberration(Vector2f pixel, Point2f &aperturePos, Sampler &sampler) const
+    {
+        /*Vector2f vec = (pixel) - Vector2f(resolution/2);
+        Point2f shift = (Point2f(vec.x(), vec.y()));
+        shift.x() = shift.x()/resolution *2.0f;
+        shift.y() = shift.y()/resolution *2.0f; //random shift
+        shift.y() = -shift.y(); //invert the y, so that it goes to the opposite side
+
+        float dist = shift.norm();
+        shift = shift.normalized();
+        float shiftAmount = dist*m_aberration; //multiply the aberration for the dist
+        Color3f shiftAmounts(shiftAmount, 0.0f, -shiftAmount);
+        int sampleKernel = (int)sampler.next1D() % 3; //sample a number and obtain one of the three
+        float amount = shiftAmounts[sampleKernel]; //select the shift corresponding to the sampled kernel
+        shiftAmounts = shiftAmounts - amount;
+        Point2f blueShift  = aperturePos + shift*shiftAmounts.x();
+        Point2f greenShift = aperturePos + shift*shiftAmounts.y();
+        Point2f redShift   = aperturePos + shift*shiftAmounts.z(); //now I have three different shifts, represening the new position of the evaluation
+        return Color3f(
+                evalApertureThroughput(redShift),
+                evalApertureThroughput(greenShift),
+                evalApertureThroughput(blueShift)
+        );
+         */
+
+        Vector2f radius = Vector2f(100,100);
+        Color3f color;
+        float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
+        if(distance > radius.x()){
+            //son fuori dal cerchio
+            float red = rand() % 4;
+            float blue = rand() % 4;
+            float green = rand() % 4;
+            color = Color3f(1.0f + red,1.0f - green,1.0f);
+        }
+        else
+            color = Color3f(1.0f);
+
+
+        //eval each of the three apertures with their shift
+        return color;
+    }
+
 
 
 
@@ -124,52 +214,21 @@ public:
 
        Point3f nearP;
        Color3f color;
-       //if(aberration){
-       //    Sampler *sampler = static_cast<Sampler *>(
-       //             NoriObjectFactory::createInstance("independent", PropertyList()));
-            /*Vector2f v(0.05, 0);
-            Point2f apertureSample1 = apertureSample;
-            Point2f apertureSample2 = sampler->next2D();
-            Point2f apertureSample3 = sampler->next2D();
 
-            int randomnumber = (rand() % 3) + 1; //1, 2 or 3
-            Point2f apertureChosen;
-            std::cout << randomnumber;
-            if(randomnumber == 1)
-                apertureChosen = apertureSample1;
-            if(randomnumber == 2)
-                apertureChosen = apertureSample2;
-            if(randomnumber == 3)
-                apertureChosen = apertureSample3;
+        Sampler *sampler = static_cast<Sampler*>(
+                NoriObjectFactory::createInstance("independent", PropertyList()));
+        sampler->activate();
 
-           float aperture = apertureChosen.x();
-            int max = 0;
-            if(apertureSample1.x() > max)
-                max = apertureSample1.x();
-            if(apertureSample2.x() > max)
-                max = apertureSample2.x();
-            if(apertureSample3.x() > max)
-                max = apertureSample3.x();
-           color =  aperture/max;*/
+        nearP = m_sampleToCamera * Point3f(samplePosition.x() * m_invOutputSize.x(),samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
-       //    Point2f lensUv = sampler->next2D();
-       //    Point2f aperturePos = _aperture->sample(MAP_UNIFORM, lensUv);
-       //    aperturePos = (aperturePos*2.0f - 1.0f)*_apertureSize;
+        Point2f ap = apertureSample;
+        if(m_aberration > 0.0){
+            color = aberration(samplePosition, ap, *sampler);
+        }
+        else {
+            color = Color3f(1.0f);
+        }
 
-       //    nearP = m_sampleToCamera*Point3f(aperturePos.x(), aperturePos.y(), 0.0f);
-       //    color = Color3f(1.0f);
-       //}
-       // else {
-           //color = Color3f(1.0f);
-           //nearP = m_sampleToCamera * Point3f(
-           //        samplePosition.x() * m_invOutputSize.x(),
-           //        samplePosition.y() * m_invOutputSize.y(), 0.0f);
-       //}
-
-        color = Color3f(1.0f);
-        nearP = m_sampleToCamera * Point3f(
-                samplePosition.x() * m_invOutputSize.x(),
-                samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
         if(m_distortion) {
             float distort = calculateDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
@@ -283,7 +342,10 @@ private:
     float k1,k2;
     //chromatic aberration parameters
     //std::shared_ptr<Texture> _aperture;
-    bool aberration;
+    float m_aberration;
+    Vector2f apertureCenter;
+    float resolution;
+
     //std::shared_ptr<Texture> _aperture;
     //float _apertureSize;
 };

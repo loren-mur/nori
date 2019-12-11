@@ -31,7 +31,7 @@
         <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="28"/>
         <float name="cosTotalWidth" value="32"/>
-        <vector name="direction" value = "0,-1,0"/>
+        <vector name="direction" value = "0,-5,0"/>
     </emitter>
 
     <emitter type="spotlight">
@@ -39,7 +39,7 @@
         <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="28"/>
         <float name="cosTotalWidth" value="32"/>
-        <vector name="direction" value = "0,-1,0"/>
+        <vector name="direction" value = "0,-5,0"/>
     </emitter>
 
     <emitter type="spotlight">
@@ -47,7 +47,7 @@
         <color name="color" value="1000,1000,1000"/>
         <float name="cosFalloffStart" value="28"/>
         <float name="cosTotalWidth" value="32"/>
-        <vector name="direction" value = "0,-1,0"/>
+        <vector name="direction" value = "0,-5,0"/>
     </emitter>
 
     <mesh type="obj">

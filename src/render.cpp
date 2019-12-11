@@ -146,7 +146,18 @@ void RenderThread::renderScene(const std::string & filename) {
             tbb::concurrent_vector< std::unique_ptr<Sampler> > samplers;
             samplers.resize(numBlocks);
 
+
+            //variance add
+            ImageBlock curBlock(camera->getOutputSize(), camera->getReconstructionFilter());
+            Bitmap sBitmap(camera->getOutputSize());
+            Bitmap ssBitmap(camera->getOutputSize());
+
             for (uint32_t k = 0; k < numSamples ; ++k) {
+
+                //variance add
+                curBlock.clear();
+
+
                 m_progress = k/float(numSamples);
                 if(m_render_status == 2)
                     break;
@@ -175,6 +186,9 @@ void RenderThread::renderScene(const std::string & filename) {
 
                         // The image block has been processed. Now add it to the "big" block that represents the entire image
                         m_block.put(block);
+
+                        //variance add
+                        curBlock.put(block);
                     }
                 };
 
@@ -183,6 +197,17 @@ void RenderThread::renderScene(const std::string & filename) {
 
                 /// Default: parallel rendering
                 tbb::parallel_for(range, map);
+
+                //variance add
+                curBlock.lock();
+                Bitmap curBitmap(*curBlock.toBitmap());
+                curBlock.unlock();
+                for (int i = 0; i < curBitmap.rows(); ++ i) {
+                    for (int j = 0; j < curBitmap.cols(); ++ j) {
+                        ssBitmap(i,j) += curBitmap(i,j) * curBitmap(i,j);
+                        sBitmap(i,j) += curBitmap(i,j);
+                    }
+                }
 
                 blockGenerator.reset();
             }
@@ -197,6 +222,18 @@ void RenderThread::renderScene(const std::string & filename) {
 
             /* Save using the OpenEXR format */
             bitmap->save(outputName);
+
+
+            //variance add
+            Bitmap varBitmap(camera->getOutputSize());
+            for (int i = 0; i < varBitmap.rows(); ++ i) {
+                for (int j = 0; j < varBitmap.cols(); ++ j) {
+                    // extra numsamples division was proposed on forum and significantly improves denoising
+                    varBitmap(i,j) = (ssBitmap(i,j) - sBitmap(i,j) * sBitmap(i,j) / numSamples) / ((numSamples - 1) * numSamples);
+                }
+            }
+            varBitmap.save(outputName.substr(0, outputName.size() - 4) + "_var.exr");
+
 
             delete m_scene;
             m_scene = nullptr;
