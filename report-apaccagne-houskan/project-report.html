@@ -32,77 +32,125 @@
 
 	<h2>Alessia</h2>
 
-     <h2>1. Depth of field</h2>
+  <h2>1. Image Textures </h2>
+
+  I implemented the images as texture feature using PNG images. For this, I had to use the <code>lodepng</code> library.
+  <a href = "http://viclw17.github.io/2019/04/12/raytracing-uv-mapping-and-texturing/"> this </a> link helped me understanding how to access the pixel value. I basically have a vector made of "RGBA RGBA RGBA..." values for each pixel, and uv coordinates. So the main problem was finding the index of the pixel in that vector. <br>
+  The texture is scaled by a scale parameter and applied over the shape I choose. I scaled the texture3 used for the ground.<br>
+  I also try to scale the perlin noise, on the left image that can be seen here. <br>
+  The first one is obtained scaling the perlin noise (texture 4) by 0.50, 0.50.
+  The second one is obtained without scaling the perlin noise texture. <br> <br>
+  <div class="twentytwenty-container">
+      <img src="images/imagetexture.jpg" alt="Perlin scaled" class="img-responsive">
+      <img src="images/imagetexturenonscaled.jpg" alt="Perlin not scaled" class="img-responsive">
+  </div> <br>
+  These are the four textures that I used:
+  <p style="margin-left:18em">
+  <img src="images/texture1.png" width = 300 height = 300 alt="Texture 1">
+  <img src="images/texture2.png" width = 300 height = 300 alt="Texture 2"></p> <br>
+  <p style="margin-left:18em"><img src="images/texture3.png" width = 300 height = 300 alt="Texture 3">
+  <img src="images/texture4.png" width = 300 height = 300 alt="Texture 4"></p>
+
+
+  <h2>2. Procedural Textures </h2>
+  For this feature, I first tried to generate a procedural texture made of colored stripes. I enabled the possibility of choosing the scaling factor, the two colors and the delta factor. The implementation was quite straightforward. The code can be found in the class <code>proceduraltexture.coo</code>.<br>
+  Then I tried to implement the perlin noise. I spent a lot of time on this, because I was using some noise function that were not optimal for the aim of generating the perlin one. At the end, I followed <a href="https://web.archive.org/web/20160530124230/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm"> this </a> reference to implement it. <br>
+  The noise function used in Perlin noise is a seeded random number generator. It returns the same value every time it is called with the same values for input. Then, I smoothed out the values that this noise function returned by using a cosine interpolation function, which worked better than the linear one because returned a much smother curve.<br>
+  I used some variables like <code>octaves</code>, <code>lacunarity</code> and <code>frequency</code> to modify the noisy function created. An octave is each successive noise function that is added. I decided to use 9 octaves. Each noise function added had twice the frequency of the previous one. I did some trials with a bigger number but after a certain number one had a too high a frequency to be displayable.<br><br>
+  The centered cup displayes the procedural perlin noise in two different colors. <br><br>
+  <div class="twentytwenty-container">
+      <img src="images/proceduraltexture.jpg" alt="Classic perlin noise" class="img-responsive">
+      <img src="images/proceduraltexture1.jpg" alt="Changed the colors for all of the procedural textures" class="img-responsive">
+  </div> <br>
+
+  Here examples of perlin noise taken from <a href="https://www.google.com/search?q=perlin+noise&bih=857&biw=1600&hl=it&sxsrf=ACYBGNSQXdhoTwQTi7W7vf43Ey-gkCdV_g:1576139109123&tbm=isch&source=iu&ictx=1&fir=qgMwSMsom5fL9M%253A%252C5fTUo1Lt4FiC4M%252C_&vet=1&usg=AI4_-kS7ZjdDerLor4Nw7L2aWwuOZVPztw&sa=X&ved=2ahUKEwib2Nzd16_mAhXQSsAKHfdCDksQ9QEwAHoECAUQAw#imgrc=qgMwSMsom5fL9M"> here </a> ,  <a href="https://subic-bars.com/perlin-noise-algorithmus-scheint-nicht-zu-produzieren-gradient-noise.html"> here </a> and  <a href="https://it.wikipedia.org/wiki/Rumore_di_Perlin"> here </a> can be seen.
+  <br>
+  <br>
+  <p style="margin-left:7em">
+  <img src="images/perlin1.png" width = 300 height = 300 alt="Perlin 1">
+  <img src="images/perlin2.png" width = 300 height = 300 alt="Perlin 2"><img src="images/perlin3.png" width = 300 height = 300 alt="Perlin 3"></p> <br>
+
+
+<h2>3. Advanced Camera Model: Depth of field, Lens distortion, Chromatic Aberration</h2>
+     <h2>3.1. Depth of field</h2>
+
+ To implement the depth of field, I added two extra parameters to the camera. One is the size of the lens aperture, and the other is the focal distance. I pass them throug the xml file of the scene. <br>
+ I modified the file <code>perspective.cpp</code>: if depth of field is activated for the scene, the ray’s origin and direction are modified so that depth of field is simulated.
+ I calculated the intersection of the ray through the lens center with the plane of focus, and then initialized the ray: its origin is set to the sampled point on the lens, its direction is initialized so that the ray passes through the point on the plane of focus.<br>
+ ray.mint and ray.maxt remains the same of the previously provided code.<br>
+ Following, different trials can be seen. <br>
 
    </p>
-   ** WILL DESCRIBE THE IMPLEMENTATION LATER, FOR NOW I AM JUST UPLOADING THE COMPARISON WITH MITSUBA **
 
 
   	<h3>Focal Length = 8, radius = 0.2 </h3>
+    The first image represents a focal length of 8, and a radius of 0.2. We can see that a small radius and a small focal length lead to focusing on the closer cup.
   	<div class="twentytwenty-container">
   	    <img src="images/miaFD8R02.jpg" alt="Mine" class="img-responsive">
   	    <img src="images/mitsubaFD8R02.jpg" alt="Mitsuba" class="img-responsive">
   	</div> <br>
 
 	<h3>Focal Length = 15, radius = 0.2 </h3>
+  The second represents a focal length of 15 and a radius of 0.2. Due to a higher focal length, we see that the closest cups are not focused anymore, differently from the ones more distant.
   	<div class="twentytwenty-container">
   	    <img src="images/miaFD15R02.jpg" alt="Mine" class="img-responsive">
   	    <img src="images/mitsubaFD15R02.jpg" alt="Mitsuba" class="img-responsive">
   	</div> <br>
 
     <h3>Focal Length = 15, radius = 0.5 </h3>
+    Finally, the last one represents a focal length of 15, and a radius of 0.5. Here, by putting a longer radius we see that a smaller area is focused.
     	<div class="twentytwenty-container">
     	    <img src="images/miaFD15R05.jpg" alt="Mine" class="img-responsive">
     	    <img src="images/mitsubaFD15R05.jpg" alt="Mitsuba" class="img-responsive">
     	</div> <br>
 
-<h2>2. Spotlight</h2>
+      <h2>3.2. Lens Distortion </h2>
+      This feature extends the perspective camera with the effect of radial distortion. I added three extra parameters, which are <code>change1</code> and <code>change2</code>, the second and fourth-order terms in a polynomial function that models the barrel distortion, and the boolean <code>m_distortion</code>, which indicates if the distortion is activated or not. After I calculate the distortion, with the function <code>calculateDistortion()</code>, I multiply the x and y coordinates of the position on the near plane for this factor. I followed mitsuba for calculating the distortion. <br><br>
+
+      <div class="twentytwenty-container">
+          <img src="images/distortion.jpg" alt="Mine" class="img-responsive">
+          <img src="images/distortionmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+      </div> <br>
+
+
+      <h2>3.3. Chromatic aberration: TODO REPORT </h2>
+
+
+<h2>4. Spotlight</h2>
+For this feature, I implementated a spotlight based on the implementation in the book "Physically based rendering".<br>
+Spotlights are a variation of point lights: they emit light in a cone of directions from their position instead of shining in all the directions. The functions are very similar to the ones written for <code>pointlight.cpp</code>. For example
+the <code>sample()</code> method is almost identical to the pointlight's one, except for the fact that it calls the <code>cutOff()</code> method, which computes the distribution of light accounting for the spotlight cone. For this function, due to the fact that I am comparing the results with Mitsuba, I changed the return value of the function <code>cutOff</code> according to Mitsuba implementation. <br>
+The parameters I input to the spotlight are <code>cosFalloffStart</code>,<code>cosTotalWidth</code> and the direction I want the spotlight to point to.
+Here we can see the validation:
+<br><br>
+
 <div class="twentytwenty-container">
     <img src="images/spotlight.png" alt="Mine" class="img-responsive">
     <img src="images/spotlightmitsuba.jpg" alt="Mitsuba" class="img-responsive">
 </div> <br>
 
-<h2>3. Environmental Map Emitter</h2>
+
+<h2>5. Environmental Map Emitter</h2>
+The environmental map emitter was one of the features that took more time to be implemented. <a href = "https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/projects/envsample.pdf" > This paper </a> helped me a lot. I followed the pseudo code given in that paper to implement the functions <code>precomputer1D()</code> and <code>sample1D()</code>.<br>
+In the paper, importance sampling an envmap depends on the intensity distribution of the light texture. The made assumption is that that illumination in images is represented using latitude-longitude parameters. In fact the <code>sample()</code> method samples points and converts them to spherical coordinates for sampling the sphere.<br>
+
+I downloaded the texture from <a href = "" > here </a>.
+In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
 <div class="twentytwenty-container">
     <img src="images/envmapnori.jpg" alt="Mine" class="img-responsive">
     <img src="images/envmapmitsuba.jpg" alt="Mitsuba" class="img-responsive">
 </div> <br>
 
-<h2>4. Lens Distortion </h2>
-<div class="twentytwenty-container">
-    <img src="images/distortion.jpg" alt="Mine" class="img-responsive">
-    <img src="images/distortionmitsuba.jpg" alt="Mitsuba" class="img-responsive">
-</div> <br>
-
-<h2>5. Image Textures </h2>
-The first one is obtained scaling the perlin noise (texture 4) by 0.50, 0.50.
-The second one is obtained without scaling the perlin noise texture.
-<div class="twentytwenty-container">
-    <img src="images/imagetexture.jpg" alt="Perlin scaled" class="img-responsive">
-    <img src="images/imagetexturenonscaled.jpg" alt="Perlin not scaled" class="img-responsive">
-</div> <br>
-These are the four textures that I used:
-<p style="margin-left:18em">
-<img src="images/texture1.png" width = 300 height = 300 alt="Texture 1">
-<img src="images/texture2.png" width = 300 height = 300 alt="Texture 2"></p> <br>
-<p style="margin-left:18em"><img src="images/texture3.png" width = 300 height = 300 alt="Texture 3">
-<img src="images/texture4.png" width = 300 height = 300 alt="Texture 4"></p>
 
 
-<h2>6. Procedural Textures </h2>
-<div class="twentytwenty-container">
-    <img src="images/proceduraltexture.jpg" alt="" class="img-responsive">
-    <img src="images/proceduraltexture1.jpg" alt="" class="img-responsive">
-</div> <br>
+<h2>6. NL means denoising: </h2>
 
-<h2>7. NL means denoising: TODO REPORT </h2>
-
+To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. <br>
+The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function. Here the result: <br><br>
 <div class="twentytwenty-container">
     <img src="images/noise.png" alt="" class="img-responsive">
     <img src="images/denoised.png" alt="" class="img-responsive">
 </div> <br>
-
-<h2>8. Chromatic aberration: TODO REPORT </h2>
 
 
 </div>

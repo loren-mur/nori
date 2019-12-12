@@ -147,16 +147,15 @@ void RenderThread::renderScene(const std::string & filename) {
             samplers.resize(numBlocks);
 
 
-            //variance add
-            ImageBlock curBlock(camera->getOutputSize(), camera->getReconstructionFilter());
+            //variance
+            ImageBlock varBlock(camera->getOutputSize(), camera->getReconstructionFilter());
             Bitmap sBitmap(camera->getOutputSize());
             Bitmap ssBitmap(camera->getOutputSize());
 
             for (uint32_t k = 0; k < numSamples ; ++k) {
 
-                //variance add
-                curBlock.clear();
-
+                //variance
+                varBlock.clear();
 
                 m_progress = k/float(numSamples);
                 if(m_render_status == 2)
@@ -188,7 +187,7 @@ void RenderThread::renderScene(const std::string & filename) {
                         m_block.put(block);
 
                         //variance add
-                        curBlock.put(block);
+                        varBlock.put(block);
                     }
                 };
 
@@ -198,13 +197,15 @@ void RenderThread::renderScene(const std::string & filename) {
                 /// Default: parallel rendering
                 tbb::parallel_for(range, map);
 
-                //variance add
-                curBlock.lock();
-                Bitmap curBitmap(*curBlock.toBitmap());
-                curBlock.unlock();
+                //variance
+                varBlock.lock();
+                Bitmap curBitmap(*varBlock.toBitmap());
+                varBlock.unlock();
                 for (int i = 0; i < curBitmap.rows(); ++ i) {
                     for (int j = 0; j < curBitmap.cols(); ++ j) {
-                        ssBitmap(i,j) += curBitmap(i,j) * curBitmap(i,j);
+                        // sum += value;
+                        // sumsqr+= value * value;
+                        ssBitmap(i,j) += pow(curBitmap(i,j),2);
                         sBitmap(i,j) += curBitmap(i,j);
                     }
                 }
@@ -224,14 +225,17 @@ void RenderThread::renderScene(const std::string & filename) {
             bitmap->save(outputName);
 
 
-            //variance add
-            Bitmap varBitmap(camera->getOutputSize());
+            //variance
+            Bitmap varBitmap(camera->getOutputSize()); //bitmap for variance of the size of the output img
             for (int i = 0; i < varBitmap.rows(); ++ i) {
                 for (int j = 0; j < varBitmap.cols(); ++ j) {
-                    // extra numsamples division was proposed on forum and significantly improves denoising
-                    varBitmap(i,j) = (ssBitmap(i,j) - sBitmap(i,j) * sBitmap(i,j) / numSamples) / ((numSamples - 1) * numSamples);
+                    //numsamples improvement
+                    //average = sum/counter;
+                    //variance = sumsqr - average*average;
+                    varBitmap(i,j) = (ssBitmap(i,j) - pow(sBitmap(i,j),2)/numSamples) / ((numSamples - 1) * numSamples);
                 }
             }
+            //removes the .exr and adds _var.exr
             varBitmap.save(outputName.substr(0, outputName.size() - 4) + "_var.exr");
 
 
