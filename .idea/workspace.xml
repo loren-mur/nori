@@ -11,13 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/report-apaccagne-houskan/images/perlin1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-apaccagne-houskan/images/perlin2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report-apaccagne-houskan/images/perlin3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/render.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/render.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spotlight.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/spotlight.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/Project/mistubascenes/ImageTexture/imagetexture.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/mistubascenes/ImageTexture/imagetexture.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +73,7 @@
       <workItem from="1575387289213" duration="84228000" />
       <workItem from="1575893226754" duration="2824000" />
       <workItem from="1575967149907" duration="8416000" />
-      <workItem from="1576064645162" duration="21183000" />
+      <workItem from="1576064645162" duration="22892000" />
     </task>
     <servers />
   </component>

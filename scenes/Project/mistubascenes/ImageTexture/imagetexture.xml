@@ -6,8 +6,8 @@
     <sensor type="perspective">
     <float name="fov" value="70"/>
     <transform name="toWorld">
-        <lookat target="5, 0, 0"
-                origin="16, 3, -3"
+        <lookat target="-5, 0, 0"
+                origin="6, 3, -3"
                 up="0, 1, 0"/>
 
     </transform>
@@ -36,10 +36,10 @@
         </bsdf>
 
         <transform name="toWorld">
-            <scale x=".01" y=".01" z=".01"/>
-            <rotate angle="90" z="1" />
+            <scale x="-.01" y=".01" z=".01"/>
+            <rotate angle="-90" z="1" />
             <rotate angle="-90" x="1" />
-            <translate x="5" y="0" z="5"/>
+            <translate x="-5" y="0" z="5"/>
         </transform>
 
 
@@ -55,10 +55,10 @@
         </bsdf>
 
         <transform name="toWorld">
-            <scale x=".01" y=".01" z=".01"/>
-            <rotate angle="90" z="1" />
+            <scale x="-.01" y=".01" z=".01"/>
+            <rotate angle="-90" z="1" />
             <rotate angle="-90" x="1" />
-            <translate x="5" y="0" z="0"/>
+            <translate x="-5" y="0" z="0"/>
         </transform>
 
 
@@ -74,10 +74,10 @@
         </bsdf>
 
         <transform name="toWorld">
-            <scale x=".01" y=".01" z=".01"/>
-            <rotate angle="90" z="1" />
+            <scale x="-.01" y=".01" z=".01"/>
+            <rotate angle="-90" z="1" />
             <rotate angle="-90" x="1" />
-            <translate x="5" y="0" z="-5"/>
+            <translate x="-5" y="0" z="-5"/>
         </transform>
 
 
@@ -125,8 +125,8 @@
 
     <emitter type="spot">
         <transform name="toWorld">
-            <lookat target="5, 0, -5"
-                    origin="5, 5, -5"/>
+            <lookat target="-5, 0, -5"
+                    origin="-5, 5, -5"/>
         </transform>
         <spectrum name="intensity" value = "85"/>
         <float name="cutoffAngle" value="30"/>
@@ -135,8 +135,8 @@
 
     <emitter type="spot">
         <transform name="toWorld">
-            <lookat target="5, 0, 0"
-                    origin="5, 5, 0"/>
+            <lookat target="-5, 0, 0"
+                    origin="-5, 5, 0"/>
         </transform>
         <spectrum name="intensity" value = "85"/>
         <float name="cutoffAngle" value="30"/>
@@ -145,8 +145,8 @@
 
     <emitter type="spot">
         <transform name="toWorld">
-            <lookat target="5, 0, 5"
-                    origin="5, 5, 5"/>
+            <lookat target="-5, 0, 5"
+                    origin="-5, 5, 5"/>
         </transform>
         <spectrum name="intensity" value = "85"/>
         <float name="cutoffAngle" value="30"/>
@@ -166,7 +166,7 @@
         </bsdf>
 
         <transform name="toWorld">
-            <scale x="20" y="100" z="20"/>
+            <scale x="20" y="100" z="-20"/>
             <rotate angle="90" z="1" />
 
             <translate x="100" y="0" z="0"/>

@@ -44,16 +44,19 @@
       <img src="images/imagetexture.jpg" alt="Perlin scaled" class="img-responsive">
       <img src="images/imagetexturenonscaled.jpg" alt="Perlin not scaled" class="img-responsive">
   </div> <br>
-  These are the four textures that I used:
+  This is the Mitsuba version of the rendering, with the perlin texture NOT scaled: they apply the textures the same way, but the colors are a bit different, probably because of the library I use to extract pngs.<br><br>
+  <p style="margin-left:10em"> <img src="images/imagetexture.png" alt="Texture 2"><br><br>
+  These are the four textures that I used:<br>
   <p style="margin-left:18em">
   <img src="images/texture1.png" width = 300 height = 300 alt="Texture 1">
   <img src="images/texture2.png" width = 300 height = 300 alt="Texture 2"></p> <br>
   <p style="margin-left:18em"><img src="images/texture3.png" width = 300 height = 300 alt="Texture 3">
-  <img src="images/texture4.png" width = 300 height = 300 alt="Texture 4"></p>
+  <img src="images/texture4.png" width = 300 height = 300 alt="Texture 4"></p><br>
+
 
 
   <h2>2. Procedural Textures </h2>
-  For this feature, I first tried to generate a procedural texture made of colored stripes. I enabled the possibility of choosing the scaling factor, the two colors and the delta factor. The implementation was quite straightforward. The code can be found in the class <code>proceduraltexture.coo</code>.<br>
+  For this feature, I first tried to generate a procedural texture made of colored stripes. I enabled the possibility of choosing the scaling factor, the two colors and the delta factor. The implementation was quite straightforward. The code can be found in the class <code>proceduraltexture.cpp</code>.<br>
   Then I tried to implement the perlin noise. I spent a lot of time on this, because I was using some noise function that were not optimal for the aim of generating the perlin one. At the end, I followed <a href="https://web.archive.org/web/20160530124230/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm"> this </a> reference to implement it. <br>
   The noise function used in Perlin noise is a seeded random number generator. It returns the same value every time it is called with the same values for input. Then, I smoothed out the values that this noise function returned by using a cosine interpolation function, which worked better than the linear one because returned a much smother curve.<br>
   I used some variables like <code>octaves</code>, <code>lacunarity</code> and <code>frequency</code> to modify the noisy function created. An octave is each successive noise function that is added. I decided to use 9 octaves. Each noise function added had twice the frequency of the previous one. I did some trials with a bigger number but after a certain number one had a too high a frequency to be displayable.<br><br>
