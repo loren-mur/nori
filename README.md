@@ -13,8 +13,8 @@ Alessia Paccagnella:
 - Procedural Texture - done. 
 
 Niklaus Houska:
-- Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss) 
+- Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss) done (except clearcoat im not sure)
 - Modeling Meshes
 - Bump Mapping
 - Textured Emitter
-- Heterogeneous participating media
+- Heterogeneous participating media done
