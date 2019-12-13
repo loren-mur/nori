@@ -86,14 +86,6 @@ public:
         float recip = 1.0f / (m_farClip - m_nearClip),
                 cot = 1.0f / std::tan(degToRad(m_fov / 2.0f));
 
-        //DISTORSION - lines 74-81
-        //nearP.x() = nearP.x()*(1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
-        //nearP.y() = nearP.y()*(1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
-        //float k1 = 1.532*pow(10,-4);
-        //float k2 = -9.656*pow(10,-8);
-        //float k3 = 7.245*pow(10,-11);
-        //float r = 0.3;
-        //cot = cot * (1 + k1 *pow(r,2.0) + k2*pow(r,4.0) + k3*pow(r,6.0));
 
         Eigen::Matrix4f perspective;
         perspective <<
@@ -117,77 +109,6 @@ public:
             m_rfilter->activate();
         }
     }
-
-
-    /*Color3f evalApertureThroughput(Vector2f aperturePos) const
-    {
-
-        /*Vector2f radius = Vector2f(0.1,0.1);
-        float color = 0;
-        float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
-        cout << "distance: \n" << distance ;
-
-        if(distance > radius.x()){ //fuori dal cerchio
-
-        }
-        else
-        { //sei dentro al raggio
-            color = 1.0f;
-        }*/
-
-       /* Color3f color(1.0f);
-
-        return color;
-    }*/
-
-
-
-    /*Color3f aberration(Vector2f pixel, Point2f &aperturePos, Sampler &sampler) const
-    {
-        Vector2f vec = (pixel) - Vector2f(m_outputSize.x()/2);
-        Point2f shift = (Point2f(vec.x(), vec.y()));
-        shift.x() = shift.x()/m_outputSize.x() *2.0f;
-        shift.y() = shift.y()/m_outputSize.x() *2.0f; //random shift
-        shift.y() = -shift.y(); //invert the y, so that it goes to the opposite side
-
-        float dist = shift.norm();
-        shift = shift.normalized();
-        float shiftAmount = dist*m_aberration; //multiply the aberration for the dist
-        Color3f shiftAmounts(shiftAmount, 0.0f, -shiftAmount);
-        int sampleKernel = (int)sampler.next1D() % 3; //sample a number and obtain one of the three
-        float amount = shiftAmounts[sampleKernel]; //select the shift corresponding to the sampled kernel
-        shiftAmounts = shiftAmounts - amount;
-        Point2f blueShift  = aperturePos + shift*shiftAmounts.x();
-        Point2f greenShift = aperturePos + shift*shiftAmounts.y();
-        Point2f redShift   = aperturePos + shift*shiftAmounts.z(); //now I have three different shifts, represening the new position of the evaluation
-
-        aperturePos -= amount*shift;
-        return Color3f(
-                evalApertureThroughput(redShift),
-                evalApertureThroughput(greenShift),
-                evalApertureThroughput(blueShift)
-        );*/
-
-
-        /*Vector2f radius = Vector2f(100,100);
-        Color3f color;
-        float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
-        if(distance > radius.x()){
-            //son fuori dal cerchio
-            float red = rand() % 4;
-            float blue = rand() % 4;
-            float green = rand() % 4;
-            color = Color3f(1.0f + red,1.0f - green,1.0f);
-        }
-        else
-            color = Color3f(1.0f);
-
-
-        //eval each of the three apertures with their shift
-        return color;*/
-    //}
-
-
 
 
     Color3f sampleRay(Ray3f &ray,const Point2f &samplePosition,const Point2f &apertureSample, int index) const {
@@ -215,7 +136,7 @@ public:
         float weight = 0;
         if(hasaberration){
             weight = weightvector[index];
-            cout << "   " << weight;
+            //cout << "   " << weight;
             color = Color3f(0);
             color[index] = 1.0;
         }

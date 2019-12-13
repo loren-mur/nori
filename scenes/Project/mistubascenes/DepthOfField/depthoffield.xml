@@ -107,6 +107,7 @@
     <shape type="obj">
         <string name="filename" value="base.obj"/>
         <bsdf type="diffuse">
+            <spectrum name="radiance" value="1"/>
         </bsdf>
 
         <transform name="toWorld">

@@ -116,7 +116,10 @@
       </div> <br>
 
 
-      <h2>3.3. Chromatic aberration: TODO REPORT </h2>
+      <h2>3.3. Chromatic aberration: </h2>
+      Chromatic aberration effect was quite tricky. If the effect is activated, in the <code>render.cpp</code> file the function <code>sampleRay()</code> of my <code>camera</code> class is called 3 times, one for each color channel. At the end, the value considered is the sum of the three values obtained.<br>
+      In the <code>sampleRay()</code> method, I select the weight of the aberration for that color channel based on the index that it is passed to it. The weights are chosen directly from the xml file. Then, the position sample is normalized to be zero centered. After that, the point on plane of focus is shifted in the x and y direction. <br><br>
+      <p style="margin-left:10em"> <img src="images/chromatic.png" alt="Chromatic Aberration Effect"><br><br>
 
 
 <h2>4. Spotlight</h2>
