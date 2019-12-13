@@ -6,7 +6,7 @@ Features:
 
 Alessia Paccagnella:
 - Environment map emitter - done.
-- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - Depth done, lens done. CHROMATIC TODO
+- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - Depth done, lens done, chromatic done
 - NL means denoising - Script written.
 - Image Textures - done. 
 - Spotlight - done. 
