@@ -57,6 +57,9 @@ public:
     /// Return a pointer to the scene's sample generator
     Sampler *getSampler() { return m_sampler; }
 
+    ///Return a reference to an array containing all media
+    const std::vector<Medium *> &getMedia() const { return m_media; }
+
     /// Return a reference to an array containing all shapes
     const std::vector<Shape *> &getShapes() const { return m_shapes; }
 
@@ -134,6 +137,7 @@ public:
     virtual EClassType getClassType() const override { return EScene; }
 private:
     std::vector<Shape *> m_shapes;
+    std::vector<Medium *> m_media;
     Integrator *m_integrator = nullptr;
     Sampler *m_sampler = nullptr;
     Camera *m_camera = nullptr;

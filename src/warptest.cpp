@@ -69,7 +69,9 @@ public:
         UniformHemisphere,
         CosineHemisphere,
         Beckmann,
-        MicrofacetBRDF
+        MicrofacetBRDF,
+        GTR1,
+        GTR2
     };
 
     WarpTest(): Screen(Vector2i(800, 600), "Assignment 2: Sampling and Warping"), m_bRec(Vector3f()) {
@@ -78,7 +80,7 @@ public:
     }
 
     static float mapParameter(WarpType warpType, float parameterValue) {
-        if (warpType == Beckmann || warpType == MicrofacetBRDF)
+        if (warpType == Beckmann || warpType == MicrofacetBRDF || warpType == GTR1 || warpType == GTR2)
             parameterValue = std::exp(std::log(0.05f) * (1 - parameterValue) +
                                       std::log(1.f)   *  parameterValue);
         return parameterValue;
@@ -99,7 +101,9 @@ public:
                 BSDFQueryRecord bRec(m_bRec);
                 float value = m_brdf->sample(bRec, sample).getLuminance();
                 return std::make_pair(bRec.wo, value == 0 ? 0.f : m_brdf->eval(bRec)[0]);
-             }
+            }
+            case GTR1: result << Warp::squareToGTR1(sample, parameterValue); break;
+            case GTR2: result << Warp::squareToGTR2(sample, parameterValue); break;
         }
 
         return std::make_pair(result, 1.f);
@@ -157,8 +161,8 @@ public:
 
             float bsdfAngle = M_PI * (m_angleSlider->value() - 0.5f);
             m_bRec.wi =
-                Vector3f(std::sin(bsdfAngle), 0,
-                         std::max(std::cos(bsdfAngle), 1e-4f)).normalized();
+                    Vector3f(std::sin(bsdfAngle), 0,
+                             std::max(std::cos(bsdfAngle), 1e-4f)).normalized();
         }
 
         /* Generate the point positions */
@@ -187,8 +191,8 @@ public:
                     continue;
                 }
                 positions.col(i) =
-                    ((value_scale == 0 ? 1.0f : (value_scale * values(0, i))) *
-                     positions.col(i)) * 0.5f + Vector3f(0.5f, 0.5f, 0.0f);
+                        ((value_scale == 0 ? 1.0f : (value_scale * values(0, i))) *
+                         positions.col(i)) * 0.5f + Vector3f(0.5f, 0.5f, 0.0f);
             }
         }
 
@@ -260,8 +264,8 @@ public:
         m_pointCountBox->setValue(str);
         m_parameterBox->setValue(tfm::format("%.1g", parameterValue));
         m_angleBox->setValue(tfm::format("%.1f", m_angleSlider->value() * 180-90));
-        m_parameterSlider->setEnabled(warpType == Beckmann || warpType == MicrofacetBRDF || warpType == UniformSphereCap);
-        m_parameterBox->setEnabled(warpType == Beckmann || warpType == MicrofacetBRDF || warpType == UniformSphereCap);
+        m_parameterSlider->setEnabled(warpType == Beckmann || warpType == MicrofacetBRDF || warpType == UniformSphereCap || warpType == GTR1 || warpType == GTR2);
+        m_parameterBox->setEnabled(warpType == Beckmann || warpType == MicrofacetBRDF || warpType == UniformSphereCap || warpType == GTR1 || warpType == GTR2);
         m_angleBox->setEnabled(warpType == MicrofacetBRDF);
         m_angleSlider->setEnabled(warpType == MicrofacetBRDF);
         m_parameterBox->setEnabled(warpType == MicrofacetBRDF);
@@ -282,7 +286,7 @@ public:
     }
 
     bool mouseMotionEvent(const Vector2i &p, const Vector2i &rel,
-                                  int button, int modifiers) {
+                          int button, int modifiers) {
         if (!Screen::mouseMotionEvent(p, rel, button, modifiers))
             m_arcball.motion(p);
         return true;
@@ -353,8 +357,8 @@ public:
             nvgTextBoxBounds(ctx, 0, 0, width() - 2 * spacer,
                              m_testResult.second.c_str(), nullptr, bounds);
             nvgTextBox(
-                ctx, spacer, verticalOffset + histHeight + spacer + (70 - bounds[3])/2,
-                width() - 2 * spacer, m_testResult.second.c_str(), nullptr);
+                    ctx, spacer, verticalOffset + histHeight + spacer + (70 - bounds[3])/2,
+                    width() - 2 * spacer, m_testResult.second.c_str(), nullptr);
             nvgEndFrame(ctx);
         } else {
             /* Render the point set */
@@ -450,7 +454,7 @@ public:
 
                 double sinTheta = std::sqrt(1 - y * y);
                 double sinPhi = std::sin(x),
-                       cosPhi = std::cos(x);
+                        cosPhi = std::cos(x);
 
                 Vector3f v((float) (sinTheta * cosPhi),
                            (float) (sinTheta * sinPhi),
@@ -471,6 +475,10 @@ public:
                     bRec.wo = v;
                     bRec.measure = nori::ESolidAngle;
                     return m_brdf->pdf(bRec);
+                } else if (warpType == GTR1) {
+                    return Warp::squareToGTR1Pdf(v, parameterValue);
+                } else if (warpType == GTR2) {
+                    return Warp::squareToGTR2Pdf(v, parameterValue);
                 } else {
                     throw NoriException("Invalid warp type");
                 }
@@ -493,7 +501,7 @@ public:
                 double xStart =  x    / (double) xres;
                 double xEnd   = (x+1-Epsilon) / (double) xres;
                 ptr[y * xres + x] = hypothesis::adaptiveSimpson2D(
-                    integrand, yStart, xStart, yEnd, xEnd) * scale;
+                        integrand, yStart, xStart, yEnd, xEnd) * scale;
                 if (ptr[y * xres + x] < 0)
                     throw NoriException("The Pdf() function returned negative values!");
             }
@@ -507,8 +515,8 @@ public:
         const float significanceLevel = 0.01f;
 
         m_testResult =
-            hypothesis::chi2_test(yres*xres, obsFrequencies.get(), expFrequencies.get(),
-                sampleCount, minExpFrequency, significanceLevel, 1);
+                hypothesis::chi2_test(yres*xres, obsFrequencies.get(), expFrequencies.get(),
+                                      sampleCount, minExpFrequency, significanceLevel, 1);
 
         float maxValue = 0, minValue = std::numeric_limits<float>::infinity();
         for (int i=0; i<res; ++i) {
@@ -526,7 +534,7 @@ public:
 
             glBindTexture(GL_TEXTURE_2D, m_textures[k]);
             glTexImage2D(GL_TEXTURE_2D, 0, GL_R32F, xres, yres,
-                    0, GL_RED, GL_FLOAT, buffer.get());
+                         0, GL_RED, GL_FLOAT, buffer.get());
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         }
@@ -560,7 +568,7 @@ public:
 
         new Label(m_window, "Warping method", "sans-bold");
         m_warpTypeBox = new ComboBox(m_window, { "None", "Disk", "Sphere", "Spherical cap", "Hemisphere (unif.)",
-                "Hemisphere (cos)", "Beckmann distr.", "Microfacet BRDF" });
+                                                 "Hemisphere (cos)", "Beckmann distr.", "Microfacet BRDF", "GTR1", "GTR2" });
         m_warpTypeBox->setCallback([&](int) { refresh(); });
 
         panel = new Widget(m_window);
@@ -589,9 +597,9 @@ public:
         m_brdfValueCheckBox->setCallback([&](bool) { refresh(); });
 
         new Label(m_window,
-            std::string(utf8(0x03C7).data()) +
-            std::string(utf8(0x00B2).data()) + " hypothesis test",
-            "sans-bold");
+                  std::string(utf8(0x03C7).data()) +
+                  std::string(utf8(0x00B2).data()) + " hypothesis test",
+                  "sans-bold");
 
         Button *testBtn = new Button(m_window, "Run", ENTYPO_ICON_CHECK);
         testBtn->setBackgroundColor(Color(0, 255, 0, 255));
@@ -607,132 +615,132 @@ public:
 
         m_pointShader = new GLShader();
         m_pointShader->init(
-            "Point shader",
+                "Point shader",
 
-            /* Vertex shader */
-            "#version 330\n"
-            "uniform mat4 mvp;\n"
-            "in vec3 position;\n"
-            "in vec3 color;\n"
-            "out vec3 frag_color;\n"
-            "void main() {\n"
-            "    gl_Position = mvp * vec4(position, 1.0);\n"
-            "    if (isnan(position.r)) /* nan (missing value) */\n"
-            "        frag_color = vec3(0.0);\n"
-            "    else\n"
-            "        frag_color = color;\n"
-            "}",
+                /* Vertex shader */
+                "#version 330\n"
+                "uniform mat4 mvp;\n"
+                "in vec3 position;\n"
+                "in vec3 color;\n"
+                "out vec3 frag_color;\n"
+                "void main() {\n"
+                "    gl_Position = mvp * vec4(position, 1.0);\n"
+                "    if (isnan(position.r)) /* nan (missing value) */\n"
+                "        frag_color = vec3(0.0);\n"
+                "    else\n"
+                "        frag_color = color;\n"
+                "}",
 
-            /* Fragment shader */
-            "#version 330\n"
-            "in vec3 frag_color;\n"
-            "out vec4 out_color;\n"
-            "void main() {\n"
-            "    if (frag_color == vec3(0.0))\n"
-            "        discard;\n"
-            "    out_color = vec4(frag_color, 1.0);\n"
-            "}"
+                /* Fragment shader */
+                "#version 330\n"
+                "in vec3 frag_color;\n"
+                "out vec4 out_color;\n"
+                "void main() {\n"
+                "    if (frag_color == vec3(0.0))\n"
+                "        discard;\n"
+                "    out_color = vec4(frag_color, 1.0);\n"
+                "}"
         );
 
         m_gridShader = new GLShader();
         m_gridShader->init(
-            "Grid shader",
+                "Grid shader",
 
-            /* Vertex shader */
-            "#version 330\n"
-            "uniform mat4 mvp;\n"
-            "in vec3 position;\n"
-            "void main() {\n"
-            "    gl_Position = mvp * vec4(position, 1.0);\n"
-            "}",
+                /* Vertex shader */
+                "#version 330\n"
+                "uniform mat4 mvp;\n"
+                "in vec3 position;\n"
+                "void main() {\n"
+                "    gl_Position = mvp * vec4(position, 1.0);\n"
+                "}",
 
-            /* Fragment shader */
-            "#version 330\n"
-            "out vec4 out_color;\n"
-            "void main() {\n"
-            "    out_color = vec4(vec3(1.0), 0.4);\n"
-            "}"
+                /* Fragment shader */
+                "#version 330\n"
+                "out vec4 out_color;\n"
+                "void main() {\n"
+                "    out_color = vec4(vec3(1.0), 0.4);\n"
+                "}"
         );
 
         m_arrowShader = new GLShader();
         m_arrowShader->init(
-            "Arrow shader",
+                "Arrow shader",
 
-            /* Vertex shader */
-            "#version 330\n"
-            "uniform mat4 mvp;\n"
-            "in vec3 position;\n"
-            "void main() {\n"
-            "    gl_Position = mvp * vec4(position, 1.0);\n"
-            "}",
+                /* Vertex shader */
+                "#version 330\n"
+                "uniform mat4 mvp;\n"
+                "in vec3 position;\n"
+                "void main() {\n"
+                "    gl_Position = mvp * vec4(position, 1.0);\n"
+                "}",
 
-            /* Fragment shader */
-            "#version 330\n"
-            "out vec4 out_color;\n"
-            "void main() {\n"
-            "    out_color = vec4(vec3(1.0), 0.4);\n"
-            "}"
+                /* Fragment shader */
+                "#version 330\n"
+                "out vec4 out_color;\n"
+                "void main() {\n"
+                "    out_color = vec4(vec3(1.0), 0.4);\n"
+                "}"
         );
 
         m_histogramShader = new GLShader();
         m_histogramShader->init(
-            "Histogram shader",
+                "Histogram shader",
 
-            /* Vertex shader */
-            "#version 330\n"
-            "uniform mat4 mvp;\n"
-            "in vec2 position;\n"
-            "out vec2 uv;\n"
-            "void main() {\n"
-            "    gl_Position = mvp * vec4(position, 0.0, 1.0);\n"
-            "    uv = position;\n"
-            "}",
+                /* Vertex shader */
+                "#version 330\n"
+                "uniform mat4 mvp;\n"
+                "in vec2 position;\n"
+                "out vec2 uv;\n"
+                "void main() {\n"
+                "    gl_Position = mvp * vec4(position, 0.0, 1.0);\n"
+                "    uv = position;\n"
+                "}",
 
-            /* Fragment shader */
-            "#version 330\n"
-            "out vec4 out_color;\n"
-            "uniform sampler2D tex;\n"
-            "in vec2 uv;\n"
-            "/* http://paulbourke.net/texture_colour/colourspace/ */\n"
-            "vec3 colormap(float v, float vmin, float vmax) {\n"
-            "    vec3 c = vec3(1.0);\n"
-            "    if (v < vmin)\n"
-            "        v = vmin;\n"
-            "    if (v > vmax)\n"
-            "        v = vmax;\n"
-            "    float dv = vmax - vmin;\n"
-            "    \n"
-            "    if (v < (vmin + 0.25 * dv)) {\n"
-            "        c.r = 0.0;\n"
-            "        c.g = 4.0 * (v - vmin) / dv;\n"
-            "    } else if (v < (vmin + 0.5 * dv)) {\n"
-            "        c.r = 0.0;\n"
-            "        c.b = 1.0 + 4.0 * (vmin + 0.25 * dv - v) / dv;\n"
-            "    } else if (v < (vmin + 0.75 * dv)) {\n"
-            "        c.r = 4.0 * (v - vmin - 0.5 * dv) / dv;\n"
-            "        c.b = 0.0;\n"
-            "    } else {\n"
-            "        c.g = 1.0 + 4.0 * (vmin + 0.75 * dv - v) / dv;\n"
-            "        c.b = 0.0;\n"
-            "    }\n"
-            "    return c;\n"
-            "}\n"
-            "void main() {\n"
-            "    float value = texture(tex, uv).r;\n"
-            "    out_color = vec4(colormap(value, 0.0, 1.0), 1.0);\n"
-            "}"
+                /* Fragment shader */
+                "#version 330\n"
+                "out vec4 out_color;\n"
+                "uniform sampler2D tex;\n"
+                "in vec2 uv;\n"
+                "/* http://paulbourke.net/texture_colour/colourspace/ */\n"
+                "vec3 colormap(float v, float vmin, float vmax) {\n"
+                "    vec3 c = vec3(1.0);\n"
+                "    if (v < vmin)\n"
+                "        v = vmin;\n"
+                "    if (v > vmax)\n"
+                "        v = vmax;\n"
+                "    float dv = vmax - vmin;\n"
+                "    \n"
+                "    if (v < (vmin + 0.25 * dv)) {\n"
+                "        c.r = 0.0;\n"
+                "        c.g = 4.0 * (v - vmin) / dv;\n"
+                "    } else if (v < (vmin + 0.5 * dv)) {\n"
+                "        c.r = 0.0;\n"
+                "        c.b = 1.0 + 4.0 * (vmin + 0.25 * dv - v) / dv;\n"
+                "    } else if (v < (vmin + 0.75 * dv)) {\n"
+                "        c.r = 4.0 * (v - vmin - 0.5 * dv) / dv;\n"
+                "        c.b = 0.0;\n"
+                "    } else {\n"
+                "        c.g = 1.0 + 4.0 * (vmin + 0.75 * dv - v) / dv;\n"
+                "        c.b = 0.0;\n"
+                "    }\n"
+                "    return c;\n"
+                "}\n"
+                "void main() {\n"
+                "    float value = texture(tex, uv).r;\n"
+                "    out_color = vec4(colormap(value, 0.0, 1.0), 1.0);\n"
+                "}"
         );
 
         /* Upload a single quad */
         MatrixXf positions(2, 4);
         MatrixXu indices(3, 2);
         positions <<
-            0, 1, 1, 0,
-            0, 0, 1, 1;
+                  0, 1, 1, 0,
+                0, 0, 1, 1;
         indices <<
-            0, 2,
-            1, 3,
-            2, 0;
+                0, 2,
+                1, 3,
+                2, 0;
         m_histogramShader->bind();
         m_histogramShader->uploadAttrib("position", positions);
         m_histogramShader->uploadIndices(indices);

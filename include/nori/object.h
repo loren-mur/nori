@@ -53,8 +53,10 @@ public:
             case EScene:      return "scene";
             case EMesh:       return "shape";
             case ETexture:    return "texture";
+            case EMedium:     return "medium";
             case EBSDF:       return "bsdf";
             case EEmitter:    return "emitter";
+            case EPhaseFunction: return "phaseFunction";
             case ECamera:     return "camera";
             case EIntegrator: return "integrator";
             case ESampler:    return "sampler";
@@ -156,7 +158,7 @@ public:
      *     of the class.
      */
     static NoriObject *createInstance(const std::string &name,
-            const PropertyList &propList) {
+                                      const PropertyList &propList) {
         if (!m_constructors || m_constructors->find(name) == m_constructors->end())
             throw NoriException("A constructor for class \"%s\" could not be found!", name);
         return (*m_constructors)[name](propList);

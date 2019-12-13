@@ -22,20 +22,20 @@
 
 NORI_NAMESPACE_BEGIN
 
-Vector3f Warp::sampleUniformHemisphere(Sampler *sampler, const Normal3f &pole) {
-    // Naive implementation using rejection sampling
-    Vector3f v;
-    do {
-        v.x() = 1.f - 2.f * sampler->next1D();
-        v.y() = 1.f - 2.f * sampler->next1D();
-        v.z() = 1.f - 2.f * sampler->next1D();
-    } while (v.squaredNorm() > 1.f);
+        Vector3f Warp::sampleUniformHemisphere(Sampler *sampler, const Normal3f &pole) {
+// Naive implementation using rejection sampling
+Vector3f v;
+do {
+v.x() = 1.f - 2.f * sampler->next1D();
+v.y() = 1.f - 2.f * sampler->next1D();
+v.z() = 1.f - 2.f * sampler->next1D();
+} while (v.squaredNorm() > 1.f);
 
-    if (v.dot(pole) < 0.f)
-        v = -v;
-    v /= v.norm();
+if (v.dot(pole) < 0.f)
+v = -v;
+v /= v.norm();
 
-    return v;
+return v;
 }
 
 Point2f Warp::squareToUniformSquare(const Point2f &sample) {
@@ -119,6 +119,40 @@ Vector3f Warp::squareToUniformTriangle(const Point2f &sample) {
     float su1 = sqrtf(sample.x());
     float u = 1.f - su1, v = sample.y() * su1;
     return Vector3f(u,v,1.f-u-v);
+}
+
+Vector3f Warp::squareToGTR1(const Point2f &sample, float alpha) {
+    float phi = 2.f * M_PI * sample.x();
+    float theta = 0.f;
+    if (alpha < 1.f)
+        theta = acos(sqrt((1.f - pow(alpha * alpha, 1 - sample.y())) / (1.f - alpha * alpha)));
+    return {sin(theta) * cos(phi), sin(theta) * sin(phi), cos(theta)};
+}
+
+float Warp::squareToGTR1Pdf(const Vector3f &m, float alpha) {
+    float cosTheta = m.z();
+    if (alpha >= 1.f)
+        return INV_PI;
+    if (!(abs(m.norm() - 1.f) < Epsilon && m.z() >= 0))
+        return 0.f;
+    float alpha2 = alpha * alpha;
+    float cosTheta2 = cosTheta * cosTheta;
+    return cosTheta * (alpha2 - 1.f) * INV_PI / (2.f * std::log(alpha) * (1.f + cosTheta2 * (alpha2 - 1.f)));
+}
+
+Vector3f Warp::squareToGTR2(const Point2f &sample, float alpha) {
+    float phi = 2.f * M_PI * sample.x();
+    float theta = acos(sqrt((1.f - sample.y()) / ( 1.f + (alpha * alpha - 1.f) * sample.y() )));
+    return {sin(theta) * cos(phi), sin(theta) * sin(phi), cos(theta)};
+}
+
+float Warp::squareToGTR2Pdf(const Vector3f &m, float alpha) {
+    float cosTheta = m.z();
+    if (!(abs(m.norm() - 1.f) < Epsilon && m.z() >= 0))
+        return 0.f;
+    float alpha2 = alpha * alpha;
+    float cosTheta2 = cosTheta * cosTheta;
+    return alpha2 * cosTheta * INV_PI / pow(1.f + cosTheta2 * (alpha2 - 1.f), 2);
 }
 
 NORI_NAMESPACE_END
