@@ -85,18 +85,37 @@ static void renderBlock(const Scene *scene, Sampler *sampler, ImageBlock &block)
             Point2f pixelSample = Point2f((float) (x + offset.x()), (float) (y + offset.y())) + sampler->next2D();
             Point2f apertureSample = sampler->next2D();
 
+            Color3f value;
             /* Sample a ray from the camera */
             Ray3f ray;
-            Color3f value = camera->sampleRay(ray, pixelSample, apertureSample);
 
-            /* Compute the incident radiance */
-            value *= integrator->Li(scene, sampler, ray);
+            if(camera->hasChromatic()){
+                Ray3f ray0, ray1, ray2;
+                Color3f value1 = camera->sampleRay(ray0, pixelSample, apertureSample, 0);
+                Color3f value2 = camera->sampleRay(ray1, pixelSample, apertureSample, 1);
+                Color3f value3 = camera->sampleRay(ray2, pixelSample, apertureSample, 2);
+
+                value1 *= integrator->Li(scene, sampler, ray0);
+                value2 *= integrator->Li(scene, sampler, ray1);
+                value3 *= integrator->Li(scene, sampler, ray2);
+
+                value = value1 + value2 + value3;
+            }
+
+            else{
+                value = camera->sampleRay(ray, pixelSample, apertureSample, 0);
+                /* Compute the incident radiance */
+                value *= integrator->Li(scene, sampler, ray);
+            }
 
             /* Store in the image block */
             block.put(pixelSample, value);
         }
     }
 }
+
+
+
 
 void RenderThread::renderScene(const std::string & filename) {
 

@@ -56,11 +56,13 @@ public:
      */
     virtual Color3f sampleRay(Ray3f &ray,
         const Point2f &samplePosition,
-        const Point2f &apertureSample) const = 0;
+        const Point2f &apertureSample, int index) const = 0;
 
     /// Return the size of the output image in pixels
     const Vector2i &getOutputSize() const { return m_outputSize; }
 
+
+    virtual int hasChromatic() const = 0;
     /// Return the camera's reconstruction filter in image space
     const ReconstructionFilter *getReconstructionFilter() const { return m_rfilter; }
 

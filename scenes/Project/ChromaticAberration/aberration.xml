@@ -26,7 +26,8 @@
 
             <!-- Field of view: 40 degrees -->
             <float name="fov" value="70"/>
-            <float name="aberration" value="200"/>
+            <integer name="hasaberration" value="1"/>
+            <vector name="aberration" value="3, 1, 2.3"/>
 
 
             <!-- 800x600 pixels -->
@@ -68,7 +69,7 @@
                 <texture type="proceduraltexture" name="albedo">
                     <point name="delta" value="0.5,0.5"/>
                     <vector name="scale" value="0.10,0.10"/>
-                    <color name="color1" value="0,1,0"/>
+                    <color name="color1" value="0,0,1"/>
                     <color name="color2" value="1, 0, 0"/>
                 </texture>
             </bsdf>

@@ -169,7 +169,7 @@ public:
                     Ray3f ray;
                     Point2f pixelSample = (sampler->next2D().array()
                         * camera->getOutputSize().cast<float>().array()).matrix();
-                    Color3f value = camera->sampleRay(ray, pixelSample, sampler->next2D());
+                    Color3f value = camera->sampleRay(ray, pixelSample, sampler->next2D(),0);
 
                     /* Compute the incident radiance */
                     value *= integrator->Li(scene, sampler, ray);

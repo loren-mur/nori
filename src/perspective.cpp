@@ -23,6 +23,8 @@
 #include <nori/sampler.h>
 #include <nori/texture.h>
 #include <iostream>
+#include <algorithm>
+#include <fstream>
 
 
 NORI_NAMESPACE_BEGIN
@@ -57,15 +59,12 @@ public:
         m_distortion = propList.getInteger("distortion", 0);
         k1 = propList.getFloat("change1", 0.0f);
         k2 = propList.getFloat("change2", 0.0f);
+        hasaberration = propList.getInteger("hasaberration", 0);
 
 
 
-        m_aberration = propList.getFloat("aberration", 0.0);
-        apertureCenter = Vector2f(1000,70);
-        resolution = 2;
-        //_aperture(std::make_shared<DiskTexture>());
-        //_apertureSize = propList.getFloat("aperture", 0.001f);
-        //_aperture->makeSamplable(MAP_UNIFORM);
+        weightvector = propList.getVector3("aberration", Vector3f(0));
+
         m_rfilter = NULL;
 
         //focalDistance = propList.getFloat("focalDistance", 10.0f);
@@ -120,54 +119,35 @@ public:
     }
 
 
-    float evalApertureThroughput(Vector2f aperturePos) const
+    /*Color3f evalApertureThroughput(Vector2f aperturePos) const
     {
 
-        Vector2f radius = Vector2f(2,2);
+        /*Vector2f radius = Vector2f(0.1,0.1);
         float color = 0;
-        /*Vector2f radius = Vector2f(10000,10000);
-        if ((aperturePos).x() > (apertureCenter).x()){
-            color = aperturePos.x() / (apertureCenter.x() + radius.x()) - 1;
-        } //sei fuori dal raggio
-        else if(((aperturePos).y() > (apertureCenter).y())){
-            color = aperturePos.y() / (apertureCenter.y() + radius.x()) -1;
-        }
-        else if(((aperturePos).x() < (apertureCenter).x())){
-            color = (apertureCenter.x() + radius.x())/aperturePos.x() - 1;
-        }
-        else if((aperturePos).y() < (apertureCenter).y()){
-            color =  (apertureCenter.y()  + radius.x())/aperturePos.y() - 1;
-        }*/
         float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
-        if(distance > radius.x()){
-            /*float max;
-            if (aperturePos.x() > aperturePos.y()) {
-                max = aperturePos.x();
-                color = max/(apertureCenter.x() + radius.x()) ; //it means that distance is bigger
-            }
-            else{
-                max = aperturePos.y();
-                color = max/(apertureCenter.y() + radius.x()) / max; //it means that distance is bigger
-            }*/
+        cout << "distance: \n" << distance ;
 
-           color = 56;
+        if(distance > radius.x()){ //fuori dal cerchio
+
         }
         else
         { //sei dentro al raggio
             color = 1.0f;
-        }
+        }*/
 
-        return color/500;
-    }
+       /* Color3f color(1.0f);
+
+        return color;
+    }*/
 
 
 
-    Color3f aberration(Vector2f pixel, Point2f &aperturePos, Sampler &sampler) const
+    /*Color3f aberration(Vector2f pixel, Point2f &aperturePos, Sampler &sampler) const
     {
-        /*Vector2f vec = (pixel) - Vector2f(resolution/2);
+        Vector2f vec = (pixel) - Vector2f(m_outputSize.x()/2);
         Point2f shift = (Point2f(vec.x(), vec.y()));
-        shift.x() = shift.x()/resolution *2.0f;
-        shift.y() = shift.y()/resolution *2.0f; //random shift
+        shift.x() = shift.x()/m_outputSize.x() *2.0f;
+        shift.y() = shift.y()/m_outputSize.x() *2.0f; //random shift
         shift.y() = -shift.y(); //invert the y, so that it goes to the opposite side
 
         float dist = shift.norm();
@@ -180,14 +160,16 @@ public:
         Point2f blueShift  = aperturePos + shift*shiftAmounts.x();
         Point2f greenShift = aperturePos + shift*shiftAmounts.y();
         Point2f redShift   = aperturePos + shift*shiftAmounts.z(); //now I have three different shifts, represening the new position of the evaluation
+
+        aperturePos -= amount*shift;
         return Color3f(
                 evalApertureThroughput(redShift),
                 evalApertureThroughput(greenShift),
                 evalApertureThroughput(blueShift)
-        );
-         */
+        );*/
 
-        Vector2f radius = Vector2f(100,100);
+
+        /*Vector2f radius = Vector2f(100,100);
         Color3f color;
         float distance = sqrt(pow(aperturePos.x() - apertureCenter.x(), 2) + pow(aperturePos.y() - apertureCenter.y(), 2));
         if(distance > radius.x()){
@@ -202,13 +184,13 @@ public:
 
 
         //eval each of the three apertures with their shift
-        return color;
-    }
+        return color;*/
+    //}
 
 
 
 
-    Color3f sampleRay(Ray3f &ray,const Point2f &samplePosition,const Point2f &apertureSample) const {
+    Color3f sampleRay(Ray3f &ray,const Point2f &samplePosition,const Point2f &apertureSample, int index) const {
         /* Compute the corresponding position on the 
            near plane (in local camera space) */
 
@@ -221,14 +203,6 @@ public:
 
         nearP = m_sampleToCamera * Point3f(samplePosition.x() * m_invOutputSize.x(),samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
-        Point2f ap = apertureSample;
-        if(m_aberration > 0.0){
-            color = aberration(samplePosition, ap, *sampler);
-        }
-        else {
-            color = Color3f(1.0f);
-        }
-
 
         if(m_distortion) {
             float distort = calculateDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
@@ -237,27 +211,44 @@ public:
         }
         /* Turn into a normalized ray direction, and
                adjust the ray interval accordingly */
-        Vector3f d = nearP.normalized();
 
+        float weight = 0;
+        if(hasaberration){
+            weight = weightvector[index];
+            cout << "   " << weight;
+            color = Color3f(0);
+            color[index] = 1.0;
+        }
+        else{
+            color =  Color3f(1.0f);
+        }
+
+        Vector3f d = nearP.normalized();
         float invZ = 1.0f / d.z();
         ray.o = m_cameraToWorld * Point3f(0, 0, 0);
         ray.d = m_cameraToWorld * d;
 
-
-        //dof
-        if(lensRadius != 0){
-            Point2f pLens = lensRadius * Warp::squareToUniformDisk(apertureSample);
+        if((hasaberration)||(lensRadius > 0)){
+            //aberration
             //compute point on plane of focus
-             //calculate t
+            //calculate t
+            Point2f pLens = lensRadius * Warp::squareToUniformDisk(apertureSample);
             float tf = focalDistance / d.z();
             Point3f pFocus = d * tf;
+            Point2f changedSamplePosition = Point2f(samplePosition.x() - 0.5*m_outputSize.x(), samplePosition.y() - 0.5*m_outputSize.y()); //zero centered
+            changedSamplePosition /= m_outputSize.maxCoeff(); //the maximum between the two sizes (the same)
+
+            Point2f delta = changedSamplePosition * changedSamplePosition.squaredNorm() * weight;
+            pFocus = pFocus + Point3f(-delta.x(), delta.y(), 0);
+
+
+            //dof
             //update ray for effect of lens
             Point3f o(pLens.x(), pLens.y(), 0);
             ray.o = m_cameraToWorld * o;
             d = (pFocus - o).normalized();
             ray.d = m_cameraToWorld * d;
         }
-
 
 
         ray.mint = m_nearClip * invZ;
@@ -268,9 +259,9 @@ public:
     }
 
 
-
-
-
+    int hasChromatic() const {
+        return hasaberration;
+    }
 
 
 
@@ -327,6 +318,9 @@ public:
             lensRadius
         );
     }
+
+
+    //method: has chromatic
 private:
     Vector2f m_invOutputSize;
     Transform m_sampleToCamera;
@@ -339,12 +333,12 @@ private:
     float focalDistance;
     //distorsion parameters
     bool m_distortion;
+    int hasaberration;
     float k1,k2;
     //chromatic aberration parameters
     //std::shared_ptr<Texture> _aperture;
-    float m_aberration;
-    Vector2f apertureCenter;
-    float resolution;
+    Vector3f m_aberration;
+    Vector3f weightvector;
 
     //std::shared_ptr<Texture> _aperture;
     //float _apertureSize;
