@@ -82,6 +82,12 @@ public:
     static Vector3f squareToUniformTriangle(const Point2f &sample);
 
     static Vector3f squareToUniformCylinder(const Point2f &sample);
+
+    static Vector3f squareToGTR1(const Point2f &sample, float alpha);
+    static float squareToGTR1Pdf(const Vector3f &m, float alpha);
+    static Vector3f squareToGTR2(const Point2f &sample, float alpha);
+    static float squareToGTR2Pdf(const Vector3f &m, float alpha);
+
 };
 
 NORI_NAMESPACE_END

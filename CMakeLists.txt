@@ -44,6 +44,8 @@ add_executable(nori
   include/nori/vector.h
   include/nori/warp.h
   include/nori/lodepng.h
+  include/nori/PhaseFunction.h
+  include/nori/medium.h
 
   # Source code files
   src/bitmap.cpp
@@ -92,6 +94,10 @@ add_executable(nori
   src/proceduraltexture.cpp
   src/lodepng.cpp
   src/perlintexture.cpp
+  src/disney.cpp
+  src/medium.cpp
+  src/PhaseFunction.cpp
+  src/vol_path.cpp
 )
 
 # The following lines build the warping test application
