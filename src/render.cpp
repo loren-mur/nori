@@ -89,12 +89,14 @@ static void renderBlock(const Scene *scene, Sampler *sampler, ImageBlock &block)
             /* Sample a ray from the camera */
             Ray3f ray;
 
-            if(camera->hasChromatic()){
+            if(camera->chromaticActivated()){
+                //samples 3 rays, one per each color channel. the index represents the index of the weight to be chosen
                 Ray3f ray0, ray1, ray2;
                 Color3f value1 = camera->sampleRay(ray0, pixelSample, apertureSample, 0);
                 Color3f value2 = camera->sampleRay(ray1, pixelSample, apertureSample, 1);
                 Color3f value3 = camera->sampleRay(ray2, pixelSample, apertureSample, 2);
 
+                //calculate the value of the color with the integrator method, and then sums the three channels results
                 value1 *= integrator->Li(scene, sampler, ray0);
                 value2 *= integrator->Li(scene, sampler, ray1);
                 value3 *= integrator->Li(scene, sampler, ray2);

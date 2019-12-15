@@ -45,6 +45,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/nori.dir/src/proceduraltexture.cpp.o"
   "CMakeFiles/nori.dir/src/lodepng.cpp.o"
   "CMakeFiles/nori.dir/src/perlintexture.cpp.o"
+  "CMakeFiles/nori.dir/src/disney.cpp.o"
+  "CMakeFiles/nori.dir/src/medium.cpp.o"
+  "CMakeFiles/nori.dir/src/PhaseFunction.cpp.o"
+  "CMakeFiles/nori.dir/src/vol_path.cpp.o"
   "nori.pdb"
   "nori"
 )

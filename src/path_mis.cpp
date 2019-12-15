@@ -20,11 +20,21 @@ public:
         float probability;
         float w_mats = 1.0f;
 
-        Intersection its;
-        if (!scene->rayIntersect(rayRecursive, its))
-            return color;
 
         while (true) {
+
+            Intersection its;
+            if (!scene->rayIntersect(rayRecursive, its))
+            {
+                if (scene->getEnv() == nullptr) {
+                    return color;
+                } else {
+                    EmitterQueryRecord lRec;
+                    lRec.wi = rayRecursive.d;
+                    return color + w_mats * t * scene->getEnv()->eval(lRec);
+                }
+            }
+
             // emitted
             if (its.mesh->isEmitter())
             {
@@ -80,6 +90,12 @@ public:
                 EmitterQueryRecord lRec = EmitterQueryRecord(origin, its.p, its.shFrame.n);
                 float pdf_em = its.mesh->getEmitter()->pdf(lRec);
                 w_mats = pdf_mat + pdf_em > 0.f ? pdf_mat / (pdf_mat + pdf_em) : pdf_mat;
+            }
+            else if (scene->getEnv() != nullptr) {
+                EmitterQueryRecord lRec_mats;
+                lRec_mats.wi = rayRecursive.d;
+                if (pdf_mat + scene->getEnv()->pdf(lRec_mats) != 0)
+                    w_mats = pdf_mat / (pdf_mat + scene->getEnv()->pdf(lRec_mats));
             }
 
             if (bRec.measure == EDiscrete)

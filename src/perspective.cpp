@@ -54,21 +54,16 @@ public:
         m_nearClip = propList.getFloat("nearClip", 1e-4f);
         m_farClip = propList.getFloat("farClip", 1e4f);
 
-        lensRadius = propList.getFloat("lensRadius", 0);
+        lensRadius = propList.getFloat("lensRadius", 0); // per default, no effect
         focalDistance = propList.getFloat("focalDistance", 12);
         m_distortion = propList.getInteger("distortion", 0);
         k1 = propList.getFloat("change1", 0.0f);
         k2 = propList.getFloat("change2", 0.0f);
         hasaberration = propList.getInteger("hasaberration", 0);
 
-
-
         weightvector = propList.getVector3("aberration", Vector3f(0));
 
         m_rfilter = NULL;
-
-        //focalDistance = propList.getFloat("focalDistance", 10.0f);
-        //lensRadius = propList.getFloat("lensRadius", 0.0f); // per default, no effect
     }
 
     virtual void activate() override {
@@ -117,6 +112,8 @@ public:
 
        Point3f nearP;
        Color3f color;
+       float weight = 0;
+
 
         Sampler *sampler = static_cast<Sampler*>(
                 NoriObjectFactory::createInstance("independent", PropertyList()));
@@ -125,15 +122,14 @@ public:
         nearP = m_sampleToCamera * Point3f(samplePosition.x() * m_invOutputSize.x(),samplePosition.y() * m_invOutputSize.y(), 0.0f);
 
 
+        //lens distortion part, change position on the near Plane multiplying for the distortion factor
         if(m_distortion) {
             float distort = calculateDistortion(Vector2f(nearP.x() / nearP.z(), nearP.y() / nearP.z()).norm());
             nearP.x() *= distort;
             nearP.y() *= distort;
         }
-        /* Turn into a normalized ray direction, and
-               adjust the ray interval accordingly */
 
-        float weight = 0;
+        //initialize the weight and the color for the specific channel depending on the index passed
         if(hasaberration){
             weight = weightvector[index];
             //cout << "   " << weight;
@@ -149,6 +145,7 @@ public:
         ray.o = m_cameraToWorld * Point3f(0, 0, 0);
         ray.d = m_cameraToWorld * d;
 
+        //if aberration or dof, then I have to change pLens and pFocus in order to change the origin and the direction of the ray!
         if((hasaberration)||(lensRadius > 0)){
             //aberration
             //compute point on plane of focus
@@ -180,13 +177,13 @@ public:
     }
 
 
-    int hasChromatic() const {
+    //tells if the chromatic aberration effect is activated or not
+    int chromaticActivated() const {
         return hasaberration;
     }
 
 
-
-
+    //calculates the distortion with the polynomial function
     float calculateDistortion(float y) const{
         int iteration = 0;
 
@@ -240,8 +237,6 @@ public:
         );
     }
 
-
-    //method: has chromatic
 private:
     Vector2f m_invOutputSize;
     Transform m_sampleToCamera;
@@ -254,15 +249,12 @@ private:
     float focalDistance;
     //distorsion parameters
     bool m_distortion;
+    //aberration activated or not
     int hasaberration;
+    //the second and fourth-order terms in a polynomial function that models the barrel distortion
     float k1,k2;
     //chromatic aberration parameters
-    //std::shared_ptr<Texture> _aperture;
-    Vector3f m_aberration;
     Vector3f weightvector;
-
-    //std::shared_ptr<Texture> _aperture;
-    //float _apertureSize;
 };
 
 NORI_REGISTER_CLASS(PerspectiveCamera, "perspective");

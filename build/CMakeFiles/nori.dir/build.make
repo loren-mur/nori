@@ -655,6 +655,58 @@ CMakeFiles/nori.dir/src/perlintexture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/perlintexture.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/perlintexture.cpp -o CMakeFiles/nori.dir/src/perlintexture.cpp.s
 
+CMakeFiles/nori.dir/src/disney.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/disney.cpp.o: ../src/disney.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/nori.dir/src/disney.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/disney.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/disney.cpp
+
+CMakeFiles/nori.dir/src/disney.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/disney.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/disney.cpp > CMakeFiles/nori.dir/src/disney.cpp.i
+
+CMakeFiles/nori.dir/src/disney.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/disney.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/disney.cpp -o CMakeFiles/nori.dir/src/disney.cpp.s
+
+CMakeFiles/nori.dir/src/medium.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/medium.cpp.o: ../src/medium.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/nori.dir/src/medium.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/medium.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/medium.cpp
+
+CMakeFiles/nori.dir/src/medium.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/medium.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/medium.cpp > CMakeFiles/nori.dir/src/medium.cpp.i
+
+CMakeFiles/nori.dir/src/medium.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/medium.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/medium.cpp -o CMakeFiles/nori.dir/src/medium.cpp.s
+
+CMakeFiles/nori.dir/src/PhaseFunction.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/PhaseFunction.cpp.o: ../src/PhaseFunction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/nori.dir/src/PhaseFunction.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/PhaseFunction.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/PhaseFunction.cpp
+
+CMakeFiles/nori.dir/src/PhaseFunction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/PhaseFunction.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/PhaseFunction.cpp > CMakeFiles/nori.dir/src/PhaseFunction.cpp.i
+
+CMakeFiles/nori.dir/src/PhaseFunction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/PhaseFunction.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/PhaseFunction.cpp -o CMakeFiles/nori.dir/src/PhaseFunction.cpp.s
+
+CMakeFiles/nori.dir/src/vol_path.cpp.o: CMakeFiles/nori.dir/flags.make
+CMakeFiles/nori.dir/src/vol_path.cpp.o: ../src/vol_path.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/nori.dir/src/vol_path.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/nori.dir/src/vol_path.cpp.o -c /Users/alessiapaccagnella/desktop/nori/src/vol_path.cpp
+
+CMakeFiles/nori.dir/src/vol_path.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/nori.dir/src/vol_path.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alessiapaccagnella/desktop/nori/src/vol_path.cpp > CMakeFiles/nori.dir/src/vol_path.cpp.i
+
+CMakeFiles/nori.dir/src/vol_path.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/nori.dir/src/vol_path.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alessiapaccagnella/desktop/nori/src/vol_path.cpp -o CMakeFiles/nori.dir/src/vol_path.cpp.s
+
 # Object files for target nori
 nori_OBJECTS = \
 "CMakeFiles/nori.dir/src/bitmap.cpp.o" \
@@ -702,7 +754,11 @@ nori_OBJECTS = \
 "CMakeFiles/nori.dir/src/imagetexture.cpp.o" \
 "CMakeFiles/nori.dir/src/proceduraltexture.cpp.o" \
 "CMakeFiles/nori.dir/src/lodepng.cpp.o" \
-"CMakeFiles/nori.dir/src/perlintexture.cpp.o"
+"CMakeFiles/nori.dir/src/perlintexture.cpp.o" \
+"CMakeFiles/nori.dir/src/disney.cpp.o" \
+"CMakeFiles/nori.dir/src/medium.cpp.o" \
+"CMakeFiles/nori.dir/src/PhaseFunction.cpp.o" \
+"CMakeFiles/nori.dir/src/vol_path.cpp.o"
 
 # External object files for target nori
 nori_EXTERNAL_OBJECTS =
@@ -753,10 +809,14 @@ nori: CMakeFiles/nori.dir/src/imagetexture.cpp.o
 nori: CMakeFiles/nori.dir/src/proceduraltexture.cpp.o
 nori: CMakeFiles/nori.dir/src/lodepng.cpp.o
 nori: CMakeFiles/nori.dir/src/perlintexture.cpp.o
+nori: CMakeFiles/nori.dir/src/disney.cpp.o
+nori: CMakeFiles/nori.dir/src/medium.cpp.o
+nori: CMakeFiles/nori.dir/src/PhaseFunction.cpp.o
+nori: CMakeFiles/nori.dir/src/vol_path.cpp.o
 nori: CMakeFiles/nori.dir/build.make
 nori: ext_build/dist/lib/libpugixml.a
 nori: CMakeFiles/nori.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX executable nori"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX executable nori"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nori.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

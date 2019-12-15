@@ -75,6 +75,17 @@ public:
         return m_emitters[index];
     }
 
+    const Emitter * getEnv() const {
+        for (int i = 0; i < m_emitters.size(); ++i) {
+            std::string s1 = m_emitters[i]->toString();
+            std::string s2 = "EnvironmentMap";
+            if (s1.find(s2) != std::string::npos) {
+                return m_emitters[i];
+            }
+        }
+        return nullptr;
+    }
+
     /**
      * \brief Intersect a ray against all triangles stored in the scene
      * and return detailed intersection information
@@ -133,6 +144,8 @@ public:
 
     /// Return a string summary of the scene (for debugging purposes)
     virtual std::string toString() const override;
+
+
 
     virtual EClassType getClassType() const override { return EScene; }
 private:

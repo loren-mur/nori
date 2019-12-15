@@ -43,7 +43,7 @@ public:
 
             virtual std::string toString() const override {
                 return tfm::format(
-                        "EnvironmentMap[\n"
+                        "EnvironmentMap"
                 );
             }
 
@@ -78,6 +78,7 @@ public:
                 return I;
             }
 
+            //returns the spherical coordinates from uv coordinates of a 2d pixel
             Vector3f pixelToDirection(const Point2f &pixel) const{
                 //from u and v, calculate spherical coordinates
                 float theta = pixel[0] * M_PI /(mrows - 1);
@@ -86,6 +87,8 @@ public:
                 return Vector3f(sin(theta) * cos(phi), sin(theta)*sin(phi), cos(theta)).normalized();
             }
 
+
+            //returns the 2d coordinates of the pixel from 3d spherical coordinates
             Point2f directionToPixel(const Vector3f &vec) const {
                 //take the spherical coordinates phi and theta
                 Point2f coordinates = sphericalCoordinates(vec);
@@ -102,20 +105,23 @@ public:
 
                 //return the indexes
                 return Point2f(u,v);
+
             }
 
 
-            //formular for bilinear interpolation http://www.cs.umd.edu/~djacobs/CMSC427/Interpolation.pdf + wikipedia ref
-            Color3f bilinearInterpolation(float Dx, float Dy, Color3f Q11, Color3f Q21, Color3f Q12, Color3f Q22, float dx1, float dy1, float dx2, float dy2) const {
-                if (Dx == 0.f || Dy == 0.f) return 0.f;
+            //formular for bilinear interpolation
+            Color3f bilinearInterpolation(float dx21, float dy21, Color3f Q11, Color3f Q21, Color3f Q12, Color3f Q22, float dx01, float dy01, float dx20, float dy20) const {
+                // check if the denominator is zero or not
+                if (dx21 == 0.f || dy21 == 0.f) return 0.f;
                 //wikipedia formula extended
-                return ((1.0 / (Dx * Dy)) * (Q11 * dx2 * dy2 + Q21 * dx1 * dy2 + Q12 * dx2 * dy1 + Q22 * dx1 * dy1));
+                return ((1.0 / (dx21 * dy21)) * (Q11 * dx20 * dy20 + Q21 * dx01 * dy20 + Q12 * dx20 * dy01 + Q22 * dx01 * dy01));
             }
 
 
 
-            Color3f eval(const EmitterQueryRecord & lRec) const override {
+    Color3f eval(const EmitterQueryRecord & lRec) const override {
                 Point2f uv = directionToPixel(lRec.wi.normalized());
+
                 //prepare for bilinear interpolation
                 float x = uv[0]; //u
                 float y = uv[1]; //v
@@ -135,15 +141,15 @@ public:
                 Color3f Q22 = 0.f;
                 if (x2 >= 0 && x2 < mrows && y2 >= 0 && y2 < mcols)
                     Q22 = imageMap(x2, y2); //value right up
-                int Dx = x2 - x1; //difference between superior and inferior value (single step)
-                int Dy = y2 - y1; //difference between superior and inferior value (single step)
-                float dx2 = x2 - x;
-                float dx1 = x - x1;
-                float dy1 = y - y1;
-                float dy2 = y2 - y;
+                int dx21 = x2 - x1; //difference between superior and inferior value (single step)
+                int dy21 = y2 - y1; //difference between superior and inferior value (single step)
+                float dx20 = x2 - x;
+                float dx01 = x - x1;
+                float dy01 = y - y1;
+                float dy20 = y2 - y;
 
-                //just as written in WIKIPEDIA
-                return bilinearInterpolation(Dx, Dy, Q11, Q12, Q21, Q22, dx1, dy1, dx2, dy2);
+                //bilinear interpolation
+                return bilinearInterpolation(dx21, dy21, Q11, Q12, Q21, Q22, dy01, dx01, dy20, dx20);
             }
 
 
@@ -155,14 +161,14 @@ public:
                 //sample the pixel, for u = 0 and v with u , marginal and conditional
                 sample1D(0, pmarginal, cmarginal, sample.x(), u, pdfu);
                 sample1D(u, mpdf, mcdf, sample.y(), v, pdfv);
-                Point2f pixel = Point2f(u, v); //lui qua usava solo u e v.
+                Point2f pixel = Point2f(u, v);
                 Vector3f w = pixelToDirection(pixel);
                 //set the lRec parameters
                 lRec.wi = w;
                 lRec.shadowRay = Ray3f(lRec.ref, lRec.wi, Epsilon, 100000);
                 pdfv = pdf(lRec) * jacobian;
                 //return Color
-                return eval(lRec) / pdf(lRec) / jacobian;
+                return eval(lRec) / pdfv;
             }
 
 

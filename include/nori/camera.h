@@ -62,7 +62,7 @@ public:
     const Vector2i &getOutputSize() const { return m_outputSize; }
 
 
-    virtual int hasChromatic() const = 0;
+    virtual int chromaticActivated() const = 0;
     /// Return the camera's reconstruction filter in image space
     const ReconstructionFilter *getReconstructionFilter() const { return m_rfilter; }
 

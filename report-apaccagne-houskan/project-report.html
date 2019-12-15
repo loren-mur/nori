@@ -139,11 +139,13 @@ Here we can see the validation:
 <h2>5. Environmental Map Emitter</h2>
 The environmental map emitter was one of the features that took more time to be implemented. <a href = "https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/projects/envsample.pdf" > This paper </a> helped me a lot. I followed the pseudo code given in that paper to implement the functions <code>precomputer1D()</code> and <code>sample1D()</code>.<br>
 In the paper, importance sampling an envmap depends on the intensity distribution of the light texture. The made assumption is that that illumination in images is represented using latitude-longitude parameters. In fact the <code>sample()</code> method samples points and converts them to spherical coordinates for sampling the sphere.<br>
+I updated my path_mis class making sure that it worked properly with my EnvMap implementation.<br>
+As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better. 
 
 I downloaded the texture from <a href = "" > here </a>.
 In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
 <div class="twentytwenty-container">
-    <img src="images/envmapnori.jpg" alt="Mine" class="img-responsive">
+    <img src="images/envmap.png" alt="Mine" class="img-responsive">
     <img src="images/envmapmitsuba.jpg" alt="Mitsuba" class="img-responsive">
 </div> <br>
 

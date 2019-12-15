@@ -11,18 +11,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/report-apaccagne-houskan/images/chromatic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ChromaticAberration/monkey.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ChromaticAberration/sphere.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ImageTexture/imagetexture.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/ImageTexture/imagetexture_var.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/mistubascenes/DepthOfField/depthoffield.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Project/mistubascenes/ImageTexture/imagetexture.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/PhaseFunction.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/disney.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/medium.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/vol_path.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report-apaccagne-houskan/images/envmap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/Project/EnvMap/envmap.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/Project/EnvMap/envmap_var.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scenes/Project/EnvMap/envmaptext.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/arealight.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/arealight.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/averagevisibility.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/averagevisibility.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/checkerboard.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/checkerboard.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/chi2test.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/chi2test.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/conductor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/conductor.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/consttexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/consttexture.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/dielectric.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/dielectric.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/diffuse.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/diffuse.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_ems.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_ems.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_mats.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_mats.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_mis.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/direct_mis.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/envmap.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/envmap.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/imagetexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/imagetexture.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/independent.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/independent.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/microfacet.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/microfacet.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/mirror.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/mirror.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/normals.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/normals.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/parser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/parser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/path_mats.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/path_mats.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/path_mis.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/path_mis.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perspective.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/photonmapper.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/photonmapper.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/pointLight.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/pointLight.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/proceduraltexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/proceduraltexture.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/render.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/render.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/rfilter.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/rfilter.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/scene.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/scene.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/shape.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/shape.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/spotlight.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/spotlight.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/ttest.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/ttest.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/warp.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/warp.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/pugixml.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/pugixml.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/tbb_p.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/tbb_p.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/tonemapper.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/tonemapper.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/microfacet.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/microfacet.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/warp.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/warp.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/warptest.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/warptest.dir/src/warptest.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/nori" beforeDir="false" afterPath="$PROJECT_DIR$/build/nori" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/warptest" beforeDir="false" afterPath="$PROJECT_DIR$/build/warptest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/nori/camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/nori/camera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/nori/scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/nori/scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Project/ChromaticAberration/aberration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/ChromaticAberration/aberration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Project/mistubascenes/DepthOfField/depthoffield.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Project/mistubascenes/DepthOfField/depthoffield.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/envmap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/envmap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/path_mis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/path_mis.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/perspective.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/perspective.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/render.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/render.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +140,7 @@
       <workItem from="1575387289213" duration="84228000" />
       <workItem from="1575893226754" duration="2824000" />
       <workItem from="1575967149907" duration="8416000" />
-      <workItem from="1576064645162" duration="46685000" />
+      <workItem from="1576064645162" duration="54901000" />
     </task>
     <servers />
   </component>

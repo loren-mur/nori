@@ -241,6 +241,33 @@ ext/pugixml/src/pugixml.cpp.s:
 	$(MAKE) -f CMakeFiles/pugixml.dir/build.make CMakeFiles/pugixml.dir/ext/pugixml/src/pugixml.cpp.s
 .PHONY : ext/pugixml/src/pugixml.cpp.s
 
+src/PhaseFunction.o: src/PhaseFunction.cpp.o
+
+.PHONY : src/PhaseFunction.o
+
+# target to build an object file
+src/PhaseFunction.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/PhaseFunction.cpp.o
+.PHONY : src/PhaseFunction.cpp.o
+
+src/PhaseFunction.i: src/PhaseFunction.cpp.i
+
+.PHONY : src/PhaseFunction.i
+
+# target to preprocess a source file
+src/PhaseFunction.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/PhaseFunction.cpp.i
+.PHONY : src/PhaseFunction.cpp.i
+
+src/PhaseFunction.s: src/PhaseFunction.cpp.s
+
+.PHONY : src/PhaseFunction.s
+
+# target to generate assembly for a file
+src/PhaseFunction.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/PhaseFunction.cpp.s
+.PHONY : src/PhaseFunction.cpp.s
+
 src/arealight.o: src/arealight.cpp.o
 
 .PHONY : src/arealight.o
@@ -682,6 +709,33 @@ src/direct_mis.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/direct_mis.cpp.s
 .PHONY : src/direct_mis.cpp.s
 
+src/disney.o: src/disney.cpp.o
+
+.PHONY : src/disney.o
+
+# target to build an object file
+src/disney.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/disney.cpp.o
+.PHONY : src/disney.cpp.o
+
+src/disney.i: src/disney.cpp.i
+
+.PHONY : src/disney.i
+
+# target to preprocess a source file
+src/disney.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/disney.cpp.i
+.PHONY : src/disney.cpp.i
+
+src/disney.s: src/disney.cpp.s
+
+.PHONY : src/disney.s
+
+# target to generate assembly for a file
+src/disney.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/disney.cpp.s
+.PHONY : src/disney.cpp.s
+
 src/envmap.o: src/envmap.cpp.o
 
 .PHONY : src/envmap.o
@@ -870,6 +924,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/medium.o: src/medium.cpp.o
+
+.PHONY : src/medium.o
+
+# target to build an object file
+src/medium.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/medium.cpp.o
+.PHONY : src/medium.cpp.o
+
+src/medium.i: src/medium.cpp.i
+
+.PHONY : src/medium.i
+
+# target to preprocess a source file
+src/medium.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/medium.cpp.i
+.PHONY : src/medium.cpp.i
+
+src/medium.s: src/medium.cpp.s
+
+.PHONY : src/medium.s
+
+# target to generate assembly for a file
+src/medium.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/medium.cpp.s
+.PHONY : src/medium.cpp.s
 
 src/mesh.o: src/mesh.cpp.o
 
@@ -1501,6 +1582,33 @@ src/ttest.cpp.s:
 	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/ttest.cpp.s
 .PHONY : src/ttest.cpp.s
 
+src/vol_path.o: src/vol_path.cpp.o
+
+.PHONY : src/vol_path.o
+
+# target to build an object file
+src/vol_path.cpp.o:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/vol_path.cpp.o
+.PHONY : src/vol_path.cpp.o
+
+src/vol_path.i: src/vol_path.cpp.i
+
+.PHONY : src/vol_path.i
+
+# target to preprocess a source file
+src/vol_path.cpp.i:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/vol_path.cpp.i
+.PHONY : src/vol_path.cpp.i
+
+src/vol_path.s: src/vol_path.cpp.s
+
+.PHONY : src/vol_path.s
+
+# target to generate assembly for a file
+src/vol_path.cpp.s:
+	$(MAKE) -f CMakeFiles/nori.dir/build.make CMakeFiles/nori.dir/src/vol_path.cpp.s
+.PHONY : src/vol_path.cpp.s
+
 src/warp.o: src/warp.cpp.o
 
 .PHONY : src/warp.o
@@ -1577,6 +1685,9 @@ help:
 	@echo "... ext/pugixml/src/pugixml.o"
 	@echo "... ext/pugixml/src/pugixml.i"
 	@echo "... ext/pugixml/src/pugixml.s"
+	@echo "... src/PhaseFunction.o"
+	@echo "... src/PhaseFunction.i"
+	@echo "... src/PhaseFunction.s"
 	@echo "... src/arealight.o"
 	@echo "... src/arealight.i"
 	@echo "... src/arealight.s"
@@ -1625,6 +1736,9 @@ help:
 	@echo "... src/direct_mis.o"
 	@echo "... src/direct_mis.i"
 	@echo "... src/direct_mis.s"
+	@echo "... src/disney.o"
+	@echo "... src/disney.i"
+	@echo "... src/disney.s"
 	@echo "... src/envmap.o"
 	@echo "... src/envmap.i"
 	@echo "... src/envmap.s"
@@ -1646,6 +1760,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/medium.o"
+	@echo "... src/medium.i"
+	@echo "... src/medium.s"
 	@echo "... src/mesh.o"
 	@echo "... src/mesh.i"
 	@echo "... src/mesh.s"
@@ -1715,6 +1832,9 @@ help:
 	@echo "... src/ttest.o"
 	@echo "... src/ttest.i"
 	@echo "... src/ttest.s"
+	@echo "... src/vol_path.o"
+	@echo "... src/vol_path.i"
+	@echo "... src/vol_path.s"
 	@echo "... src/warp.o"
 	@echo "... src/warp.i"
 	@echo "... src/warp.s"

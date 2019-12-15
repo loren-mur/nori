@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/alessiapaccagnella/desktop/nori/src/PhaseFunction.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/PhaseFunction.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/arealight.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/arealight.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/averagevisibility.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/averagevisibility.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/bitmap.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/bitmap.cpp.o"
@@ -20,12 +21,14 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/alessiapaccagnella/desktop/nori/src/direct_ems.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/direct_ems.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/direct_mats.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/direct_mats.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/direct_mis.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/direct_mis.cpp.o"
+  "/Users/alessiapaccagnella/desktop/nori/src/disney.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/disney.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/envmap.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/envmap.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/gui.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/gui.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/imagetexture.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/imagetexture.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/independent.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/independent.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/lodepng.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/lodepng.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/main.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/main.cpp.o"
+  "/Users/alessiapaccagnella/desktop/nori/src/medium.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/medium.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/mesh.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/mesh.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/microfacet.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/microfacet.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/mirror.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/mirror.cpp.o"
@@ -49,6 +52,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/alessiapaccagnella/desktop/nori/src/sphere.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/sphere.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/spotlight.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/spotlight.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/ttest.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/ttest.cpp.o"
+  "/Users/alessiapaccagnella/desktop/nori/src/vol_path.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/vol_path.cpp.o"
   "/Users/alessiapaccagnella/desktop/nori/src/warp.cpp" "/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir/src/warp.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
