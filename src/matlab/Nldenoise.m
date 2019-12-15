@@ -5,7 +5,7 @@ function Nldenoise(f, r, k)
     datvar = exrread(strcat(file_name, '_var.exr'));
     flt = zeros(size(dat));
     wgtsum = zeros(size(dat));
-    box2 = ones(2);
+    box2 = fspecial("average",2*2+1); 
     datvar = max(datvar, convn(datvar,box2, 'same'));
 
     %loop over neighbors
@@ -16,11 +16,11 @@ function Nldenoise(f, r, k)
             ngbvar = circshift(datvar,[dx,dy]);
             %definition of d2 on the slides, non uniform variance
             d2pixel = (((dat - ngb).^2) - (datvar + min(ngbvar, datvar))) ./ ( eps + k^2 * (datvar + ngbvar));
-            boxf = ones(f);
+            boxf = fspecial("average",2*f+1); 
             %box filter
             d2patch = convn(d2pixel, boxf, 'same');
             wgt = exp(-max(0, d2patch));
-            boxf1 = ones(f-1);
+            boxf1 = fspecial("average",2*f-1);  %2*(f-1) + 1 = 2*f - 2 + 1 = 2*f -1 
             %patch contribution
             wgt = convn(wgt, boxf1, 'same');
             flt = flt + wgt .* ngb;

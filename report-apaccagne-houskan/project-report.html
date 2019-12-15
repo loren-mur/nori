@@ -140,7 +140,7 @@ Here we can see the validation:
 The environmental map emitter was one of the features that took more time to be implemented. <a href = "https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/projects/envsample.pdf" > This paper </a> helped me a lot. I followed the pseudo code given in that paper to implement the functions <code>precomputer1D()</code> and <code>sample1D()</code>.<br>
 In the paper, importance sampling an envmap depends on the intensity distribution of the light texture. The made assumption is that that illumination in images is represented using latitude-longitude parameters. In fact the <code>sample()</code> method samples points and converts them to spherical coordinates for sampling the sphere.<br>
 I updated my path_mis class making sure that it worked properly with my EnvMap implementation.<br>
-As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better. 
+As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better.
 
 I downloaded the texture from <a href = "" > here </a>.
 In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
@@ -156,8 +156,8 @@ In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled b
 To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. <br>
 The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function. Here the result: <br><br>
 <div class="twentytwenty-container">
-    <img src="images/noise.png" alt="" class="img-responsive">
-    <img src="images/denoised.png" alt="" class="img-responsive">
+    <img src="images/noise.png"  alt="" class="img-responsive">
+    <img src="images/denoised.png"  alt="" class="img-responsive">
 </div> <br>
 
 
