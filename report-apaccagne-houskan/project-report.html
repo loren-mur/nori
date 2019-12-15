@@ -153,7 +153,7 @@ In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled b
 
 <h2>6. NL means denoising: </h2>
 
-To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. <br>
+To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. To initialize the box filter, I used the function <code>fspecial</code> of Matlab, and used the size of 2*f+1 for it, where each entry gets assigned 1/num_entries. <br>
 The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function. Here the result: <br><br>
 <div class="twentytwenty-container">
     <img src="images/noise.png"  alt="" class="img-responsive">
