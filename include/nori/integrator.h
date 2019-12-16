@@ -20,6 +20,9 @@
 #define __NORI_INTEGRATOR_H
 
 #include <nori/object.h>
+#include <nori/scene.h>
+#include <nori/bsdf.h>
+#include <nori/sampler.h>
 
 NORI_NAMESPACE_BEGIN
 

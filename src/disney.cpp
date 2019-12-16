@@ -35,10 +35,16 @@ public:
         } else {
             m_albedo = nullptr;
         }
+        if(propList.has("specular")) {
+            PropertyList l;
+            l.setColor("value", propList.getFloat("specular"));
+            m_specular = static_cast<Texture<Color3f> *>(NoriObjectFactory::createInstance("constant_color", l));
+        } else {
+            m_specular = nullptr;
+        }
         // (0: dialectric, 1: metallic)
         m_metallic = propList.getFloat("metallic", 0.0f);
 
-        m_specular = propList.getFloat("specular", 0.2f);
         m_specularTint = propList.getFloat("specularTint", 0.0f);
         m_roughness = propList.getFloat("roughness", 0.5f);
         m_clearcoat = propList.getFloat("clearcoat", 0.5f);
@@ -49,6 +55,7 @@ public:
     ~DisneyBRDF() {
         delete m_albedo;
         delete m_normalMap;
+        delete m_specular;
     }
 
     /// Evaluate the BRDF for the given pair of directions
@@ -66,7 +73,7 @@ public:
         Color3f C = m_albedo->eval(bRec.uv);
         float luminance = C.getLuminance();
         Color3f Ctint = (luminance > 0.f) ? Color3f(C.r() / luminance, C.g() / luminance, C.b() / luminance) : Color3f(1);
-        Color3f CtintMix = 0.08 * m_specular * lerp(m_specularTint, Color3f(1), Ctint);
+        Color3f CtintMix = 0.08 * m_specular->eval(bRec.uv).maxCoeff() * lerp(m_specularTint, Color3f(1), Ctint);
         Color3f Cspec = lerp(m_metallic, CtintMix, C);
 
         /*
@@ -80,10 +87,10 @@ public:
 
         Color3f diffuseTerm = C * INV_PI * (1.f + (FD90 - 1.f) * fl) * (1.f + (FD90 - 1.f) * fv);
 
-        //float diffuse_fresnel = (1.0f - 0.5f * fl) * (1.0f - 0.5f * fv);
-        //float RR = 2.f * m_roughness * cosThetaD * cosThetaD;
-        //float retro = RR * (fl + fv + fl * fv * (RR - 1.f));
-        //Color3f diffuseTerm = C * INV_PI * (retro + diffuse_fresnel);
+        float diffuse_fresnel = (1.0f - 0.5f * fl) * (1.0f - 0.5f * fv);
+        float RR = 2.f * m_roughness * cosThetaD * cosThetaD;
+        float retro = RR * (fl + fv + fl * fv * (RR - 1.f));
+        //Color3f diffuseTerm = C * INV_PI * (retro +  diffuse_fresnel);
         /*
          * Specular
          */
@@ -121,9 +128,9 @@ public:
 
         float alpha = std::max(0.001f, m_roughness * m_roughness);
         return diffuse * cosTheta * INV_PI + (1.f - diffuse) *
-                                             (GTR2 * Warp::squareToGTR2Pdf(wh, alpha) * Jh * cosTheta_wh +
-                                              (1.f - GTR2) * Warp::squareToGTR1Pdf(wh, lerp(m_clearcoatGloss, .1f, .001f)) * Jh * cosTheta_wh);
-    }
+                     (GTR2 * Warp::squareToGTR2Pdf(wh, alpha) * Jh * cosTheta_wh +
+                      (1.f - GTR2) * Warp::squareToGTR1Pdf(wh, lerp(m_clearcoatGloss, .1f, .001f)) * Jh * cosTheta_wh);
+}
 
     /// Sample the BRDF
     virtual Color3f sample(BSDFQueryRecord &bRec, const Point2f &_sample) const override {
@@ -170,7 +177,13 @@ public:
                     if (m_normalMap) {
                         throw NoriException("Disney: tried register multiple normal maps");
                     }
-                    m_normalMap = static_cast<Texture<Vector3f>*>(obj);
+                    m_normalMap = static_cast<Texture<Color3f>*>(obj);
+                }
+                else if (obj->getIdName() == "specular") {
+                    if (m_specular) {
+                        throw NoriException("Disney: tried register multiple specular maps");
+                    }
+                    m_specular = static_cast<Texture<Color3f>*>(obj);
                 }
                 else {
                     throw NoriException("The name of this texture does not match any field!");
@@ -181,7 +194,7 @@ public:
         }
     }
 
-    bool hasNormalMap(Texture<Vector3f>* &normalMap) const override {
+    bool hasNormalMap(Texture<Color3f>* &normalMap) const override {
         if (m_normalMap) {
             normalMap = m_normalMap;
             return true;
@@ -193,22 +206,25 @@ public:
         return tfm::format(
                 "DisneyBRDF[\n"
                 "  metallic = %f,\n"
-                "  specular = %f,\n"
+                "  specular = %s,\n"
                 "  specularTint = %f,\n"
                 "  roughness = %f\n"
                 "  clearcoat = %f\n"
                 "  clearcoatGloss = %f\n"
+                "  normal = %s, \n"
                 "]",
-                m_metallic, m_specular, m_specularTint, m_roughness, m_clearcoat, m_clearcoatGloss
+                m_metallic, m_specular->toString(), m_specularTint, m_roughness, m_clearcoat, m_clearcoatGloss,
+                m_normalMap == nullptr ? "null" : m_normalMap->toString()
         );
     }
 
 private:
-    float m_metallic, m_specular, m_specularTint, m_roughness, m_clearcoat, m_clearcoatGloss;
-    Texture<Vector3f>* m_normalMap;
+    float m_metallic, m_specularTint, m_roughness, m_clearcoat, m_clearcoatGloss;
+    Texture<Color3f>* m_normalMap;
     Texture<Color3f>* m_albedo;
+    Texture<Color3f>* m_specular;
 
 };
 
-    NORI_REGISTER_CLASS(DisneyBRDF, "disney");
+NORI_REGISTER_CLASS(DisneyBRDF, "disney");
 NORI_NAMESPACE_END

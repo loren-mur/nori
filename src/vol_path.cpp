@@ -2,9 +2,6 @@
 // Created by Niklaus on 11.11.19.
 //
 #include <nori/integrator.h>
-#include <nori/scene.h>
-#include <nori/bsdf.h>
-#include <nori/sampler.h>
 #include <nori/medium.h>
 #include <nori/warp.h>
 #include <nori/PhaseFunction.h>
@@ -26,25 +23,8 @@ public:
         Medium *medium = scene->getMedia()[0];
         float w_mats = 1.f;
         Intersection its;
-        Texture<Vector3f>* normalMap;
 
         bool hasIntersected = scene->rayIntersect(rayRecursive, its);
-        if (hasIntersected) {
-            //https://en.wikipedia.org/wiki/Normal_mapping
-            if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
-                Vector3f newNormal = normalMap->eval(its.uv);
-
-                if (abs(newNormal.norm() - 1.f) < Epsilon)
-                {
-                    Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
-                    Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
-                    Vector3f tan (n(1)*s(2) - n(2) * s(1),
-                                  n(2) * s(0) - n(0) * s(2),
-                                  n(0) * s(1) - n(1)* s(0));
-                    its.shFrame = Frame(s,tan,n);
-                }
-            }
-        }
 
         while (true) {
             float tmax;
@@ -85,20 +65,6 @@ public:
                 rayRecursive = Ray3f(mi.p, wo.normalized());
                 hasIntersected = scene->rayIntersect(rayRecursive, its);
                 if (hasIntersected) {
-                    //https://en.wikipedia.org/wiki/Normal_mapping
-                    if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
-                        Vector3f newNormal = normalMap->eval(its.uv);
-
-                        if (abs(newNormal.norm() - 1.f) < Epsilon)
-                        {
-                            Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
-                            Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
-                            Vector3f tan (n(1)*s(2) - n(2) * s(1),
-                                          n(2) * s(0) - n(0) * s(2),
-                                          n(0) * s(1) - n(1)* s(0));
-                            its.shFrame = Frame(s,tan,n);
-                        }
-                    }
                     if (its.mesh->isEmitter()) {
                         EmitterQueryRecord lRec = EmitterQueryRecord(rayRecursive.o, its.p, its.shFrame.n);
                         lRec.uv = its.uv;
@@ -164,20 +130,6 @@ public:
                 hasIntersected = scene->rayIntersect(rayRecursive, its);
 
                 if (hasIntersected) {
-                    //https://en.wikipedia.org/wiki/Normal_mapping
-                    if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
-                        Vector3f newNormal = normalMap->eval(its.uv);
-
-                        if (abs(newNormal.norm() - 1.f) < Epsilon)
-                        {
-                            Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
-                            Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
-                            Vector3f tan (n(1)*s(2) - n(2) * s(1),
-                                          n(2) * s(0) - n(0) * s(2),
-                                          n(0) * s(1) - n(1)* s(0));
-                            its.shFrame = Frame(s,tan,n);
-                        }
-                    }
 
                     if (its.mesh->isEmitter()) {
                         EmitterQueryRecord lRec = EmitterQueryRecord(rayRecursive.o, its.p, its.shFrame.n);

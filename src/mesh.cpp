@@ -122,7 +122,7 @@ bool Mesh::rayIntersect(uint32_t index, const Ray3f &ray, float &u, float &v, fl
 void Mesh::setHitInformation(uint32_t index, const Ray3f &ray, Intersection & its) const {
     /* Find the barycentric coordinates */
     Vector3f bary;
-    bary << 1-its.uv.sum(), its.uv;
+    bary << 1 - its.uv.sum(), its.uv;
 
     /* Vertex indices of the triangle */
     uint32_t idx0 = m_F(0, index), idx1 = m_F(1, index), idx2 = m_F(2, index);
@@ -140,7 +140,7 @@ void Mesh::setHitInformation(uint32_t index, const Ray3f &ray, Intersection & it
                  bary.z() * m_UV.col(idx2);
 
     /* Compute the geometry frame */
-    its.geoFrame = Frame((p1-p0).cross(p2-p0).normalized());
+    its.geoFrame = Frame((p1 - p0).cross(p2 - p0).normalized());
 
     if (m_N.size() > 0) {
         /* Compute the shading frame. Note that for simplicity,
@@ -155,6 +155,20 @@ void Mesh::setHitInformation(uint32_t index, const Ray3f &ray, Intersection & it
                  bary.z() * m_N.col(idx2)).normalized());
     } else {
         its.shFrame = its.geoFrame;
+    }
+
+    Texture<Color3f> *normalMap;
+    //https://en.wikipedia.org/wiki/Normal_mapping
+    if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
+        Color3f rgb = normalMap->eval(its.uv);
+        Vector3f newNormal(2 * rgb.r() - 1, 2 * rgb.g() - 1, 2 * rgb.b() - 1);
+        Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
+        Vector3f dpdU = (p1 - p0).normalized();
+        Vector3f s = (dpdU - n * n.dot(dpdU)).normalized();
+        Vector3f t(n(1) * s(2) - n(2) * s(1),
+                   n(2) * s(0) - n(0) * s(2),
+                   n(0) * s(1) - n(1) * s(0));
+        its.shFrame = Frame(s,t,n);
     }
 }
 

@@ -89,7 +89,8 @@ float Medium::getDensity(const Point3f &p) const {
             case 1:
                 return m_maxDensity;
             case 2:
-                return m_maxDensity * exp( - 2 * std::max(0.0f, p.y()+bounds.min.y()));
+                //std::cout << p.z() << " " << bounds.min.z() << " " << bounds.getExtents().z() << " " << 10 * std::max(0.0f, (p.z()-bounds.min.z()) / bounds.getExtents().z()) << std::endl;
+                return m_maxDensity * exp( - 2 * std::max(0.0f, (p.z()-bounds.min.z()) / bounds.getExtents().z()));
             default:
                 return m_maxDensity;
         }

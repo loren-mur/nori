@@ -120,7 +120,7 @@ public:
      */
     virtual bool isDiffuse() const { return false; }
 
-    virtual bool hasNormalMap(Texture<Vector3f>* &normalMap) const { return false; }
+    virtual bool hasNormalMap(Texture<Color3f>* &normalMap) const { return false; }
 
     void addChild(NoriObject *child) override {};
 };
