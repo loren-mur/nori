@@ -144,6 +144,7 @@ In the paper, importance sampling an envmap depends on the intensity distributio
 I updated my <code>path_mis</code> class making sure that it worked properly with my EnvMap implementation.<br>
 As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better.<br>
 The code can be found inside <code>envmap.cpp</code>. <br><br>
+I also added a strenght parameter to envmap, which multiplies what the <code>eval()</code> method returns in order to obtain a brighter result. <br><br>
 
 I downloaded the texture from <a href = "https://hdrihaven.com/hdri/?c=outdoor&h=quarry_03" > here </a>.
 In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
