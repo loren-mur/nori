@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +72,9 @@
       <workItem from="1575893226754" duration="2824000" />
       <workItem from="1575967149907" duration="8416000" />
       <workItem from="1576064645162" duration="55477000" />
-      <workItem from="1576423760077" duration="183000" />
+      <workItem from="1576423760077" duration="321000" />
+      <workItem from="1576486055838" duration="4000" />
+      <workItem from="1576486359327" duration="1000" />
     </task>
     <servers />
   </component>

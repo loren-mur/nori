@@ -75,6 +75,7 @@
 
 
 <h2>3. Advanced Camera Model: Depth of field, Lens distortion, Chromatic Aberration</h2>
+The code for these features can be found inside <code>perspective.cpp</code>.<br><br>
      <h2>3.1. Depth of field</h2>
 
  To implement the depth of field, I added two extra parameters to the camera. One is the size of the lens aperture, and the other is the focal distance. I pass them throug the xml file of the scene. <br>
@@ -123,10 +124,11 @@
 
 
 <h2>4. Spotlight</h2>
-For this feature, I implementated a spotlight based on the implementation in the book "Physically based rendering".<br>
+For this feature, I implemented a spotlight based on the implementation in the book "Physically based rendering".<br>
 Spotlights are a variation of point lights: they emit light in a cone of directions from their position instead of shining in all the directions. The functions are very similar to the ones written for <code>pointlight.cpp</code>. For example
 the <code>sample()</code> method is almost identical to the pointlight's one, except for the fact that it calls the <code>cutOff()</code> method, which computes the distribution of light accounting for the spotlight cone. For this function, due to the fact that I am comparing the results with Mitsuba, I changed the return value of the function <code>cutOff</code> according to Mitsuba implementation. <br>
-The parameters I input to the spotlight are <code>cosFalloffStart</code>,<code>cosTotalWidth</code> and the direction I want the spotlight to point to.
+The parameters I input to the spotlight are <code>cosFalloffStart</code>,<code>cosTotalWidth</code> and the direction I want the spotlight to point to.<br>
+The code can be found inside <code>spotlight.cpp</code>. <br><br>
 Here we can see the validation:
 <br><br>
 
@@ -139,10 +141,11 @@ Here we can see the validation:
 <h2>5. Environmental Map Emitter</h2>
 The environmental map emitter was one of the features that took more time to be implemented. <a href = "https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/projects/envsample.pdf" > This paper </a> helped me a lot. I followed the pseudo code given in that paper to implement the functions <code>precomputer1D()</code> and <code>sample1D()</code>.<br>
 In the paper, importance sampling an envmap depends on the intensity distribution of the light texture. The made assumption is that that illumination in images is represented using latitude-longitude parameters. In fact the <code>sample()</code> method samples points and converts them to spherical coordinates for sampling the sphere.<br>
-I updated my path_mis class making sure that it worked properly with my EnvMap implementation.<br>
-As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better.
+I updated my <code>path_mis</code> class making sure that it worked properly with my EnvMap implementation.<br>
+As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better.<br>
+The code can be found inside <code>envmap.cpp</code>. <br><br>
 
-I downloaded the texture from <a href = "" > here </a>.
+I downloaded the texture from <a href = "https://hdrihaven.com/hdri/?c=outdoor&h=quarry_03" > here </a>.
 In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
 <div class="twentytwenty-container">
     <img src="images/envmap.png" alt="Mine" class="img-responsive">
@@ -154,15 +157,186 @@ In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled b
 <h2>6. NL means denoising: </h2>
 
 To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. To initialize the box filter, I used the function <code>fspecial</code> of Matlab, and used the size of 2*f+1 for it, where each entry gets assigned 1/num_entries. <br>
-The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function. Here the result: <br><br>
+The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function.<br>
+The code is inside the file <code>Nldenoise.m</code>, inside the folder <code>Matlab</code>. <br>Here the result: <br><br>
 <div class="twentytwenty-container">
     <img src="images/noise.png"  alt="" class="img-responsive">
     <img src="images/denoised.png"  alt="" class="img-responsive">
 </div> <br>
 
 
+<h2>Niklaus</h2>
+
+<h2>1. Heterogeneous Participating Media </h2>
+
+  Relevant classes
+  <br>
+  <code> medium.h/.cpp </code> <br>
+  <code> PhaseFunction.h/.cpp </code> <br>
+  <code> vol_path.cpp </code> <br>
+  <br>
+
+  In following section the implementation of the heterogeneous medium and
+  the volumetric path tracer (mis) are presented.
+
+  <h3>Medium </h3>
+
+  Our medium is described by the absorption and scattering coefficients <code> sigma_a </code> and <code> sigma_s </code> and
+  a phase function. <code> sigma_t </code> the extinction coefficient and
+  the color <code> albedo </code> can be derived from <code> sigma_a </code> and <code> sigma_s </code>. Each point in the medium
+  has a density value determined by a function of choice. For simplicity the medium is bounded by a parameterized box,
+  such that density evaluates to 0 outside the box.
+  <br>
+  We need two main functionalities from our medium class. We need to be able to sample an medium interaction given a ray
+  and be able to determine the transmittance along a ray. To sample a medium interaction, we take a random step along the ray
+  according to <code> -log(1 - random) / sigma_t </code>. Where random is a number between 0 and 1. If the normalized density
+  at the observed spot is bigger than another random number, we report the medium interaction and return the interaction
+  color <code> albedo * density_at_location </code>, else we continue. If the end
+  of the ray is reached or the bounding box is exited, no medium interaction is made.
+  <br>
+  The transmittance is caluclated similarly. We step along the ray according to <code> -log(1 - random) / sigma_t </code>
+  until we reach the end of the ray or leave the mediums bounding box. At each step we multiply the initial transmittance of
+  1 by <code> 1 - density_at_location </code> where the density is normalized to lie between 0 and 1.
+
+  <br>
+  For the density function I implemeted a simple exponential decay function <code> a * exp(-b*h) </code>.
+  <br> <br>
+  <code> sigma_a = 0.2 </code> and <code> sigma_s = 2 </code>. Sample count 1024.<br><br>
+<p style="margin-left:10em">
+<img src="imagesNik/cbox_path_vol_exp.png"  alt="Example 1">
+
+  <h3> Volumetric Path Tracer </h3>
+
+  The path tracer is the core of the whole and took the most time to implement. As we are interested in a multiple importance
+  sampler, I started by extending the MIS-path tracer already implemented in the exercises. Outline of the changed code:
+  <br>
+<pre>
+t = (1,1,1), w_mats = 1
+rayIntersect(...)
+while (true)
+  mediumColor = medium->sample_interaction(ray)
+  if (medium interaction)
+
+      pdf_mat, wo = sample_phaseFunction(ray)
+
+      sample light and get pdf_ems
+      if (shadowRay unoccluded)
+          t *= mediumColor
+          result += t * transmittance_to_light * pdf_mat * light_sample
+
+      Russian Roulette
+
+      ray = new Ray (origin=medium interaction, direction=wo)
+      new w_mats weight if new intersection is emitter
+
+  else if (not ray intersected)
+      return result
+
+  else
+      -- Here comes surface interaction. Same as in path-mis except added transmission term to each light contribution
+      -- and except that we dont return if the new ray does not intersect the scene
+      -- to allow a further medium interaction
+</pre>
+<h3> Validation </h3>
+Here a comparison between the new integrator without a medium and the old mis path tracer. They are identical.
+<br>
+<div class="twentytwenty-container">
+    <img src="imagesNik/cbox_path_mis.png" alt="Old MIS" class="img-responsive">
+    <img src="imagesNik/cbox_path_vol.png" alt="Volumetric" class="img-responsive">
+</div> <br>
+
+  Next we show comparison of mitsuba with mine solution. The scenes geometry is not 100% identical due to conversion issues.
+  <br>
+  <code> sigma_a = 1 </code> and <code> sigma_s = 2 </code>. Sample count 256.
+<div class="twentytwenty-container">
+    <img src="imagesNik/cbox_path_vol_m.png" alt="Mitsuba volpath_simple" class="img-responsive">
+    <img src="imagesNik/cbox_path_vol_mc.png" alt="Mine vol_path" class="img-responsive">
+</div> <br>
+
+<h2> Bump Mapping </h2>
+  Relevant classes
+  <br>
+  <code> normaltexture.cpp </code> <br>
+  <code> vol_path.cpp </code> <br>
+  <code> path_mis.cpp </code> <br>
+  <br>
+  Here I implemented a simple normal map texture. The color channels of the normal map are transformed into normal vector
+  components according to <code> 2 * c - 1 </code>. The normal texture is added as a nested texture to any bsdf and the uv
+  coordinate is used to look up the value. Furthermore, the texture can be scaled in the same way as the image texture.
+  <br>
+  The main integrators <code> vol_path </code> and <code> path_mis </code> where adapted to construct the new coordinate frame
+  based on the looked up normal.
+  <br> Below is a comparison of the normal maps effect. The images in the bottom row have a constant normal map evaluating to (0,0,1) everywhere.
+
+  <div class="twentytwenty-container">
+    <img src="imagesNik/material_no_tex.png" alt="Plain normal" class="img-responsive">
+    <img src="imagesNik/material_tex_norm.png" alt="Texture + normal" class="img-responsive">
+    <img src="imagesNik/material_ref1.png" alt="Plain reference" class="img-responsive">
+    <img src="imagesNik/material_ref2.png" alt="Texture reference" class="img-responsive">
+</div> <br>
+
+<h2> 3. Textured Emitter </h2>
+  Relevant classes
+  <br>
+  <code> arealight.cpp </code>
+  <br><br>
+  To make textured emitters work, I added the functionality to add a texture to the area emitter. The area emitter is
+  not anymore limited to a constant color but can use the uv coordinates to look up the radiance of a specified point.
+  For this I added the possibility to pass uv coordinates within the EmitterQueryRecord and adapted the integrators to do so.
+  <br>
+  Below you see Suzanne (Blenders monkey) having a checkerboard textured area emitter as texture. Rendered using vol_path in light fog.<br><br>
+<p style="margin-left:14em">
+  <img src="imagesNik/texture_emitter.png" alt="Texture 1">
+<br><br>
+<h2> 4. Disney BRDF </h2>
+  Relevant classes
+  <br>
+  <code> disney.cpp </code><br>
+  <code> warp.cpp </code>
+  <h3> BRDF evaluation </h3>
+  The evaluation of the brdf for a given pair of direction was implemented with help of
+  <a href = "https://disney-animation.s3.amazonaws.com/uploads/production/publication_asset/48/asset/s2012_pbs_disney_brdf_notes_v3.pdf"> this</a>.
+  I implemented the diffuse, roughness, specularity + tint, metallic and clearcoat + gloss parameters. Omitting subsurface
+  scattering and anisotropic effects. There exist several small variants to the diffuse and specularity implementation, which I
+  think comes due to artist preference. To describe the specular lobes we need two variants of the Generalized-Trowbridge-Reit
+  distribution (or GTR), one for the specularity term (GTR2) and another one for the clearcoat term (GTR1). The SquareToGTR1/2 functions
+  where added to the warp classes and verified using warptest as seen later in the report. Noteworthy is that we square the roughness parameter
+  for the specularity evaluation, many materials show very low roughness values and the squaring makes it more natural to arrive
+  to them. Clearcoat uses a hardcoded range of roughness adjustable through the clearcoat gloss parameter.
+  <br><br>
+  Below each image sequence varies one parameter while keeping the others constant. <br>
+  Metallic (1, pink), Specular (2, blue), Specular Tint (3, yellow), Roughness (4, green), Clearcoat (5, red), Clearcoat Gloss (6, red)<br><br>
+  <p style="margin-left:6em"> <strong> 0 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.1 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.3 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+     0.5 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.7 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.9 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1 </strong>
+
+  <p style="margin-left:0.85em">
+  <img src="imagesNik/metal00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/specular00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/tint00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/rough00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/coat00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/gloss00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat10_.png" width = 150 height = 150 alt="00">
+  <br><br>
+
+  To compare the implementation with a reference, I took the Principled BSDF of blender<br>
+  <div class="twentytwenty-container">
+    <img src="imagesNik/disneyref1.png" alt="Blender Principled BSDF" class="img-responsive">
+    <img src="imagesNik/disneycomp1.png" alt="Disney BRDF" class="img-responsive">
+</div> <br>
+  <br>
+  <p style="margin-left:2em"><img src="imagesNik/GTR1.png" width = 512 height = 400 alt="GTR1">
+  <img src="imagesNik/GTR1pdf.png" width =512 height = 400 alt="GTR1 pdf"><br><br>
+  <img src="imagesNik/GTR2.png" width = 512 height = 400 alt="GTR1">
+  <img src="imagesNik/GTR2pdf.png" width = 512 height = 400 alt="GTR1 pdf">
+
 </div>
 </div>
+
 
 
 <!-- Bootstrap core JavaScript -->
