@@ -4,17 +4,20 @@
 #pragma once
 
 #include <nori/object.h>
+#include <nori/warp.h>
 
 NORI_NAMESPACE_BEGIN
 
 class PhaseFunction : public NoriObject {
-    public:
-        virtual float p(const Vector3f &wo, const Vector3f &wi) const = 0;
-        virtual float sample_p(const Vector3f &wo, Vector3f &wi, const Point2f &sample) const = 0;
+public:
+    PhaseFunction();
+    PhaseFunction(const PropertyList &props);
 
-        std::string toString() const override = 0;
+    virtual float sample_p(const Vector3f &wo, Vector3f &wi, const Point2f &sample) const;
 
-        EClassType  getClassType() const override { return EPhaseFunction; }
+    std::string toString() const override;
+
+    EClassType  getClassType() const override { return EPhaseFunction; }
 
 };
 
@@ -24,7 +27,6 @@ class HenyeyGreenstein : public PhaseFunction {
 
         float getG() { return m_g; }
 
-        virtual float p(const Vector3f &wo, const Vector3f &wi) const;
         virtual float sample_p(const Vector3f &wo, Vector3f &wi, const Point2f &sample) const;
 
         std::string toString() const override;

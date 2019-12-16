@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+	<integrator type="volpath_simple"/>
+
+	<sensor type="perspective">
+		<float name="focusDistance" value="5.97656"/>
+		<float name="fov" value="27.7856"/>
+		<string name="fovAxis" value="x"/>
+		<integer name="height" value="600"/>
+		<transform name="toWorld">
+
+			<lookat target="5.93446e-08, 0.907974, 4.41152" origin="7.12694e-08, 0.937691, 5.41108" up="-3.57743e-11, 0.999558, -0.0297176"/>
+		</transform>
+		<integer name="width" value="800"/>
+
+		<sampler type="independent">
+			<integer name="sampleCount" value="256"/>
+		</sampler>
+
+		<film type="hdrfilm">
+			<rfilter type="gaussian"/>
+		</film>
+	</sensor>
+
+	<medium type="homogeneous" id="myMedium">
+		<spectrum name="sigmaA" value="1"/>
+		<spectrum name="sigmaS" value="2"/>
+	</medium>
+
+	<shape type="cube">
+		
+        <transform name="toWorld">
+            <translate x="1.3374" y="0.9963" z="1.1301"/>
+		    <scale x="0.3263" y="0.3263" z="0.3263"/>
+        </transform>
+		<ref name="interior" id="myMedium"/>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="meshes/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<spectrum name="reflectance" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="meshes/rightwall.obj"/>
+
+		<bsdf type="diffuse">
+			<spectrum name="reflectance" value="0.161 0.133 0.427"/>
+		</bsdf>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="meshes/leftwall.obj"/>
+
+		<bsdf type="diffuse">
+			<spectrum name="reflectance" value="0.630 0.065 0.05"/>
+		</bsdf>
+	</shape>
+
+	<shape type="sphere">
+		<point name="center" x="-0.421400" y="0.332100" z="-0.280000"/>
+		<float name="radius" value="0.3263"/>
+
+		<bsdf type="diffuse">
+            <spectrum name="reflectance" value="0.630 0.065 0.05"/>
+        </bsdf>
+	</shape>
+	<!--<mesh type="sphere">
+        <point name="center" value="0.445800 0.332100 0.376700" />
+        <float name="radius" value="0.3263" />
+
+        <bsdf type="dielectric"/>
+    </mesh>-->
+
+	<shape type="obj">
+		<string name="filename" value="meshes/light.obj"/>
+
+		<emitter type="area">
+			<spectrum name="radiance" value="20 20 20"/>
+		</emitter>
+	</shape>
+</scene>

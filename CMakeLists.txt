@@ -98,6 +98,7 @@ add_executable(nori
   src/medium.cpp
   src/PhaseFunction.cpp
   src/vol_path.cpp
+  src/normaltexture.cpp
 )
 
 # The following lines build the warping test application

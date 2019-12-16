@@ -55,6 +55,7 @@ private:
     PhaseFunction * m_phaseFunction = nullptr;
 
     float m_maxDensity;
+    int m_density_function;
 
     BoundingBox3f bounds;
 };

@@ -1,3 +1,0 @@
-repository='external project URL'
-module='/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p/ext/glfw'
-tag=''

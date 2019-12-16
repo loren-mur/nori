@@ -26,9 +26,25 @@ public:
         Medium *medium = scene->getMedia()[0];
         float w_mats = 1.f;
         Intersection its;
+        Texture<Vector3f>* normalMap;
 
         bool hasIntersected = scene->rayIntersect(rayRecursive, its);
+        if (hasIntersected) {
+            //https://en.wikipedia.org/wiki/Normal_mapping
+            if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
+                Vector3f newNormal = normalMap->eval(its.uv);
 
+                if (abs(newNormal.norm() - 1.f) < Epsilon)
+                {
+                    Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
+                    Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
+                    Vector3f tan (n(1)*s(2) - n(2) * s(1),
+                                  n(2) * s(0) - n(0) * s(2),
+                                  n(0) * s(1) - n(1)* s(0));
+                    its.shFrame = Frame(s,tan,n);
+                }
+            }
+        }
 
         while (true) {
             float tmax;
@@ -38,34 +54,58 @@ public:
             else
                 tmax = its.t;
 
-
             //sample mean free path
             MediumInteractionQuery mi;
             mi.tMax = tmax;
             Color3f mediumColor = medium->sample(rayRecursive, sampler, mi);
 
             if (mi.isValid) {
-                //w_mats = 1.f;
+
                 Vector3f wo;
                 float pdf_mat = medium->get_phaseFunction()->sample_p(rayRecursive.d, wo, sampler->next2D());
-                rayRecursive = Ray3f(mi.p, wo.normalized());
 
                 const Emitter *light = scene->getRandomEmitter(sampler->next1D());
-                EmitterQueryRecord lRec(rayRecursive.o);
+                EmitterQueryRecord lRec(mi.p);
+                lRec.uv = its.uv;
                 Color3f Li = light->sample(lRec, sampler->next2D()) * scene->getLights().size();
-                float pdf_em = light->pdf(lRec);
                 if (!scene->rayIntersect(lRec.shadowRay)) {
                     t *= mediumColor;
                     mi.tMax = lRec.shadowRay.maxt;
-                    float w_ems = pdf_mat + pdf_em > 0.f ? pdf_em / (pdf_mat + pdf_em) : pdf_em;
-                    result += t * medium->Tr(lRec.shadowRay, sampler, mi) * w_ems * Li;
+                    result += t * medium->Tr(lRec.shadowRay, sampler, mi) * Li * pdf_mat;
                 }
+                else
+                    t *= mediumColor;
 
                 probability = std::min(t.x(), .99f);
                 if (sampler->next1D() >= probability)
                     return result;
                 t /= probability;
 
+                //continue recursion
+                rayRecursive = Ray3f(mi.p, wo.normalized());
+                hasIntersected = scene->rayIntersect(rayRecursive, its);
+                if (hasIntersected) {
+                    //https://en.wikipedia.org/wiki/Normal_mapping
+                    if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
+                        Vector3f newNormal = normalMap->eval(its.uv);
+
+                        if (abs(newNormal.norm() - 1.f) < Epsilon)
+                        {
+                            Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
+                            Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
+                            Vector3f tan (n(1)*s(2) - n(2) * s(1),
+                                          n(2) * s(0) - n(0) * s(2),
+                                          n(0) * s(1) - n(1)* s(0));
+                            its.shFrame = Frame(s,tan,n);
+                        }
+                    }
+                    if (its.mesh->isEmitter()) {
+                        EmitterQueryRecord lRec = EmitterQueryRecord(rayRecursive.o, its.p, its.shFrame.n);
+                        lRec.uv = its.uv;
+                        float pdf_em = its.mesh->getEmitter()->pdf(lRec);
+                        w_mats = pdf_mat + pdf_em > 0.f ? pdf_mat / (pdf_mat + pdf_em) : pdf_mat;
+                    }
+                }
             } else if (!hasIntersected) {
                 return result;
             } else {
@@ -74,13 +114,15 @@ public:
                 // emitted
                 if (its.mesh->isEmitter())
                 {
-                    EmitterQueryRecord lRecE(rayRecursive.o, its.p, its.shFrame.n);
-                    result += t * w_mats * its.mesh->getEmitter()->eval(lRecE) * medium->Tr(rayRecursive, sampler, mi);
+                    EmitterQueryRecord lRec(rayRecursive.o, its.p, its.shFrame.n);
+                    lRec.uv = its.uv;
+                    result += t * w_mats * its.mesh->getEmitter()->eval(lRec) * medium->Tr(rayRecursive, sampler, mi);
                 }
 
                 //EMS
                 const Emitter *light = scene->getRandomEmitter(sampler->next1D());
                 EmitterQueryRecord lRec(its.p);
+                lRec.uv = its.uv;
                 Color3f Li = light->sample(lRec, sampler->next2D()) * scene->getLights().size();
                 float pdf_em = light->pdf(lRec);
                 if (!scene->rayIntersect(lRec.shadowRay)) //intersection point is occluded
@@ -121,42 +163,32 @@ public:
 
                 hasIntersected = scene->rayIntersect(rayRecursive, its);
 
-                if (its.mesh->isEmitter()) {
-                    EmitterQueryRecord lRec = EmitterQueryRecord(rayRecursive.o, its.p, its.shFrame.n);
-                    float pdf_em = its.mesh->getEmitter()->pdf(lRec);
-                    w_mats = pdf_mat + pdf_em > 0.f ? pdf_mat / (pdf_mat + pdf_em) : pdf_mat;
-                }
+                if (hasIntersected) {
+                    //https://en.wikipedia.org/wiki/Normal_mapping
+                    if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
+                        Vector3f newNormal = normalMap->eval(its.uv);
 
-                if (bRec.measure == EDiscrete)
-                    w_mats = 1.0f;
-
-                /*
-                if (its.mesh->isEmitter()) {
-                    EmitterQueryRecord lRecE(rayRecursive.o, its.p, its.shFrame.n);
-                    Color3f Le = its.mesh->getEmitter()->eval(lRecE);
-                    result += t * medium->Tr(rayRecursive, sampler, mi) * Le;
-                } else {
-                    //reflected
-                    const Emitter* light = scene->getRandomEmitter(sampler->next1D());
-                    EmitterQueryRecord lRecE(its.p);
-                    Color3f Le = light->sample(lRecE, sampler->next2D()) * scene->getLights().size();
-
-                    if (!scene->rayIntersect(lRecE.shadowRay)) {
-                        //BSDF
-                        BSDFQueryRecord bRecE(its.shFrame.toLocal(-rayRecursive.d), its.shFrame.toLocal(lRecE.wi),ESolidAngle);
-                        bRecE.uv = its.uv;
-                        Color3f f = its.mesh->getBSDF()->eval(bRecE);
-                        mi.tMax = lRecE.shadowRay.maxt;
-                        result += t * f * medium->Tr(lRecE.shadowRay, sampler, mi) * Le;
+                        if (abs(newNormal.norm() - 1.f) < Epsilon)
+                        {
+                            Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
+                            Vector3f s = (its.shFrame.t - n * n.dot(its.shFrame.t)).normalized();
+                            Vector3f tan (n(1)*s(2) - n(2) * s(1),
+                                          n(2) * s(0) - n(0) * s(2),
+                                          n(0) * s(1) - n(1)* s(0));
+                            its.shFrame = Frame(s,tan,n);
+                        }
                     }
+
+                    if (its.mesh->isEmitter()) {
+                        EmitterQueryRecord lRec = EmitterQueryRecord(rayRecursive.o, its.p, its.shFrame.n);
+                        lRec.uv = its.uv;
+                        float pdf_em = its.mesh->getEmitter()->pdf(lRec);
+                        w_mats = pdf_mat + pdf_em > 0.f ? pdf_mat / (pdf_mat + pdf_em) : pdf_mat;
+                    }
+
+                    if (bRec.measure == EDiscrete)
+                        w_mats = 1.0f;
                 }
-
-                //BSDF sampling
-                BSDFQueryRecord bRec(its.shFrame.toLocal(-rayRecursive.d));
-                Color3f f = its.mesh->getBSDF()->sample(bRec, sampler->next2D());
-                t *= f;
-
-                rayRecursive = Ray3f(its.p, its.toWorld(bRec.wo));*/
             }
 
         }

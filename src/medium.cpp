@@ -13,6 +13,7 @@ Medium::Medium(const PropertyList &props) {
     m_sigmaS = Color3f(props.getFloat("sigma_s", 0.2f));
     m_sigmaT = m_sigmaA + m_sigmaS;
     m_albedo = m_sigmaS / m_sigmaT;
+    m_density_function = props.getInteger("density_function", 1);
     Vector3f dims = props.getVector3("dimensions", Vector3f(0.4)).cwiseAbs();
     Vector3f origin = props.getVector3("origin", Vector3f(0.f));
     m_maxDensity = std::max(0.0f, props.getFloat("max_density", 1.f));
@@ -29,6 +30,7 @@ Color3f Medium::Tr(const Point3f &a, const Point3f &b) const {
 
 //Heterogeneous transmission
 Color3f Medium::Tr(const Ray3f &ray, Sampler *sampler, MediumInteractionQuery &mi) const {
+    //reference from here https://www.csie.ntu.edu.tw/~cyy/courses/rendering/09fall/lectures/handouts/chap17_volume_4up.pdf
     float td = Epsilon;
     float transmission = 1.0f;
 
@@ -39,13 +41,6 @@ Color3f Medium::Tr(const Ray3f &ray, Sampler *sampler, MediumInteractionQuery &m
 
         float density = getDensity(ray(td));
         transmission *= 1.f - std::max(0.0f, density * m_invDensityMax);
-
-        float thresh = 0.1f;
-        if (transmission < thresh) {
-            float q = std::max(0.05f, 1.f - transmission);
-            if (sampler->next1D() < q) return {0.f};
-            transmission /= 1.f - q;
-        }
     }
     return {transmission};
 }
@@ -54,6 +49,7 @@ Color3f Medium::Tr(const Ray3f &ray, Sampler *sampler, MediumInteractionQuery &m
 Color3f Medium::sample(const Ray3f &ray, Sampler *sampler, MediumInteractionQuery &mi) const {
     float td = Epsilon;
     //delta tracking iterations to sample a medium interaction
+    //reference from here https://www.csie.ntu.edu.tw/~cyy/courses/rendering/09fall/lectures/handouts/chap17_volume_4up.pdf
     while (true) {
 
         td -= log(1.f - sampler->next1D()) * m_invDensityMax / m_sigmaT.maxCoeff();
@@ -89,8 +85,14 @@ void Medium::addChild(NoriObject *child) {
 
 float Medium::getDensity(const Point3f &p) const {
     if (bounds.contains(p)) {
-        float h = std::max(0.0f, p.y());
-        return m_maxDensity * exp(-2*h);
+        switch(m_density_function) {
+            case 1:
+                return m_maxDensity;
+            case 2:
+                return m_maxDensity * exp( - 2 * std::max(0.0f, p.y()+bounds.min.y()));
+            default:
+                return m_maxDensity;
+        }
     }
     else {
         return 0.0f;

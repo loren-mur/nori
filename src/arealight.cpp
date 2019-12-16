@@ -19,13 +19,24 @@
 #include <nori/emitter.h>
 #include <nori/warp.h>
 #include <nori/shape.h>
+#include <nori/texture.h>
 
 NORI_NAMESPACE_BEGIN
 
 class AreaEmitter : public Emitter {
 public:
     AreaEmitter(const PropertyList &props) {
-        m_radiance = props.getColor("radiance");
+        if(props.has("radiance")) {
+            PropertyList l;
+            l.setColor("value", props.getColor("radiance"));
+            m_radiance = static_cast<Texture<Color3f> *>(NoriObjectFactory::createInstance("constant_color", l));
+        } else {
+            m_radiance = nullptr;
+        }
+    }
+
+    ~AreaEmitter() {
+        delete m_radiance;
     }
 
     virtual std::string toString() const override {
@@ -33,14 +44,14 @@ public:
                 "AreaLight[\n"
                 "  radiance = %s,\n"
                 "]",
-                m_radiance.toString());
+                m_radiance->toString());
     }
 
     virtual Color3f eval(const EmitterQueryRecord & lRec) const override {
         if(!m_shape)
             throw NoriException("There is no shape attached to this Area light!");
 
-        return (lRec.n.dot(lRec.wi) < 0.f) * m_radiance;
+        return (lRec.n.dot(lRec.wi) < 0.f) *  m_radiance->eval(lRec.uv);
     }
 
     virtual Color3f sample(EmitterQueryRecord & lRec, const Point2f & sample) const override {
@@ -86,9 +97,20 @@ public:
         return eval(lRec) * M_PI / sRec.pdf;
     }
 
+    void addChild(NoriObject *obj) override {
+        switch (obj->getClassType()) {
+            case ETexture:
+                if (m_radiance)
+                    throw NoriException("AreaEmitter: There is already a radiance defined!");
+                m_radiance = static_cast<Texture<Color3f> *>(obj);
+                break;
+            default:
+                throw NoriException("AreaEmitter: addChild<%s> is not supported other than normal maps",obj->getIdName());
+        }
+    }
 
 protected:
-    Color3f m_radiance;
+    Texture<Color3f> *m_radiance = nullptr;
 };
 
 NORI_REGISTER_CLASS(AreaEmitter, "area")
