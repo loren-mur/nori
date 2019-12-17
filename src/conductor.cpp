@@ -13,8 +13,9 @@ public:
         m_eta = propList.getFloat("eta", 0.23086);
         m_k = propList.getFloat("k", 2.9102);
         m_reflectance = propList.getFloat("specularReflectance", 0.90751);
-        m_rgb = propList.getColor("rgb", Color3f(255, 255, 255)); // albedo of the base material
-        m_rgb /= 255.f; // normalize
+        m_rgb = propList.getColor("rgb", Color3f(255, 255, 255));
+        //normalize rgb
+        m_rgb /= 255.f;
     }
 
     virtual Color3f eval(const BSDFQueryRecord &) const override {
@@ -44,7 +45,7 @@ public:
         return m_reflectance * m_rgb * fresnelConductor(Frame::cosTheta(bRec.wi), m_eta, m_k);
     }
 
-    Color3f fresnelConductor(float cosTheta_i, Color3f eta, Color3f k) const { 
+    Color3f fresnelConductor(float cosTheta_i, Color3f eta, Color3f k) const {
         float cosTheta2 = cosTheta_i * cosTheta_i;
         Color3f temp = eta*eta + k*k;
 

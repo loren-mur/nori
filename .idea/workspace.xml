@@ -20,82 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70bf450-d381-4742-aca8-a146becf55c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scenes/Final/Cobblestone06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/Cobblestone06_NRM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/Cobblestone06_SPEC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/earthmap1k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/final_scene.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/final_scene.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/final_scene_var.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/gasplanet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/jupitermap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/mercurymap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/meshes/Box.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/meshes/stairs2.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/meshes/stairs2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/meshes/teeth22.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/meshes/teeth22.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/neptunemap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/Final/plutomap1k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/026_Half.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/Cobblestone05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/Cobblestone05_NRM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/Cobblestone05_SPEC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/WoodenPlanks10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/WoodenPlanks10_NRM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/WoodenPlanks10_SPEC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/material.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/material_var.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Box.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Gorilla.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Ground.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Ground1.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Mouth.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Thooth1.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/Thooth2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/ball1.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/ball2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/ball3.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/ball4.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/ball5.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/eye.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/houses.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/housess.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/light.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/mirror.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/mirrro2.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/sphere.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/meshes/stairs.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/test0.exr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scenes/mmm/texture1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/mesh.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/mesh.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/nori.dir/src/perlintexture.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/nori" beforeDir="false" afterPath="$PROJECT_DIR$/build/nori" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report-apaccagne-houskan/project-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/026_Half.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/026_Half.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/Cobblestone05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/Cobblestone05_NRM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/Cobblestone05_SPEC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10.png" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10_NRM.png" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10_NRM.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10_SPEC.png" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/WoodenPlanks10_SPEC.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/material.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/material.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/material.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/material_var.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/material_var.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/Box.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/Box.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/eye.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/eye.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/houses.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/houses.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/housess.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/housess.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/light.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/light.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/mirror.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/mirror.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/mirrro2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/mirrro2.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/meshes/stairs.obj" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/meshes/stairs.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/test0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/test0.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/Final/texture1.png" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/Final/texture1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conductor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/conductor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mesh.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -212,7 +139,7 @@
       <workItem from="1576423760077" duration="321000" />
       <workItem from="1576486055838" duration="4000" />
       <workItem from="1576486359327" duration="1000" />
-      <workItem from="1576571838880" duration="10188000" />
+      <workItem from="1576571838880" duration="10547000" />
     </task>
     <servers />
   </component>
