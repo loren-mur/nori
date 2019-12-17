@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="openexr"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\IlmImf\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package_source">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 package_source"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="package">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 package"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/libIlmImf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IlmImf/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/libIlmImf.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 IlmImf/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dwaLookups">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/dwaLookups" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 dwaLookups"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dwaLookups/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/dwaLookups" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 dwaLookups/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b44ExpLogTable">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/b44ExpLogTable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 b44ExpLogTable"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b44ExpLogTable/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/b44ExpLogTable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DILM_IMF_TEST_IMAGEDIR=&quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfTest/&quot;"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/config"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfUtil"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmaketiled"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrenvmap"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmakepreview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/exrmultiview"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImfFuzzTest"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/OpenEXR"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 b44ExpLogTable/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/b44ExpLogTable.h.rule">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p-build/IlmImf/dwaLookups.h.rule">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfAcesFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfAcesFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfB44Compressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfB44Compressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfBoxAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfBoxAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCRgbaFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCRgbaFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChannelList.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChannelList.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChannelListAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChannelListAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChromaticities.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChromaticities.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChromaticitiesAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfChromaticitiesAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompositeDeepScanLine.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompositeDeepScanLine.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompressionAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompressionAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfConvert.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfConvert.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepCompositing.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepCompositing.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepFrameBuffer.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepFrameBuffer.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepImageStateAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepImageStateAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineInputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineInputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineOutputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepScanLineOutputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledInputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledInputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledOutputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDeepTiledOutputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDoubleAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDoubleAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDwaCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfDwaCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfEnvmap.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfEnvmap.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfEnvmapAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfEnvmapAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFastHuf.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFastHuf.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFloatAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFloatAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFloatVectorAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFloatVectorAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFrameBuffer.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFrameBuffer.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFramesPerSecond.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfFramesPerSecond.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfGenericInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfGenericInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfGenericOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfGenericOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfHeader.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfHeader.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfHuf.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfHuf.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfIO.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfIO.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputPartData.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfInputPartData.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfIntAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfIntAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfKeyCode.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfKeyCode.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfKeyCodeAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfKeyCodeAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfLineOrderAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfLineOrderAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfLut.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfLut.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMatrixAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMatrixAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMisc.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMisc.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiPartInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiPartInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiPartOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiPartOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiView.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfMultiView.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOpaqueAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOpaqueAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputPartData.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfOutputPartData.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPartType.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPartType.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPizCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPizCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPreviewImage.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPreviewImage.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPreviewImageAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPreviewImageAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPxr24Compressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfPxr24Compressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRational.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRational.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRationalAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRationalAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRgbaFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRgbaFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRgbaYca.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRgbaYca.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRle.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRle.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRleCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfRleCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfScanLineInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfScanLineInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStandardAttributes.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStandardAttributes.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStdIO.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStdIO.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStringAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStringAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStringVectorAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfStringVectorAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfSystemSpecific.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfSystemSpecific.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTestFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTestFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfThreading.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfThreading.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTileDescriptionAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTileDescriptionAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTileOffsets.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTileOffsets.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledInputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledInputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledInputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledInputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledMisc.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledMisc.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledOutputFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledOutputFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledOutputPart.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledOutputPart.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledRgbaFile.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTiledRgbaFile.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTimeCode.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTimeCode.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTimeCodeAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfTimeCodeAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfVecAttribute.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfVecAttribute.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfVersion.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfVersion.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfWav.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfWav.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfZip.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfZip.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfZipCompressor.cpp">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/ImfZipCompressor.h">
+			<Option target="IlmImf"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/b44ExpLogTable.cpp">
+			<Option target="b44ExpLogTable"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/dwaLookups.cpp">
+			<Option target="dwaLookups"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/OpenEXR_p/IlmImf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\IlmImf\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

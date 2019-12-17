@@ -126,7 +126,7 @@ public:
             amplitude = pow(lacunarity, (float)i);
         }
 
-        return Color3f((total/1000), (total/1000), (total/100));
+        return Color3f((total/255), (total/255), (total/255));
     }
 
 

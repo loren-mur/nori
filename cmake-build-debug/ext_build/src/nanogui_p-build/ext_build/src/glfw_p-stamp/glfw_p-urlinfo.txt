@@ -1,0 +1,3 @@
+repository='external project URL'
+module='/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw'
+tag=''

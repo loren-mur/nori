@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libIexMath.a  CMakeFiles/IexMath.dir/IexMathFloatExc.cpp.o CMakeFiles/IexMath.dir/IexMathFpu.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libIexMath.a

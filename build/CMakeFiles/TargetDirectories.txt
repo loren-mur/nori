@@ -1,0 +1,10 @@
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/rebuild_cache.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/edit_cache.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/tonemapper.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/warptest.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nori.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/pugixml.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/IlmBase_p.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/nanogui_p.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/OpenEXR_p.dir
+/Users/alessiapaccagnella/desktop/nori/build/CMakeFiles/tbb_p.dir

@@ -9,8 +9,8 @@
 NORI_NAMESPACE_BEGIN
 
 Medium::Medium(const PropertyList &props) {
-    m_sigmaA = Color3f(props.getFloat("sigma_a", 0.2f));
-    m_sigmaS = Color3f(props.getFloat("sigma_s", 0.2f));
+    m_sigmaA = (props.getColor("sigma_a", Color3f(0.2f)));
+    m_sigmaS = (props.getColor("sigma_s", Color3f(0.2f)));
     m_sigmaT = m_sigmaA + m_sigmaS;
     m_albedo = m_sigmaS / m_sigmaT;
     m_density_function = props.getInteger("density_function", 1);

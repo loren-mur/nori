@@ -1,0 +1,10 @@
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/install/local.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/install/strip.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/install.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/list_install_components.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/rebuild_cache.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/edit_cache.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/nanogui.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/example.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/glfw_p.dir
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/bin2c.dir

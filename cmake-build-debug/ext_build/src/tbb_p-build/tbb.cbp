@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tbb"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbb.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbb"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbb/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbb.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBB_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbb/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbbmalloc_proxy">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbbmalloc_proxy.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBBMALLOC_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbbmalloc_proxy"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbbmalloc_proxy/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbbmalloc_proxy.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBBMALLOC_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbbmalloc_proxy/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbbmalloc">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbbmalloc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBBMALLOC_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbbmalloc"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tbbmalloc/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/libtbbmalloc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-D__TBBMALLOC_BUILD=1"/>
+					<Add option="-DDO_ITT_NOTIFY"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 tbbmalloc/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/rml/client/rml_tbb.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/arena.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/arena.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/cache_aligned_allocator.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/concurrent_hash_map.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/concurrent_monitor.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/concurrent_monitor.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/concurrent_queue.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/concurrent_vector.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/condition_variable.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/critical_section.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/dynamic_link.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/dynamic_link.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/governor.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/governor.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/itt_notify.cpp">
+			<Option target="tbb"/>
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/itt_notify.h">
+			<Option target="tbb"/>
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/market.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/market.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/observer_proxy.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/observer_proxy.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/pipeline.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/private_server.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/queuing_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/queuing_rw_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/reader_writer_lock.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/recursive_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/scheduler.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/scheduler.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/semaphore.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/semaphore.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/spin_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/spin_rw_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/task.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/task_group_context.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_main.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_main.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_misc.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_misc.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_misc_ex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_statistics.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_statistics.h">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/tbb_thread.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbb/x86_rtm_rw_mutex.cpp">
+			<Option target="tbb"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/backend.cpp">
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/backref.cpp">
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/frontend.cpp">
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/large_objects.cpp">
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/proxy.cpp">
+			<Option target="tbbmalloc_proxy"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/proxy.h">
+			<Option target="tbbmalloc_proxy"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/tbb_function_replacement.cpp">
+			<Option target="tbbmalloc_proxy"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/tbb_function_replacement.h">
+			<Option target="tbbmalloc_proxy"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/src/tbbmalloc/tbbmalloc.cpp">
+			<Option target="tbbmalloc"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/tbb_p/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

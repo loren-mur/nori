@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+0ed1cd359c442cf3c2bf32971feff29d IlmImf/b44ExpLogTable.h
+402ab730f22cb635e9c9a246e3fcd8b2 IlmImf/dwaLookups.h

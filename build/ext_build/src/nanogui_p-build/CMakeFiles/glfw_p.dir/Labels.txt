@@ -1,0 +1,13 @@
+# Target labels
+ glfw_p
+# Source files and their labels
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/glfw_p
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/glfw_p.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/CMakeFiles/glfw_p-complete.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-install.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-mkdir.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-download.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-update.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-patch.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-configure.rule
+/Users/alessiapaccagnella/desktop/nori/build/ext_build/src/nanogui_p-build/ext_build/src/glfw_p-stamp/glfw_p-build.rule

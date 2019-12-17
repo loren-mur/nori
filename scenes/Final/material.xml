@@ -7,14 +7,14 @@
         <float name="fov" value="46"/>
         <transform name="toWorld">
             <scale value="1,1,1"/>
-            <lookat target="0, 0, 0.35" origin="-0.38,-1,0.4" up="0, 0, 1"/>
+            <lookat target="0, 0, 0.35" origin="-0.38,-1.5,0.4" up="0, 0, 1"/>
         </transform>
         
        <!-- <float name="lensRadius" value="0.001"/>
         <float name="focalDistance" value="1.1"/>-->
         
-        <integer name="height" value="768"/>
-        <integer name="width" value="680"/>
+        <integer name="height" value="800"/> <!--768-->
+        <integer name="width" value="1100"/><!--680-->
     </camera>
 
 
@@ -53,7 +53,6 @@
     <mesh type="obj">
         <string name="filename" value="meshes/Ground.obj"/>
         <transform name="toWorld">
-            <translate value="0,0,0"/>
              <scale value="-1,1,1" />
         </transform>
     
@@ -81,9 +80,9 @@
     
     <medium type="medium">
         <phase type="iso"/>
-        <float name="sigma_a" value="0.2"/>
-        <float name="sigma_s" value="2"/>
-        <float name="max_density" value="2"/>
+        <color name="sigma_a" value="0.1 0.1 0.1"/>
+        <color name="sigma_s" value="0.725 0.71 0.68"/>
+        <float name="max_density" value="4"/> <!--- from 2 to 7-->
         <integer name="density_function" value="2"/> <!-- 1 is constant, 2 is exponentional decay-->
         <vector name="origin" value="0.0, 0, 0.1"/>
         <vector name="dimensions" value = "0.6 .6 0.07"/>
@@ -107,7 +106,7 @@
         <string name="filename" value="meshes/Mouth.obj"/>
     
         <bsdf type="disney">
-        <color name="albedo" value="0.875 0.38 0.035"/>
+        <color name="albedo" value="0.8 0.1 0"/>
             <float name="specular" value="0.4" />
             <float name="metallic" value="0.0" />
             <float name="roughness" value="0.2" />
@@ -132,7 +131,20 @@
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
-    
+
+    <mesh type="obj">
+        <string name="filename" value="meshes/stairs.obj"/>
+        <transform name="toWorld">
+            <scale value="-1,1,1" />
+        </transform>
+        <bsdf type="conductor">
+            <float name="eta" value="0.24873"/>
+            <float name="k" value="3.0740"/>
+            <float name="specularReflectance" value="1"/>
+            <!-- <color name="rgb" value="255, 215, 200"/>-->
+        </bsdf>
+    </mesh>
+
     <mesh type="obj">
         <string name="filename" value="meshes/houses.obj"/>
         <transform name="toWorld">
@@ -140,54 +152,127 @@
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
-    
+
     <mesh type="obj">
-        <string name="filename" value="meshes/ball1.obj"/>
+        <string name="filename" value="meshes/housess.obj"/>
         <transform name="toWorld">
-             <scale value="-1,1,1" />
+            <scale value="-1,1,1" />
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
-    
+
+
+
+    <mesh type="sphere">
+        <point name="center" value="-0.6 6 0.3" />
+        <float name="radius" value="0.2" />
+
+        <bsdf type="diffuse">
+            <texture type="proceduraltexture" name="albedo">
+                <point name="delta" value="0.3,0.3"/>
+                <vector name="scale" value="0.10,0.10"/>
+                <color name="color1" value="0,1,0"/>
+                <color name="color2" value="1, 1, 0"/>
+            </texture>
+        </bsdf>
+    </mesh>
+
+
+    <!--<mesh type="obj">
+        <string name="filename" value="meshes/mirrro2.obj"/>
+        <transform name="toWorld">
+            <scale value = "-1, 1,1" />
+            <translate value = "0.4,0,-0.2" />
+            <rotate angle = "90" axis = "0 1 0" />
+        </transform>
+        <bsdf type="mirror">
+
+        </bsdf>
+    </mesh>-->
+
+    <mesh type="obj">
+        <string name="filename" value="meshes/ball1.obj"/>
+        <transform name="toWorld">
+            <scale value="-1,1,1" />
+        </transform>
+        <bsdf type="dielectric"/>
+    </mesh>
+
     <mesh type="obj">
         <string name="filename" value="meshes/ball2.obj"/>
         <transform name="toWorld">
-             <scale value="-1,1,1" />
+            <scale value="-1,1,1" />
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
     <mesh type="obj">
         <string name="filename" value="meshes/ball3.obj"/>
         <transform name="toWorld">
-             <scale value="-1,1,1" />
+            <scale value="-1,1,1" />
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
     <mesh type="obj">
         <string name="filename" value="meshes/ball4.obj"/>
         <transform name="toWorld">
-             <scale value="-1,1,1" />
+            <scale value="-1,1,1" />
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
     <mesh type="obj">
         <string name="filename" value="meshes/ball5.obj"/>
         <transform name="toWorld">
-             <scale value="-1,1,1" />
+            <scale value="-1,1,1" />
         </transform>
         <bsdf type="dielectric"/>
     </mesh>
-    
+
+    <mesh type="sphere">
+        <point name="center" value="-0.5 11 0.3" />
+        <float name="radius" value="0.2" />
+
+        <bsdf type="diffuse">
+            <texture type="proceduraltexture" name="albedo">
+                <point name="delta" value="0.5,0.5"/>
+                <vector name="scale" value="0.10,0.10"/>
+                <color name="color1" value="1,1,0"/>
+                <color name="color2" value="0, 1, 1"/>
+            </texture>
+        </bsdf>
+    </mesh>
+
+
+
+    <mesh type="sphere">
+        <point name="center" value="0.721400 0.532100 0.5" />
+        <float name="radius" value="0.07" />
+
+        <bsdf type="diffuse">
+            <texture type="imagetexture" name="albedo">
+                <string name="fileName" value="texture1.png"/>
+                <vector name="scale" value="1,1"/>
+            </texture>
+        </bsdf>
+    </mesh>
+
+
+
     <!-- well that doesnt work
     <mesh type="obj">
         <string name="filename" value="meshes/eye.obj"/>
         <transform name="toWorld">
              <scale value="-1,1,1" />
-        </transform>
-        <emitter type="area">
+        </transform>-->
+        <!--<emitter type="area">
             <color name="radiance" value="20 20 20"/>
-        </emitter>
-    </mesh> -->
+        </emitter>-->
+    <!--<bsdf type="diffuse">
+        <color name="albedo" value="0,0,0"/>
+    </bsdf>
+    <emitter type="area">
+        <color name="radiance" value="34000, 24000, 8000"/>
+    </emitter>
+</mesh>-->
     
 
 </scene>

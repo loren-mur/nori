@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="NanoGUI"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\nanogui_p-build\;CMake Files\..\nanogui_p-build\ext_build\;CMake Files\..\nanogui_p-build\ext_build\tmp\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/libnanogui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 nanogui"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nanogui/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/libnanogui.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 nanogui/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 example"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="example/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/example" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 example/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw_p">
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 glfw_p"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bin2c">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/bin2c" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 bin2c"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bin2c/fast">
+				<Option output="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/bin2c" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/eigen"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/glfw/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include"/>
+					<Add directory="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 bin2c/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/resources.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p-build/resources.cpp.rule">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src/nanovg.c">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/ext/nanovg/src/nanovg.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/button.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/checkbox.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/combobox.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/glutil.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/imagepanel.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/label.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/layout.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/messagedialog.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/nanogui.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/popup.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/popupbutton.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/progressbar.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/screen.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/slider.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/textbox.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/theme.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/toolbutton.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/vscrollpanel.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/widget.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/include/nanogui/window.h">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/resources/bin2c.c">
+			<Option target="bin2c"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/button.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/checkbox.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/combobox.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/darwin.mm">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/example.cpp">
+			<Option target="example"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/glutil.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/imagepanel.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/label.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/layout.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/messagedialog.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/nanogui.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/popup.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/popupbutton.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/progressbar.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/screen.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/slider.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/textbox.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/theme.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/vscrollpanel.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/widget.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/src/window.cpp">
+			<Option target="nanogui"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/src/nanogui_p/../nanogui_p-build/ext_build/tmp/glfw_p-cfgcmd.txt.in">
+			<Option virtualFolder="CMake Files\..\nanogui_p-build\ext_build\tmp\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
