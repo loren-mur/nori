@@ -18,12 +18,10 @@ public:
     }
 
     virtual Color3f eval(const BSDFQueryRecord &) const override {
-        /* Discrete BRDFs always evaluate to zero in Nori */
         return Color3f(0.0f);
     }
 
     virtual float pdf(const BSDFQueryRecord &) const override {
-        /* Discrete BRDFs always evaluate to zero in Nori */
         return 0.0f;
     }
 
@@ -33,34 +31,30 @@ public:
 
         bRec.measure = EDiscrete;
 
-        // In a conductor you only have reflection (not refraction)
-        bRec.wo = Vector3f( // perfect specular reflectance
+        //no refraction
+        bRec.wo = Vector3f( //perfect reflectance
                 -bRec.wi.x(),
                 -bRec.wi.y(),
                 bRec.wi.z()
         );
         bRec.measure = EDiscrete;
 
-        // Relative index of refraction
+        //index of ref
         bRec.eta = 1.0f;
         return m_reflectance * m_rgb * fresnelConductor(Frame::cosTheta(bRec.wi), m_eta, m_k);
     }
 
-    Color3f fresnelConductor(float cosTheta_i, Color3f eta, Color3f k) const { // fresnel term for conductors
-
+    Color3f fresnelConductor(float cosTheta_i, Color3f eta, Color3f k) const { 
         float cosTheta2 = cosTheta_i * cosTheta_i;
         Color3f temp = eta*eta + k*k;
 
         Color3f t1 = temp * cosTheta2;
         Color3f t2 = 2 * eta * cosTheta_i;
 
-        // Fresnel Reflectance for parallel polarized light
-        Color3f ref_par = (t1 - t2 + 1) / (t1 + t2 + 1);
-        // Fresnel Reflectance for perpendicular polarized light
-        Color3f ref_per = (temp - t2 + cosTheta2) / (temp + t2 + cosTheta2);
+        Color3f c1 = (t1 - t2 + 1) / (t1 + t2 + 1);
+        Color3f c2 = (temp - t2 + cosTheta2) / (temp + t2 + cosTheta2);
 
-        // For unpolarized light we average over both terms
-        return (ref_par + ref_per) / 2;
+        return (c1 + c2) / 2;
     }
 
     virtual std::string toString() const override {

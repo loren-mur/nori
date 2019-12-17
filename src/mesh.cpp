@@ -160,15 +160,21 @@ void Mesh::setHitInformation(uint32_t index, const Ray3f &ray, Intersection & it
     Texture<Color3f> *normalMap;
     //https://en.wikipedia.org/wiki/Normal_mapping
     if (its.mesh->getBSDF()->hasNormalMap(normalMap)) {
+
         Color3f rgb = normalMap->eval(its.uv);
-        Vector3f newNormal(2 * rgb.r() - 1, 2 * rgb.g() - 1, 2 * rgb.b() - 1);
-        Normal3f n = (its.shFrame.toWorld(newNormal)).normalized();
-        Vector3f dpdU = (p1 - p0).normalized();
-        Vector3f s = (dpdU - n * n.dot(dpdU)).normalized();
+        Vector3f local_normal(2 * rgb.r() - 1, 2 * rgb.g() - 1, 2 * rgb.b() - 1);
+        Vector3f dpdu = its.geoFrame.t;
+
+        Vector3f n = its.shFrame.n;
+        Vector3f s = (dpdu - n * n.dot(dpdu)).normalized();
         Vector3f t(n(1) * s(2) - n(2) * s(1),
                    n(2) * s(0) - n(0) * s(2),
                    n(0) * s(1) - n(1) * s(0));
-        its.shFrame = Frame(s,t,n);
+        t.normalize();
+
+        Frame frame_local = Frame(s,t,n);
+        Vector3f worldNormal = frame_local.toWorld(local_normal.normalized());
+        its.shFrame = Frame(worldNormal);
     }
 }
 
