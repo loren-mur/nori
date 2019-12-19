@@ -5,16 +5,16 @@ Ray tracing renderer implemented for Computer Graphics rendering competition at 
 Features:
 
 Alessia Paccagnella:
-- Environment map emitter - done.
-- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  - Depth done, lens done, chromatic done
-- NL means denoising - Script written.
-- Image Textures - done. 
-- Spotlight - done. 
-- Procedural Texture - done. 
+- Environment map emitter 
+- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  
+- NL means denoising 
+- Image Textures 
+- Spotlight 
+- Procedural Texture
 
 Niklaus Houska:
-- Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss) - done 
+- Disney BRDF (baseColor, Metal, Specular, specularTint, Roughness, clearcoat, clearcoatGloss)  
 - Modeling Meshes
-- Bump Mapping - done
-- Textured Emitter - done
-- Heterogeneous participating media - done
+- Bump Mapping
+- Textured Emitter 
+- Heterogeneous participating media 
