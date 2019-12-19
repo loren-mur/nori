@@ -18,3 +18,5 @@ Niklaus Houska:
 - Bump Mapping
 - Textured Emitter 
 - Heterogeneous participating media 
+
+![alt text](https://github.com/alessiapacca/nori/blob/master/final.png)
