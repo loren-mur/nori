@@ -1,6 +1,9 @@
 # NoriProject
 Ray tracing renderer implemented for Computer Graphics rendering competition at ETH.
 
+Final Image rendered
+![alt text](https://github.com/alessiapacca/nori/blob/master/final.png)
+
 
 Features:
 
@@ -19,4 +22,3 @@ Niklaus Houska:
 - Textured Emitter 
 - Heterogeneous participating media 
 
-![alt text](https://github.com/alessiapacca/nori/blob/master/final.png)
