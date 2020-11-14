@@ -4,8 +4,8 @@ Ray tracing renderer implemented for Computer Graphics rendering competition at 
 Final Image rendered
 ![alt text](https://github.com/alessiapacca/nori/blob/master/final.png)
 
-
-Features:
+The project consisted in implementing a minimum set of features for the renderer.
+The implemented features are: 
 
 Alessia Paccagnella:
 - Environment map emitter 
