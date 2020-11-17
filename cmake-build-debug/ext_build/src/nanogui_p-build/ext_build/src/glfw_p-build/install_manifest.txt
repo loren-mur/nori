@@ -1,8 +1,0 @@
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/GLFW/glfw3.h
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/include/GLFW/glfw3native.h
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/cmake/glfw3/glfw3Config.cmake
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/cmake/glfw3/glfw3ConfigVersion.cmake
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/cmake/glfw3/glfw3Targets.cmake
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/cmake/glfw3/glfw3Targets-release.cmake
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/pkgconfig/glfw3.pc
-/Users/alessiapaccagnella/Desktop/nori/cmake-build-debug/ext_build/dist/lib/libglfw3.a
