@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene version="0.5.0">
+	<integrator type="path"/>
+
+	<sensor type="perspective_rdist">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<string name="kc" value="3,3"/>
+
+		<film type="hdrfilm">
+            <rfilter type="box"/>
+            <integer name="width" value="800"/>
+            <integer name="height" value="600"/>
+        </film>
+
+		<sampler type="independent">
+			<integer name="sampleCount" value="512"/>
+		</sampler>
+	</sensor>
+
+	<shape type="obj">
+		<string name="filename" value="walls.obj"/>
+
+		<bsdf type="diffuse" id="white">
+			<rgb name="reflectance" value="0.725, 0.71, 0.68"/>
+		</bsdf>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="rightwall.obj"/>
+
+		<bsdf type="diffuse" id="blue">
+        	<rgb name="reflectance" value="0.161, 0.133, 0.427"/>
+    	</bsdf>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="leftwall.obj"/>
+
+		<bsdf type="diffuse" id="red">
+        	<rgb name="reflectance" value="0.630, 0.065, 0.05"/>
+    	</bsdf>
+	</shape>
+
+	<shape type="obj">
+		<string name="filename" value="light.obj"/>
+
+		<emitter type="area">
+            <rgb name="radiance" value="15"/>
+		</emitter>
+	</shape>
+
+	<shape type="sphere">
+		<point name="center" x="-0.421400" y="0.332100" z="-0.280000" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="conductor">
+			<string name="material" value="none"/>
+		</bsdf>
+	</shape>
+
+	<shape type="sphere">
+		<point name="center" x="0.445800" y="0.332100" z="0.376700" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="dielectric"/>
+	</shape>
+
+</scene>

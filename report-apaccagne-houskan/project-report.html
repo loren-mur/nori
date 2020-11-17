@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../favicon.ico" />
+
+    <title>Computer Graphics - PA4</title>
+
+    <link href="resources/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/offcanvas.css" rel="stylesheet">
+    <link href="resources/custom2014.css" rel="stylesheet">
+    <link href="resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container headerBar">
+		<h1>Project Proposal - Niklaus Houska & Alessia Paccagnella</h1>
+</div>
+
+<div class="container contentWrapper">
+<div class="pageContent">
+
+	<!-- ================================================================= -->
+
+	<h2>Alessia</h2>
+
+  <h2>1. Image Textures </h2>
+
+  I implemented the images as texture feature using PNG images. For this, I had to use the <code>lodepng</code> library.
+  <a href = "http://viclw17.github.io/2019/04/12/raytracing-uv-mapping-and-texturing/"> this </a> link helped me understanding how to access the pixel value. I basically have a vector made of "RGBA RGBA RGBA..." values for each pixel, and uv coordinates. So the main problem was finding the index of the pixel in that vector. <br>
+  The texture is scaled by a scale parameter and applied over the shape I choose. I scaled the texture3 used for the ground.<br>
+  I also try to scale the perlin noise, on the left image that can be seen here. <br>
+  The first one is obtained scaling the perlin noise (texture 4) by 0.50, 0.50.
+  The second one is obtained without scaling the perlin noise texture. <br> <br>
+  <div class="twentytwenty-container">
+      <img src="images/imagetexture.jpg" alt="Perlin scaled" class="img-responsive">
+      <img src="images/imagetexturenonscaled.jpg" alt="Perlin not scaled" class="img-responsive">
+  </div> <br>
+  This is the Mitsuba version of the rendering, with the perlin texture NOT scaled: they apply the textures the same way, but the colors are a bit different, probably because of the library I use to extract pngs.<br><br>
+  <p style="margin-left:10em"> <img src="images/imagetexture.png" alt="Texture 2"><br><br>
+  These are the four textures that I used:<br>
+  <p style="margin-left:18em">
+  <img src="images/texture1.png" width = 300 height = 300 alt="Texture 1">
+  <img src="images/texture2.png" width = 300 height = 300 alt="Texture 2"></p> <br>
+  <p style="margin-left:18em"><img src="images/texture3.png" width = 300 height = 300 alt="Texture 3">
+  <img src="images/texture4.png" width = 300 height = 300 alt="Texture 4"></p><br>
+
+
+
+  <h2>2. Procedural Textures </h2>
+  For this feature, I first tried to generate a procedural texture made of colored stripes. I enabled the possibility of choosing the scaling factor, the two colors and the delta factor. The implementation was quite straightforward. The code can be found in the class <code>proceduraltexture.cpp</code>.<br>
+  Then I tried to implement the perlin noise. I spent a lot of time on this, because I was using some noise function that were not optimal for the aim of generating the perlin one. At the end, I followed <a href="https://web.archive.org/web/20160530124230/http://freespace.virgin.net/hugo.elias/models/m_perlin.htm"> this </a> reference to implement it. <br>
+  The noise function used in Perlin noise is a seeded random number generator. It returns the same value every time it is called with the same values for input. Then, I smoothed out the values that this noise function returned by using a cosine interpolation function, which worked better than the linear one because returned a much smother curve.<br>
+  I used some variables like <code>octaves</code>, <code>lacunarity</code> and <code>frequency</code> to modify the noisy function created. An octave is each successive noise function that is added. I decided to use 9 octaves. Each noise function added had twice the frequency of the previous one. I did some trials with a bigger number but after a certain number one had a too high a frequency to be displayable.<br><br>
+  The centered cup displayes the procedural perlin noise in two different colors. <br><br>
+  <div class="twentytwenty-container">
+      <img src="images/proceduraltexture.jpg" alt="Classic perlin noise" class="img-responsive">
+      <img src="images/proceduraltexture1.jpg" alt="Changed the colors for all of the procedural textures" class="img-responsive">
+  </div> <br>
+
+  Here examples of perlin noise taken from <a href="https://www.google.com/search?q=perlin+noise&bih=857&biw=1600&hl=it&sxsrf=ACYBGNSQXdhoTwQTi7W7vf43Ey-gkCdV_g:1576139109123&tbm=isch&source=iu&ictx=1&fir=qgMwSMsom5fL9M%253A%252C5fTUo1Lt4FiC4M%252C_&vet=1&usg=AI4_-kS7ZjdDerLor4Nw7L2aWwuOZVPztw&sa=X&ved=2ahUKEwib2Nzd16_mAhXQSsAKHfdCDksQ9QEwAHoECAUQAw#imgrc=qgMwSMsom5fL9M"> here </a> ,  <a href="https://subic-bars.com/perlin-noise-algorithmus-scheint-nicht-zu-produzieren-gradient-noise.html"> here </a> and  <a href="https://it.wikipedia.org/wiki/Rumore_di_Perlin"> here </a> can be seen.
+  <br>
+  <br>
+  <p style="margin-left:7em">
+  <img src="images/perlin1.png" width = 300 height = 300 alt="Perlin 1">
+  <img src="images/perlin2.png" width = 300 height = 300 alt="Perlin 2"><img src="images/perlin3.png" width = 300 height = 300 alt="Perlin 3"></p> <br>
+
+
+<h2>3. Advanced Camera Model: Depth of field, Lens distortion, Chromatic Aberration</h2>
+The code for these features can be found inside <code>perspective.cpp</code>.<br><br>
+     <h2>3.1. Depth of field</h2>
+
+ To implement the depth of field, I added two extra parameters to the camera. One is the size of the lens aperture, and the other is the focal distance. I pass them throug the xml file of the scene. <br>
+ I modified the file <code>perspective.cpp</code>: if depth of field is activated for the scene, the ray’s origin and direction are modified so that depth of field is simulated.
+ I calculated the intersection of the ray through the lens center with the plane of focus, and then initialized the ray: its origin is set to the sampled point on the lens, its direction is initialized so that the ray passes through the point on the plane of focus.<br>
+ ray.mint and ray.maxt remains the same of the previously provided code.<br>
+ Following, different trials can be seen. <br>
+
+   </p>
+
+
+  	<h3>Focal Length = 8, radius = 0.2 </h3>
+    The first image represents a focal length of 8, and a radius of 0.2. We can see that a small radius and a small focal length lead to focusing on the closer cup.
+  	<div class="twentytwenty-container">
+  	    <img src="images/miaFD8R02.jpg" alt="Mine" class="img-responsive">
+  	    <img src="images/mitsubaFD8R02.jpg" alt="Mitsuba" class="img-responsive">
+  	</div> <br>
+
+	<h3>Focal Length = 15, radius = 0.2 </h3>
+  The second represents a focal length of 15 and a radius of 0.2. Due to a higher focal length, we see that the closest cups are not focused anymore, differently from the ones more distant.
+  	<div class="twentytwenty-container">
+  	    <img src="images/miaFD15R02.jpg" alt="Mine" class="img-responsive">
+  	    <img src="images/mitsubaFD15R02.jpg" alt="Mitsuba" class="img-responsive">
+  	</div> <br>
+
+    <h3>Focal Length = 15, radius = 0.5 </h3>
+    Finally, the last one represents a focal length of 15, and a radius of 0.5. Here, by putting a longer radius we see that a smaller area is focused.
+    	<div class="twentytwenty-container">
+    	    <img src="images/miaFD15R05.jpg" alt="Mine" class="img-responsive">
+    	    <img src="images/mitsubaFD15R05.jpg" alt="Mitsuba" class="img-responsive">
+    	</div> <br>
+
+      <h2>3.2. Lens Distortion </h2>
+      This feature extends the perspective camera with the effect of radial distortion. I added three extra parameters, which are <code>change1</code> and <code>change2</code>, the second and fourth-order terms in a polynomial function that models the barrel distortion, and the boolean <code>m_distortion</code>, which indicates if the distortion is activated or not. After I calculate the distortion, with the function <code>calculateDistortion()</code>, I multiply the x and y coordinates of the position on the near plane for this factor. I followed mitsuba for calculating the distortion. <br><br>
+
+      <div class="twentytwenty-container">
+          <img src="images/distortion.jpg" alt="Mine" class="img-responsive">
+          <img src="images/distortionmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+      </div> <br>
+
+
+      <h2>3.3. Chromatic aberration: </h2>
+      Chromatic aberration effect was quite tricky. If the effect is activated, in the <code>render.cpp</code> file the function <code>sampleRay()</code> of my <code>camera</code> class is called 3 times, one for each color channel. At the end, the value considered is the sum of the three values obtained.<br>
+      In the <code>sampleRay()</code> method, I select the weight of the aberration for that color channel based on the index that it is passed to it. The weights are chosen directly from the xml file. Then, the position sample is normalized to be zero centered. After that, the point on plane of focus is shifted in the x and y direction. <br><br>
+      <p style="margin-left:10em"> <img src="images/chromatic.png" alt="Chromatic Aberration Effect"><br><br>
+
+
+<h2>4. Spotlight</h2>
+For this feature, I implemented a spotlight based on the implementation in the book "Physically based rendering".<br>
+Spotlights are a variation of point lights: they emit light in a cone of directions from their position instead of shining in all the directions. The functions are very similar to the ones written for <code>pointlight.cpp</code>. For example
+the <code>sample()</code> method is almost identical to the pointlight's one, except for the fact that it calls the <code>cutOff()</code> method, which computes the distribution of light accounting for the spotlight cone. For this function, due to the fact that I am comparing the results with Mitsuba, I changed the return value of the function <code>cutOff</code> according to Mitsuba implementation. <br>
+The parameters I input to the spotlight are <code>cosFalloffStart</code>,<code>cosTotalWidth</code> and the direction I want the spotlight to point to.<br>
+The code can be found inside <code>spotlight.cpp</code>. <br><br>
+Here we can see the validation:
+<br><br>
+
+<div class="twentytwenty-container">
+    <img src="images/spotlight.png" alt="Mine" class="img-responsive">
+    <img src="images/spotlightmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+</div> <br>
+
+
+<h2>5. Environmental Map Emitter</h2>
+The environmental map emitter was one of the features that took more time to be implemented. <a href = "https://web.cs.wpi.edu/~emmanuel/courses/cs563/S07/projects/envsample.pdf" > This paper </a> helped me a lot. I followed the pseudo code given in that paper to implement the functions <code>precomputer1D()</code> and <code>sample1D()</code>.<br>
+In the paper, importance sampling an envmap depends on the intensity distribution of the light texture. The made assumption is that that illumination in images is represented using latitude-longitude parameters. In fact the <code>sample()</code> method samples points and converts them to spherical coordinates for sampling the sphere.<br>
+I updated my <code>path_mis</code> class making sure that it worked properly with my EnvMap implementation.<br>
+As a first result, I obtained a very pixelated background. Then I changed the order of inputs in the bilinear interpolation and it looked much better.<br>
+The code can be found inside <code>envmap.cpp</code>. <br><br>
+I also added a strenght parameter to envmap, which multiplies what the <code>eval()</code> method returns in order to obtain a brighter result. <br><br>
+
+I downloaded the texture from <a href = "https://hdrihaven.com/hdri/?c=outdoor&h=quarry_03" > here </a>.
+In my scene I put a conductor sphere of radius 4. The envmap sphere is modeled by a sphere of radius of 30.<br><br>
+<div class="twentytwenty-container">
+    <img src="images/envmap.png" alt="Mine" class="img-responsive">
+    <img src="images/envmapmitsuba.jpg" alt="Mitsuba" class="img-responsive">
+</div> <br>
+
+
+
+<h2>6. NL means denoising: </h2>
+
+To complete this task, I implemented a matlab function following the pseudocode given in the slides from the lectures. I added the optimization for the fast implementation, that updates datvar as the maximum between datvar and the convolution of datvar and box2. To initialize the box filter, I used the function <code>fspecial</code> of Matlab, and used the size of 2*f+1 for it, where each entry gets assigned 1/num_entries. <br>
+The inputs of the function are <code>f</code>, <code>r</code>, <code>k</code>, I used the values given in the slides from lecture (3,10,0.45). <br> In order to use the function with exr files, I had to install the tool <code>openexr</code> for matlab. <br>In order to obtain the variance in exr format, I had to modify the code from <code>render.cpp</code>. I used the same structures (<code>ImageBlock</code> and <code>BitMap</code>) used in the provided code to save the original rendered image in that class. <br> I applied the function to the cbox scene generated for <code>path_mats</code> function.<br>
+The code is inside the file <code>Nldenoise.m</code>, inside the folder <code>Matlab</code>. <br>Here the result: <br><br>
+<div class="twentytwenty-container">
+    <img src="images/noise.png"  alt="" class="img-responsive">
+    <img src="images/denoised.png"  alt="" class="img-responsive">
+</div> <br>
+
+<h2>7. Extra: </h2>
+
+I implemented the conductor feature just to use it for one of the renderings, but I don't submit it for grading.<br><br>
+
+<h2>Niklaus</h2>
+
+<h2>1. Heterogeneous Participating Media </h2>
+
+  Relevant classes
+  <br>
+  <code> medium.h/.cpp </code> <br>
+  <code> PhaseFunction.h/.cpp </code> <br>
+  <code> vol_path.cpp </code> <br>
+  <br>
+
+  In following section the implementation of the heterogeneous medium and
+  the volumetric path tracer (mis) are presented.
+
+  <h3>Medium </h3>
+
+  Our medium is described by the absorption and scattering coefficients <code> sigma_a </code> and <code> sigma_s </code> and
+  a phase function. <code> sigma_t </code> the extinction coefficient and
+  the color <code> albedo </code> can be derived from <code> sigma_a </code> and <code> sigma_s </code>. Each point in the medium
+  has a density value determined by a function of choice. For simplicity the medium is bounded by a parameterized box,
+  such that density evaluates to 0 outside the box.
+  <br>
+  We need two main functionalities from our medium class. We need to be able to sample an medium interaction given a ray
+  and be able to determine the transmittance along a ray. To sample a medium interaction, we take a random step along the ray
+  according to <code> -log(1 - random) / sigma_t </code>. Where random is a number between 0 and 1. If the normalized density
+  at the observed spot is bigger than another random number, we report the medium interaction and return the interaction
+  color <code> albedo * density_at_location </code>, else we continue. If the end
+  of the ray is reached or the bounding box is exited, no medium interaction is made.
+  <br>
+  The transmittance is caluclated similarly. We step along the ray according to <code> -log(1 - random) / sigma_t </code>
+  until we reach the end of the ray or leave the mediums bounding box. At each step we multiply the initial transmittance of
+  1 by <code> 1 - density_at_location </code> where the density is normalized to lie between 0 and 1.
+
+  <br>
+  For the density function I implemeted a simple exponential decay function <code> a * exp(-b*h) </code>.
+  <br> <br>
+  <code> sigma_a = 0.2 </code> and <code> sigma_s = 2 </code>. Sample count 1024.<br><br>
+<p style="margin-left:10em">
+<img src="imagesNik/cbox_path_vol_exp.png"  alt="Example 1">
+
+  <h3> Volumetric Path Tracer </h3>
+
+  The path tracer is the core of the whole and took the most time to implement. As we are interested in a multiple importance
+  sampler, I started by extending the MIS-path tracer already implemented in the exercises. Outline of the changed code:
+  <br>
+<pre>
+t = (1,1,1), w_mats = 1
+rayIntersect(...)
+while (true)
+  mediumColor = medium->sample_interaction(ray)
+  if (medium interaction)
+
+      pdf_mat, wo = sample_phaseFunction(ray)
+
+      sample light and get pdf_ems
+      if (shadowRay unoccluded)
+          t *= mediumColor
+          result += t * transmittance_to_light * pdf_mat * light_sample
+
+      Russian Roulette
+
+      ray = new Ray (origin=medium interaction, direction=wo)
+      new w_mats weight if new intersection is emitter
+
+  else if (not ray intersected)
+      return result
+
+  else
+      -- Here comes surface interaction. Same as in path-mis except added transmission term to each light contribution
+      -- and except that we dont return if the new ray does not intersect the scene
+      -- to allow a further medium interaction
+</pre>
+<h3> Validation </h3>
+Here a comparison between the new integrator without a medium and the old mis path tracer. They are identical.
+<br>
+<div class="twentytwenty-container">
+    <img src="imagesNik/cbox_path_mis.png" alt="Old MIS" class="img-responsive">
+    <img src="imagesNik/cbox_path_vol.png" alt="Volumetric" class="img-responsive">
+</div> <br>
+
+  Next we show comparison of mitsuba with mine solution. The scenes geometry is not 100% identical due to conversion issues.
+  <br>
+  <code> sigma_a = 1 </code> and <code> sigma_s = 2 </code>. Sample count 256.
+<div class="twentytwenty-container">
+    <img src="imagesNik/cbox_path_vol_m.png" alt="Mitsuba volpath_simple" class="img-responsive">
+    <img src="imagesNik/cbox_path_vol_mc.png" alt="Mine vol_path" class="img-responsive">
+</div> <br>
+
+<h2> Bump Mapping </h2>
+  Relevant classes
+  <br>
+  <code> normaltexture.cpp </code> <br>
+  <code> vol_path.cpp </code> <br>
+  <code> path_mis.cpp </code> <br>
+  <br>
+  Here I implemented a simple normal map texture. The color channels of the normal map are transformed into normal vector
+  components according to <code> 2 * c - 1 </code>. The normal texture is added as a nested texture to any bsdf and the uv
+  coordinate is used to look up the value. Furthermore, the texture can be scaled in the same way as the image texture.
+  <br>
+  The main integrators <code> vol_path </code> and <code> path_mis </code> where adapted to construct the new coordinate frame
+  based on the looked up normal.
+  <br> Below is a comparison of the normal maps effect. The images in the bottom row have a constant normal map evaluating to (0,0,1) everywhere.
+
+  <div class="twentytwenty-container">
+    <img src="imagesNik/material_no_tex.png" alt="Plain normal" class="img-responsive">
+    <img src="imagesNik/material_tex_norm.png" alt="Texture + normal" class="img-responsive">
+    <img src="imagesNik/material_ref1.png" alt="Plain reference" class="img-responsive">
+    <img src="imagesNik/material_ref2.png" alt="Texture reference" class="img-responsive">
+</div> <br>
+
+<h2> 3. Textured Emitter </h2>
+  Relevant classes
+  <br>
+  <code> arealight.cpp </code>
+  <br><br>
+  To make textured emitters work, I added the functionality to add a texture to the area emitter. The area emitter is
+  not anymore limited to a constant color but can use the uv coordinates to look up the radiance of a specified point.
+  For this I added the possibility to pass uv coordinates within the EmitterQueryRecord and adapted the integrators to do so.
+  <br>
+  Below you see Suzanne (Blenders monkey) having a checkerboard textured area emitter as texture. Rendered using vol_path in light fog.<br><br>
+<p style="margin-left:14em">
+  <img src="imagesNik/texture_emitter.png" alt="Texture 1">
+<br><br>
+<h2> 4. Disney BRDF </h2>
+  Relevant classes
+  <br>
+  <code> disney.cpp </code><br>
+  <code> warp.cpp </code>
+  <h3> BRDF evaluation </h3>
+  The evaluation of the brdf for a given pair of direction was implemented with help of
+  <a href = "https://disney-animation.s3.amazonaws.com/uploads/production/publication_asset/48/asset/s2012_pbs_disney_brdf_notes_v3.pdf"> this</a>.
+  I implemented the diffuse, roughness, specularity + tint, metallic and clearcoat + gloss parameters. Omitting subsurface
+  scattering and anisotropic effects. There exist several small variants to the diffuse and specularity implementation, which I
+  think comes due to artist preference. To describe the specular lobes we need two variants of the Generalized-Trowbridge-Reit
+  distribution (or GTR), one for the specularity term (GTR2) and another one for the clearcoat term (GTR1). The SquareToGTR1/2 functions
+  where added to the warp classes and verified using warptest as seen later in the report. Noteworthy is that we square the roughness parameter
+  for the specularity evaluation, many materials show very low roughness values and the squaring makes it more natural to arrive
+  to them. Clearcoat uses a hardcoded range of roughness adjustable through the clearcoat gloss parameter.
+  <br><br>
+  Below each image sequence varies one parameter while keeping the others constant. <br>
+  Metallic (1, pink), Specular (2, blue), Specular Tint (3, yellow), Roughness (4, green), Clearcoat (5, red), Clearcoat Gloss (6, red)<br><br>
+  <p style="margin-left:6em"> <strong> 0 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.1 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.3 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+     0.5 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.7 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 0.9 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1 </strong>
+
+  <p style="margin-left:0.85em">
+  <img src="imagesNik/metal00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/metal10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/specular00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/specular10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/tint00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/tint10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/rough00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/rough10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/coat00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat10_.png" width = 150 height = 150 alt="00">
+  <br>
+  <img src="imagesNik/gloss00_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss01_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss03_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss05_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss07_.png" width = 150 height = 150 alt="00"><img src="imagesNik/gloss09_.png" width = 150 height = 150 alt="00"><img src="imagesNik/coat10_.png" width = 150 height = 150 alt="00">
+  <br><br>
+
+  To compare the implementation with a reference, I took the Principled BSDF of blender<br>
+  <div class="twentytwenty-container">
+    <img src="imagesNik/disneyref1.png" alt="Blender Principled BSDF" class="img-responsive">
+    <img src="imagesNik/disneycomp1.png" alt="Disney BRDF" class="img-responsive">
+</div> <br>
+  <br>
+  <p style="margin-left:2em"><img src="imagesNik/GTR1.png" width = 512 height = 400 alt="GTR1">
+  <img src="imagesNik/GTR1pdf.png" width =512 height = 400 alt="GTR1 pdf"><br><br>
+  <img src="imagesNik/GTR2.png" width = 512 height = 400 alt="GTR1">
+  <img src="imagesNik/GTR2pdf.png" width = 512 height = 400 alt="GTR1 pdf">
+
+</div>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="resources/bootstrap.min.js"></script>
+<script src="/js/offcanvas.js"></script>
+<script src="resources/jquery.event.move.js"></script>
+<script src="resources/jquery.twentytwenty.js"></script>
+
+
+<script>
+$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+</script>
+
+</body>
+</html>

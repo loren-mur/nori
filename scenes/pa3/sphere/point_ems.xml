@@ -1,0 +1,48 @@
+<scene>
+	<!-- Independent sample generator, user-selected samples per pixel -->
+	<sampler type="independent">
+		<integer name="sampleCount" value="4"/>
+	</sampler>
+
+	<!-- Use a direct illumination integrator -->
+	<integrator type="direct_ems">
+	</integrator>
+
+
+	<!-- Render the scene as viewed by a perspective camera -->
+	<camera type="perspective">
+		<transform name="toWorld">
+			<lookat target="0,0,0" origin="5,5,3" up="0,0,1"/>
+		</transform>
+
+		<!-- Field of view: 40 degrees -->
+		<float name="fov" value="40"/>
+
+		<!-- 512 x 512 pixels -->
+		<integer name="width" value="512"/>
+		<integer name="height" value="512"/>
+	</camera>
+
+	<!-- Point light with identical power -->
+	<emitter type="point">
+		<point name="position" value="0,0,2" />
+		<color name="power" value="0,157.91367,0"/> <!-- E=1 <-> power = 4pi^2.d^2 = 16pi^2 -->
+	</emitter>
+
+	<!-- Ground plane -->
+	<mesh type="obj">
+		<string name="filename" value="../../pa1/plane.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="1,1,1"/>
+		</bsdf>
+
+		<transform name="toWorld">
+			<scale value="10,1,10"/>
+			<rotate axis="1,0,0" angle="90"/>
+		</transform>
+
+	</mesh>
+
+
+</scene>

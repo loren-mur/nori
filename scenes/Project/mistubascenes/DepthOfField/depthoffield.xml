@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- Independent sample generator, user-selected samples per pixel -->
+<scene version="0.5.0">
+    <integrator type="path"/>
+
+    <sensor type="thinlens" id="Camera-camera">
+        <float name="fov" value="70"/>
+        <transform name="toWorld">
+            <lookat target="9, 5.4, -9"
+                    origin="9.5, 6, -10"
+                    up="0, 0.2, 0"/>
+
+        </transform>
+
+        <!-- Focus on the target -->
+        <float name="focusDistance" value="8.0"/>
+        <float name="apertureRadius" value="0.2"/>
+
+        <sampler type="independent">
+            <integer name="sampleCount" value="128"/>
+        </sampler>
+
+        <film type="hdrfilm">
+            <integer name="height" value="400"/>
+            <integer name="width" value="800"/>
+        </film>
+    </sensor>
+
+
+    <shape type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x="300" y="300" z="300"/>
+            <rotate angle="270" z="1" />
+            <translate x="-1000" y="1000" z="0"/>
+        </transform>
+
+        <emitter type="area">
+            <spectrum name="radiance" value="2"/>
+        </emitter>
+    </shape>
+
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y="0.01" z=".01"/>
+            <rotate angle="-90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="5"/>
+        </transform>
+
+    </shape>
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y="0.01" z=".01"/>
+            <rotate angle="-90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="-5"/>
+        </transform>
+
+    </shape>
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y="0.01" z=".01"/>
+            <rotate angle="-90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="0"/>
+        </transform>
+
+    </shape>
+
+
+    <shape type="obj">
+        <string name="filename" value="mug.obj"/>
+        <bsdf type="diffuse">
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x=".01" y="0.01" z=".01"/>
+            <rotate angle="-90" z="1" />
+            <rotate angle="-90" x="1" />
+            <translate x="5" y="0" z="10"/>
+        </transform>
+
+    </shape>
+
+
+    <shape type="obj">
+        <string name="filename" value="base.obj"/>
+        <bsdf type="diffuse">
+            <spectrum name="radiance" value="1"/>
+        </bsdf>
+
+        <transform name="toWorld">
+            <scale x="20" y="20" z="20"/>
+            <rotate angle="90" z="1" />
+            <translate x="100" y="0" z="0"/>
+        </transform>
+
+
+    </shape>
+
+
+</scene>

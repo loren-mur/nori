@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<scene>
+	<integrator type="vol_path"/>
+
+	<camera type="perspective">
+		<float name="fov" value="27.7856"/>
+		<transform name="toWorld">
+			<scale value="-1,1,1"/>
+			<lookat target="0, 0.893051, 4.41198" origin="0, 0.919769, 5.41159" up="0, 1, 0"/>
+		</transform>
+
+		<integer name="height" value="600"/>
+		<integer name="width" value="800"/>
+	</camera>
+
+	<sampler type="independent">
+		<integer name="sampleCount" value="256"/>
+	</sampler>
+
+    <medium type="medium">
+        <phase type="iso"/>
+        <float name="sigma_a" value="0.2"/>
+        <float name="sigma_s" value="2"/>
+        <float name="max_density" value="0.1"/>
+        <integer name="density_function" value="2"/>
+        <vector name="origin" value="0.0, 0.821198, 0.2"/>
+        <vector name="dimensions" value = "1.0 1.05 1.05"/>
+    </medium>
+
+    
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/walls.obj"/>
+
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.725 0.71 0.68"/>
+		</bsdf>
+	</mesh>
+
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/rightwall.obj"/>
+
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.161 0.133 0.427"/>
+        </bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/leftwall.obj"/>
+
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.630 0.035 0.05"/>
+        </bsdf>
+	</mesh>
+
+	<mesh type="sphere">
+		<point name="center" value="-0.421400 0.332100 -0.280000" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="mirror"> </bsdf>
+	</mesh>
+ 
+    <mesh type="sphere">
+        <point name="center" value="0 0 0" />
+        <float name="radius" value="10" />
+
+        <bsdf type="diffuse">
+            <color name="albedo" value="0 0 0"/>
+        </bsdf>
+    </mesh>
+ 
+ 
+    <!--<mesh type="sphere">
+        <point name="center" value="0.445800 0.332100 0.376700" />
+        <float name="radius" value="0.3263" />
+
+        <bsdf type="dielectric"/>
+    </mesh>-->
+
+	<mesh type="sphere">
+		<point name="center" value="0.445800 0.332100 0.376700" />
+		<float name="radius" value="0.3263" />
+
+		<bsdf type="disney">
+            <color name="albedo" value="0.630 0.035 0.05"/>
+            <float name="metallic" value="0.0" />
+            <float name="specular" value="1.0" />
+            <float name="roughness" value="0.2" />
+            <float name="specularTint" value="0.0" />
+            <float name="clearcoat" value="0.0" />
+            <float name="clearcoatGloss" value="0.0" />
+            <texture type ="normaltexture" name="normal">
+                <vector name="scale" value="1 1" />
+                <string name="fileName" value= "Bricks01_NRM.png"/>
+            </texture>
+        </bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/light.obj"/>
+
+		<emitter type="area">
+			<!--<color name="radiance" value="20 20 20"/>-->
+            <texture type="checkerboard_color">
+                <vector name="scale" value="1 1"/>
+                <point name="delta" value="0 0"/>
+                <color name="value1" value=".5 .5 0.5"/>
+                <color name="value2" value="20 20 20" />
+            </texture>
+		</emitter>
+	</mesh>
+</scene>
