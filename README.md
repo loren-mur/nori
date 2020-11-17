@@ -9,7 +9,7 @@ Features:
 
 Alessia Paccagnella:
 - Environment map emitter 
-- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aborration)  
+- Advanced Camera Model (Depth of Field, Lens distortion, Chromatic Aberration)  
 - NL means denoising 
 - Image Textures 
 - Spotlight 
