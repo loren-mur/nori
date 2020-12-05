@@ -23,4 +23,4 @@ Niklaus Houska:
 - Heterogeneous participating media 
 
 Report:
-https://htmlpreview.github.io/?https://github.com/alessiapacca/nori/blob/master/report-apaccagne-houskan/project-report.html
+http://htmlpreview.github.io/?https://github.com/alessiapacca/nori/blob/master/report-apaccagne-houskan/project-report.html
