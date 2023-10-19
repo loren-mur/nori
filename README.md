@@ -1,3 +1,5 @@
+# Please do not publish Nori code. Report is fine. 
+
 # NoriProject
 Ray tracing renderer implemented for Computer Graphics rendering competition at ETH.<br>
 [Click here to see the course page](https://cgl.ethz.ch/teaching/cg19/home.php)<br>
